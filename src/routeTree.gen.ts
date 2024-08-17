@@ -18,6 +18,7 @@ import { Route as PrivateImport } from './routes/_private'
 // Create Virtual Routes
 
 const IndexLazyImport = createFileRoute('/')()
+const PrivateNovoTicketLazyImport = createFileRoute('/_private/novo-ticket')()
 const PrivateMeusChamadosLazyImport = createFileRoute(
   '/_private/meus-chamados',
 )()
@@ -34,6 +35,13 @@ const IndexLazyRoute = IndexLazyImport.update({
   path: '/',
   getParentRoute: () => rootRoute,
 } as any).lazy(() => import('./routes/index.lazy').then((d) => d.Route))
+
+const PrivateNovoTicketLazyRoute = PrivateNovoTicketLazyImport.update({
+  path: '/novo-ticket',
+  getParentRoute: () => PrivateRoute,
+} as any).lazy(() =>
+  import('./routes/_private/novo-ticket.lazy').then((d) => d.Route),
+)
 
 const PrivateMeusChamadosLazyRoute = PrivateMeusChamadosLazyImport.update({
   path: '/meus-chamados',
@@ -81,6 +89,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivateMeusChamadosLazyImport
       parentRoute: typeof PrivateImport
     }
+    '/_private/novo-ticket': {
+      id: '/_private/novo-ticket'
+      path: '/novo-ticket'
+      fullPath: '/novo-ticket'
+      preLoaderRoute: typeof PrivateNovoTicketLazyImport
+      parentRoute: typeof PrivateImport
+    }
   }
 }
 
@@ -91,6 +106,7 @@ export const routeTree = rootRoute.addChildren({
   PrivateRoute: PrivateRoute.addChildren({
     PrivateDashboardLazyRoute,
     PrivateMeusChamadosLazyRoute,
+    PrivateNovoTicketLazyRoute,
   }),
 })
 
@@ -113,7 +129,8 @@ export const routeTree = rootRoute.addChildren({
       "filePath": "_private.jsx",
       "children": [
         "/_private/dashboard",
-        "/_private/meus-chamados"
+        "/_private/meus-chamados",
+        "/_private/novo-ticket"
       ]
     },
     "/_private/dashboard": {
@@ -122,6 +139,10 @@ export const routeTree = rootRoute.addChildren({
     },
     "/_private/meus-chamados": {
       "filePath": "_private/meus-chamados.lazy.jsx",
+      "parent": "/_private"
+    },
+    "/_private/novo-ticket": {
+      "filePath": "_private/novo-ticket.lazy.jsx",
       "parent": "/_private"
     }
   }

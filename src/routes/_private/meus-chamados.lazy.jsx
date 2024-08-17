@@ -36,9 +36,7 @@ import {
 } from "@/components/ui/table";
 import {
   Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
+  TabsContent
 } from "@/components/ui/tabs";
 
 export const Route = createLazyFileRoute('/_private/meus-chamados')({
@@ -55,14 +53,14 @@ export function MyTickets() {
       <main className="grid flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
         <Tabs defaultValue="all">
           <div className="flex items-center">
-            <TabsList>
+            {/*<TabsList>
               <TabsTrigger value="all">Todos</TabsTrigger>
-              {/* <TabsTrigger value="active">Abertos</TabsTrigger>
+               <TabsTrigger value="active">Abertos</TabsTrigger>
               <TabsTrigger value="draft">Encerrados</TabsTrigger>
               <TabsTrigger value="archived" className="hidden sm:flex">
                 Arquivados
-              </TabsTrigger> */}
-            </TabsList>
+              </TabsTrigger>
+            </TabsList> */}
             <div className="ml-auto flex items-center gap-2">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>

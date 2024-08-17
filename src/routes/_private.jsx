@@ -12,17 +12,7 @@ import {
   Users2
 } from "lucide-react";
 
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
-import { Separator } from '@/components/ui/separator';
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Link } from '@tanstack/react-router';
 
 export const Route = createFileRoute('/_private')({
   component: LayoutComponent
@@ -91,7 +81,7 @@ function LayoutComponent() {
                 </nav>
               </SheetContent>
             </Sheet>
-            <Breadcrumb className="hidden md:flex">
+            {/* <Breadcrumb className="hidden md:flex">
               <BreadcrumbList>
                 <BreadcrumbItem>
                   <BreadcrumbLink asChild>
@@ -103,10 +93,10 @@ function LayoutComponent() {
                   <BreadcrumbPage>Meus tickets</BreadcrumbPage>
                 </BreadcrumbItem>
               </BreadcrumbList>
-            </Breadcrumb>
+            </Breadcrumb> */}
           </header>
 
-          <Separator />
+          {/* <Separator /> */}
 
           <Outlet />
         </div>
