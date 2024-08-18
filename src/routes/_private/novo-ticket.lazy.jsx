@@ -11,6 +11,8 @@ import {
   CardHeader,
   CardTitle
 } from "@/components/ui/card";
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import {
   Tabs,
@@ -67,13 +69,14 @@ function NewTicket() {
 
             <Card x-chunk="dashboard-01-chunk-0" className="sticky top-6">
               <CardHeader>
-                <CardTitle>Chamado #12323</CardTitle>
-                <CardDescription>
-                  Veja abaixo os tickets criados para você.
-                </CardDescription>
+                <CardTitle>Ações</CardTitle>
+                
               </CardHeader>
               <CardContent>
-                <Button>Butao</Button>
+              <div className="grid w-full max-w-sm items-center gap-1.5">
+                <Label htmlFor="level">Complexidade</Label>
+                <Input id="level" type="text" />
+              </div>
               </CardContent>
             </Card>
           </TabsContent>
