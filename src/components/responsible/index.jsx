@@ -21,62 +21,61 @@ import {
 } from "@/components/ui/popover";
 
 
-const statuses = [
+const list = [
   {
+    avatar: 'https://github.com/shadcn.png',
     value: "junior",
     label: "Consultor júnior",
   },
   {
+    avatar: 'https://github.com/shadcn.png',
     value: "pleno",
     label: "Consultor pleno",
   },
   {
+    avatar: 'https://github.com/shadcn.png',
     value: "senior",
     label: "Consultor sênior",
   },
   {
+    avatar: 'https://github.com/shadcn.png',
     value: "specialist",
     label: "Consultor especialista",
   }
 ]
 
 export default function Responsible() {
+  const [selected, setSelected] = React.useState([])
+
+  const handleRemove = (responsible) => {
+    setSelected(s => s.filter(t => t !== responsible))
+  }
+
   return (
     <div className="flex flex-col space-y-1.5">
       <Label htmlFor="responsavel">Responsáveis</Label>
       <div className="flex space-x-2">
-        <ComboboxPopover />
-      </div>
-      <div className="space-x-2">
-        <Badge variant="secondary" className="rounded-2xl p-0.5">
-          <Avatar className="w-8 h-8">
-            <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
-            <AvatarFallback>CN</AvatarFallback>
-          </Avatar>
-          <p className="pl-2">Consultor Júnior</p>
-          <Cross2Icon className="w-3 mx-2" />
-        </Badge>
-        <Badge variant="secondary" className="rounded-2xl p-0.5">
-          <Avatar className="w-8 h-8">
-            <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
-            <AvatarFallback>CN</AvatarFallback>
-          </Avatar>
-          <p className="pl-2">Consultor Sênior</p>
-          <Cross2Icon className="w-3 mx-2" />
-        </Badge>
+        <ComboboxPopover selected={selected} onSelectResponsible={(responsible) => setSelected(state => [...state, responsible])} />
       </div>
 
+      <div className="flex gap-2 flex-wrap">
+        {selected.map((responsible) => (
+          <Badge key={responsible.value} variant="secondary" className="rounded-2xl p-0.5">
+            <Avatar className="w-8 h-8">
+              <AvatarImage src={responsible.avatar} alt="@shadcn" />
+              <AvatarFallback>CN</AvatarFallback>
+            </Avatar>
+            <p className="pl-2">{responsible.label}</p>
+            <Cross2Icon className="w-3 mx-2 cursor-pointer" onClick={() => handleRemove(responsible)}/>
+          </Badge>
+        ))}
+      </div>
     </div>
   )
 }
 
-
-
-export function ComboboxPopover() {
+export function ComboboxPopover({ selected, onSelectResponsible }) {
   const [open, setOpen] = React.useState(false)
-  const [selectedStatus, setSelectedStatus] = React.useState(
-    null
-  )
 
   return (
     <div className="w-full flex items-center space-x-4">
@@ -84,8 +83,8 @@ export function ComboboxPopover() {
         <PopoverTrigger asChild>
           <Button
             variant="outline"
-            size="sm"
-            className="w-full h-9 justify-start"
+            size="md"
+            className="w-full h-9 justify-start px-4"
           >
             Adicionar responável
           </Button>
@@ -96,14 +95,14 @@ export function ComboboxPopover() {
             <CommandList>
               <CommandEmpty>Resposável não encontrado.</CommandEmpty>
               <CommandGroup>
-                {statuses.map((status) => (
+                {list.filter((responsible) => !selected?.includes(responsible)).map((responsible) => (
                   <CommandItem
-                    key={status.value}
-                    value={status.value}
+                    key={`command_${responsible.value}`}
+                    value={responsible.value}
                     className="flex gap-2"
                     onSelect={(value) => {
-                      setSelectedStatus(
-                        statuses.find((priority) => priority.value === value) ||
+                      onSelectResponsible(
+                        list.find((responsible) => responsible.value === value) ||
                         null
                       )
                       setOpen(false)
@@ -113,7 +112,7 @@ export function ComboboxPopover() {
                       <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
                       <AvatarFallback>CN</AvatarFallback>
                     </Avatar>
-                    <span>{status.label}</span>
+                    <span>{responsible.label}</span>
                   </CommandItem>
                 ))}
               </CommandGroup>

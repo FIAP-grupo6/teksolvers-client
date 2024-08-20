@@ -41,7 +41,7 @@ function NewTicket() {
             </TabsList>
           </div>
 
-          <TabsContent value="main" className="grid grid-cols-[minmax(auto,70%)_minmax(auto,30%)] gap-2 items-start">
+          <TabsContent value="main" className="grid grid-cols-[minmax(auto,65%)_minmax(auto,450px)] gap-2 items-start">
             <div>
               <ScrollArea className="h-[calc(100vh-284px)] border-b rounded-md flex flex-col pr-3">
                 {Array.from({ length: 5 }).map((_, i) => (
