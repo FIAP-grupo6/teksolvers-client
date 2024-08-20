@@ -86,7 +86,7 @@ export function ComboboxPopover({ selected, onSelectResponsible }) {
             size="md"
             className="w-full h-9 justify-start px-4"
           >
-            Adicionar responável
+            Adicionar responsável
           </Button>
         </PopoverTrigger>
         <PopoverContent className="p-0">
