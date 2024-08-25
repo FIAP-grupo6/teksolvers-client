@@ -1,9 +1,8 @@
 import { Button } from '@/components/ui/button';
-import { createLazyFileRoute } from '@tanstack/react-router';
+import { createFileRoute } from '@tanstack/react-router';
 import { Helmet } from 'react-helmet';
 
 
-import { MinimalTiptapEditor } from '@/components/minimal-tiptap/index';
 import InputCardInfos from '@/components/opened-ticket/input-card-infos/index';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import {
@@ -20,12 +19,19 @@ import {
   TabsList,
   TabsTrigger
 } from "@/components/ui/tabs";
+import { Textarea } from '@/components/ui/textarea';
+import { SendHorizonal } from 'lucide-react';
 
-export const Route = createLazyFileRoute('/_private/novo-ticket')({
-  component: NewTicket
+export const Route = createFileRoute('/_private/ticket-aberto-cliente')({
+  component: OpenTicket
 })
 
-function NewTicket() {
+function OpenTicket() {
+  const handleSubmitMessage = (e) => {
+    e.preventDefault();
+    console.log('submit', e.target.description.value);
+  }
+
   return (
     <>
       <Helmet>
@@ -37,13 +43,12 @@ function NewTicket() {
           <div className="flex items-center">
             <TabsList>
               <TabsTrigger value="main">Histórico</TabsTrigger>
-              <TabsTrigger value="assistants">Assistentes A.I</TabsTrigger>
             </TabsList>
           </div>
 
           <TabsContent value="main" className="grid grid-cols-[minmax(auto,65%)_minmax(auto,450px)] gap-2 items-start">
             <div>
-              <ScrollArea className="h-[calc(100vh-284px)] border-b rounded-md flex flex-col pr-3">
+              <ScrollArea className="h-[calc(100vh-215px)] flex flex-col pr-3">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Card x-chunk="dashboard-01-chunk-0" key={`card_${i}`} className="mb-4">
                     <CardHeader className="flex flex-row gap-4">
@@ -67,18 +72,15 @@ function NewTicket() {
                   </Card>
                 ))}
               </ScrollArea>
-              <MinimalTiptapEditor
-                throttleDelay={2000}
-                className="w-full min-h-32 mt-6 bg-white"
-                editorContentClassName="p-5"
-                output="html"
-                placeholder="Descreva o problema aqui"
-                autofocus={true}
-                immediatelyRender={true}
-                editable={true}
-                injectCSS={true}
-                editorClassName="focus:outline-none"
-              />
+
+              <div className="relative">
+                <form className="relative" onSubmit={handleSubmitMessage}>
+                  <Textarea className="mt-6 min-h-24 resize-none bg-white" placeholder="Descreva aqui o que está acontecendo" name="description" />
+                  <Button type="submit" className="mt-4 absolute bottom-4 right-4" size="icon">
+                    <SendHorizonal className="w-4 h-4" />
+                  </Button>
+                </form>
+              </div>
             </div>
 
             <InputCardInfos className="sticky top-6 w-full" />
