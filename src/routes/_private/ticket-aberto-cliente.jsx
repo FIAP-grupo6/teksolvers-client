@@ -90,20 +90,6 @@ function OpenTicket() {
 
             <InputCardInfos className="sticky top-6 w-full" />
           </TabsContent>
-
-          <TabsContent value="assistants" className="w-full">
-            <Card x-chunk="dashboard-06-chunk-0" className="w-full">
-              <CardHeader>
-                <CardTitle>Assistente 1</CardTitle>
-                <CardDescription>
-                  Veja abaixo os tickets criados para você.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Button>Butao</Button>
-              </CardContent>
-            </Card>
-          </TabsContent>
         </Tabs>
       </main>
     </>
