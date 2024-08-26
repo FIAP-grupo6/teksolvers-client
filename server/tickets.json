@@ -1,0 +1,2871 @@
+[
+  {
+    "id": "INC0194887",
+    "createdAt": "09\/02\/2024 17:15:47",
+    "updatedAt": "03\/05\/2024 14:34:26",
+    "reportStatus": "Resolvido",
+    "reportDate": "05\/03\/2024",
+    "reportCategory": "Outros Sistemas",
+    "reportSubcategory": "Adapt",
+    "groupAssignment": "N2-LEG-SAT",
+    "category": "AMS-Não SAP",
+    "assigned": "Analista AMS",
+    "priority": "3 - Baixo",
+    "closedAt": "01\/05\/2024 18:00:04",
+    "applicant": "ADM Sistemas",
+    "local": "Fábrica 1",
+    "description": "Lentidão sistema",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Somente em sua maquina ?",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em todo departamento",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Solução aplicada Reinciado serviço database"
+  },
+  {
+    "id": "INC0201867",
+    "createdAt": "22\/03\/2024 08:08:10",
+    "updatedAt": "02\/05\/2024 14:40:15",
+    "reportStatus": "Resolvido",
+    "reportDate": "05\/02\/2024",
+    "reportCategory": "Outros Sistemas",
+    "reportSubcategory": "Sistema Labware",
+    "groupAssignment": "N2-LEG-SAT",
+    "category": "AMS-Não SAP",
+    "assigned": "Analista AMS",
+    "priority": "3 - Baixo",
+    "closedAt": "01\/05\/2024 18:00:04",
+    "applicant": "ADM Sistemas",
+    "local": "Fábrica 1",
+    "description": "Lentidão sistema",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Somente em sua maquina ?",
+        "user": "Consultor"
+      },
+      {
+        "message": "Somente na minha maquina",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Solução aplicada Reinciado sistema operacional local "
+  },
+  {
+    "id": "INC0204817",
+    "createdAt": "16\/04\/2024 13:35:32",
+    "updatedAt": "03\/05\/2024 14:54:03",
+    "reportStatus": "Resolvido",
+    "reportDate": "05\/03\/2024",
+    "reportCategory": "Outros Sistemas",
+    "reportSubcategory": "HCA",
+    "symptomQualification": "Download",
+    "groupAssignment": "N2-LEG-SAT",
+    "category": "AMS-Não SAP",
+    "assigned": "Analista AMS",
+    "priority": "3 - Baixo",
+    "closedAt": "01\/05\/2024 18:00:04",
+    "applicant": "ADM Sistemas",
+    "local": "Escritório central",
+    "description": "Lentidão sistema",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Somente em sua maquina ?",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em todo departamento",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Solução aplicada Reinciado serviço database"
+  },
+  {
+    "id": "INC0205119",
+    "createdAt": "18\/04\/2024 07:17:26",
+    "updatedAt": "02\/05\/2024 12:29:14",
+    "reportStatus": "Resolvido",
+    "reportDate": "05\/02\/2024",
+    "reportCategory": "Outros Sistemas",
+    "reportSubcategory": "Lakos",
+    "groupAssignment": "N2-LEG-SAT",
+    "category": "AMS-Não SAP",
+    "assigned": "Analista AMS",
+    "priority": "3 - Baixo",
+    "closedAt": "01\/05\/2024 18:00:04",
+    "applicant": "ADM Sistemas",
+    "local": "Fábrica 1",
+    "description": "Lentidão sistema",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Somente em sua maquina ?",
+        "user": "Consultor"
+      },
+      {
+        "message": "Somente na minha maquina",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Solução aplicada Reinciado sistema operacional local "
+  },
+  {
+    "id": "INC0208361",
+    "createdAt": "02\/05\/2024 11:47:19",
+    "updatedAt": "02\/05\/2024 13:29:23",
+    "reportStatus": "Resolvido",
+    "reportDate": "05\/02\/2024",
+    "reportCategory": "Outros Sistemas",
+    "reportSubcategory": "Outros Sistemas",
+    "symptomQualification": "Outros",
+    "groupAssignment": "N1-NÃO SAP",
+    "category": "Service Desk",
+    "assigned": "Analista Service Desk",
+    "priority": "3 - Baixo",
+    "closedAt": "01\/05\/2024 18:00:04",
+    "applicant": "ADM Sistemas",
+    "local": "Fábrica 1",
+    "description": "Impressora Não Imprime",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Impressora esta ligada?",
+        "user": "Consultor"
+      },
+      {
+        "message": "Sim, somente em minha maquina não imprime ",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Realizado instalção driver impressora."
+  },
+  {
+    "id": "INC0208388",
+    "createdAt": "02\/05\/2024 16:59:33",
+    "updatedAt": "02\/05\/2024 17:49:39",
+    "reportStatus": "Resolvido",
+    "reportDate": "05\/02\/2024",
+    "reportCategory": "Outros Sistemas",
+    "reportSubcategory": "Gente & Gestão",
+    "groupAssignment": "N1-NÃO SAP",
+    "category": "Service Desk",
+    "assigned": "Analista Service Desk",
+    "priority": "3 - Baixo",
+    "closedAt": "01\/05\/2024 18:00:04",
+    "applicant": "ADM Sistemas",
+    "local": "Centro de Distribuição",
+    "description": "Sistema não abre ",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Somente em sua maquina ?",
+        "user": "Consultor"
+      },
+      {
+        "message": "Somente na minha maquina",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Solução aplicada Reinciado sistema operacional local "
+  },
+  {
+    "id": "TASK0900023",
+    "createdAt": "19\/02\/2024 08:16:45",
+    "updatedAt": "01\/05\/2024 17:00:04",
+    "reportStatus": "Fechado",
+    "reportDate": "04\/26\/2024",
+    "reportCategory": "Acessos",
+    "reportSubcategory": "Alteração de Perfil",
+    "symptom": "Manutenção de transação e objeto",
+    "symptomQualification": "Com SAP",
+    "groupAssignment": "N1-ACESSOS-SAP",
+    "category": "Acesso",
+    "assigned": "Analista Acesso ",
+    "priority": "3 - Baixo",
+    "closedAt": "01\/05\/2024 17:00:04",
+    "applicant": "ADM Sistemas",
+    "local": "Fábrica 1",
+    "description": "Incluir perfil espelho",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Informar perfil espelho",
+        "user": "Consultor"
+      },
+      {
+        "message": "Usar perfil espelho XXXXXXX",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Realizado conforme solicitado o espelhamento do perfil "
+  },
+  {
+    "id": "TASK0900593",
+    "createdAt": "19\/02\/2024 13:14:10",
+    "updatedAt": "01\/05\/2024 11:00:05",
+    "reportStatus": "Fechado",
+    "reportDate": "04\/26\/2024",
+    "reportCategory": "Acessos",
+    "reportSubcategory": "Alteração de Perfil",
+    "symptom": "Troca de Perfil",
+    "symptomQualification": "Com SAP",
+    "groupAssignment": "N1-ACESSOS-SAP",
+    "category": "Acesso",
+    "assigned": "Analista Acesso ",
+    "priority": "2 - Médio",
+    "closedAt": "01\/05\/2024 11:00:05",
+    "applicant": "ADM Sistemas",
+    "local": "Fábrica 1",
+    "description": "Troca de pefil",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Informar perfil espelho",
+        "user": "Consultor"
+      },
+      {
+        "message": "Usar perfil espelho XXXXXXX",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Realizado conforme solicitado o espelhamento do perfil "
+  },
+  {
+    "id": "TASK0902990",
+    "createdAt": "21\/02\/2024 15:57:24",
+    "updatedAt": "01\/05\/2024 18:00:04",
+    "reportStatus": "Fechado",
+    "reportDate": "04\/26\/2024",
+    "reportCategory": "Acessos",
+    "reportSubcategory": "Liberação de Acesso",
+    "symptom": "Criação de Acesso",
+    "symptomQualification": "Com SAP",
+    "groupAssignment": "N1-OUTROS",
+    "category": "Service Desk",
+    "assigned": "Analista Service Desk",
+    "priority": "3 - Baixo",
+    "closedAt": "01\/05\/2024 18:00:04",
+    "applicant": "ADM Sistemas",
+    "local": "Centro de Distribuição",
+    "description": "Criar usuário de rede ",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Anexar aval e planilha de acesso ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Realizado envio das informações solicitadas",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Usuário de rede criado e enviado os dados ao gestor imediato"
+  },
+  {
+    "id": "TASK0912173",
+    "createdAt": "05\/03\/2024 16:55:51",
+    "updatedAt": "03\/05\/2024 16:17:38",
+    "reportStatus": "Resolvido",
+    "reportDate": "05\/03\/2024",
+    "reportCategory": "Funcional SAP",
+    "reportSubcategory": "Solicitação",
+    "symptom": "Análise SAP",
+    "symptomQualification": "Outros",
+    "groupAssignment": "N1-SAP",
+    "category": "Service Desk",
+    "assigned": "Analista Service Desk",
+    "priority": "4 - Planejamento",
+    "closedAt": "03\/05\/2024 16:17:38",
+    "applicant": "ADM Sistemas",
+    "local": "Fábrica 1",
+    "description": "Impressora Não Imprime",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Impressora esta ligada?",
+        "user": "Consultor"
+      },
+      {
+        "message": "Não, estamos sem energia no local",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Realizado acionamento time de facilites local."
+  },
+  {
+    "id": "TASK0919208",
+    "createdAt": "14\/03\/2024 18:18:18",
+    "updatedAt": "01\/05\/2024 18:00:40",
+    "reportStatus": "Fechado",
+    "reportDate": "04\/26\/2024",
+    "reportCategory": "Acessos",
+    "reportSubcategory": "Alteração de Perfil",
+    "symptom": "Outras manutenções de Perfil",
+    "symptomQualification": "Com SAP",
+    "groupAssignment": "N1-OUTROS",
+    "category": "Service Desk",
+    "assigned": "Analista Service Desk",
+    "priority": "3 - Baixo",
+    "closedAt": "01\/05\/2024 18:00:40",
+    "applicant": "ADM Sistemas",
+    "local": "Fábrica 1",
+    "description": "Incluir perfil espelho",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Informar perfil espelho",
+        "user": "Consultor"
+      },
+      {
+        "message": "Usar perfil espelho XXXXXXX",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Realizado conforme solicitado o espelhamento do perfil "
+  },
+  {
+    "id": "TASK0926414",
+    "createdAt": "25\/03\/2024 17:17:59",
+    "updatedAt": "01\/05\/2024 16:00:04",
+    "reportStatus": "Fechado",
+    "reportDate": "04\/26\/2024",
+    "reportCategory": "Equipamento de TI",
+    "reportSubcategory": "Solicitação de Equipamento",
+    "symptom": "Colaborador Interno",
+    "symptomQualification": "Capitais e Regiões Metropolitanas",
+    "groupAssignment": "N2-FS-CA",
+    "category": "Field Service",
+    "assigned": "Analista Field",
+    "priority": "3 - Baixo",
+    "closedAt": "01\/05\/2024 16:00:04",
+    "applicant": "ADM Sistemas",
+    "local": "Centro de Distribuição",
+    "description": "Solicitação de Equipamento",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Informar data e local entrega",
+        "user": "Consultor"
+      },
+      {
+        "message": "Equipamentos liberados para entrega",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Equipamentos entregue e termos assinados"
+  },
+  {
+    "id": "TASK0928474",
+    "createdAt": "28\/03\/2024 09:31:03",
+    "updatedAt": "02\/05\/2024 09:08:05",
+    "reportStatus": "Resolvido",
+    "reportDate": "05\/02\/2024",
+    "reportCategory": "Acessos",
+    "reportSubcategory": "Atualização de Acesso",
+    "symptom": "Atualização de dados cadastrais na BU",
+    "groupAssignment": "N1-OUTROS",
+    "category": "Service Desk",
+    "assigned": "Analista Service Desk",
+    "priority": "3 - Baixo",
+    "closedAt": "02\/05\/2024 09:08:06",
+    "applicant": "ADM Sistemas",
+    "local": "Fábrica 1",
+    "description": "Atualização de Acesso",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Anexar aval e planilha de acesso ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Realizado envio das informações solicitadas",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Usuário de rede criado e enviado os dados ao gestor imediato"
+  },
+  {
+    "id": "TASK0929053",
+    "createdAt": "28\/03\/2024 17:23:31",
+    "updatedAt": "03\/05\/2024 08:41:16",
+    "reportStatus": "Resolvido",
+    "reportDate": "05\/03\/2024",
+    "reportCategory": "Sistemas SAP",
+    "reportSubcategory": "Suporte Funcional",
+    "symptom": "Analise",
+    "symptomQualification": "Ordem de Produção",
+    "groupAssignment": "N1-SAP",
+    "category": "Service Desk",
+    "assigned": "Analista Service Desk",
+    "priority": "2 - Médio",
+    "closedAt": "03\/05\/2024 08:41:17",
+    "applicant": "ADM Sistemas",
+    "local": "Fábrica 1",
+    "description": "Suporte Funcional",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Somente em sua maquina ?",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em todo departamento",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Solução aplicada Reinciado serviço database"
+  },
+  {
+    "id": "TASK0931383",
+    "createdAt": "02\/04\/2024 13:05:46",
+    "updatedAt": "02\/05\/2024 10:41:16",
+    "reportStatus": "Resolvido",
+    "reportDate": "05\/02\/2024",
+    "reportCategory": "Outros Sistemas",
+    "reportSubcategory": "Nugenesis",
+    "symptom": "Outros",
+    "groupAssignment": "N2-LEG-SAT",
+    "category": "AMS-Não SAP",
+    "assigned": "Analista AMS",
+    "priority": "3 - Baixo",
+    "closedAt": "22\/04\/2024 15:05:12",
+    "applicant": "ADM Sistemas",
+    "local": "Fábrica 1",
+    "description": "Sistema lento ",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Somente em sua maquina ?",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em todo departamento",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Solução aplicada Reinciado serviço database"
+  },
+  {
+    "id": "TASK0933095",
+    "createdAt": "04\/04\/2024 10:37:29",
+    "updatedAt": "01\/05\/2024 13:00:42",
+    "reportStatus": "Fechado",
+    "reportDate": "04\/26\/2024",
+    "reportCategory": "Equipamento de TI",
+    "reportSubcategory": "Troca de Equipamento",
+    "symptom": "Colaborador Externo",
+    "symptomQualification": "Acima de 300Km",
+    "groupAssignment": "N2-FS-EX",
+    "category": "Field Service",
+    "assigned": "Analista Field",
+    "priority": "3 - Baixo",
+    "closedAt": "01\/05\/2024 13:00:42",
+    "applicant": "ADM Sistemas",
+    "local": "Centro de Distribuição",
+    "description": "Troca de Equipamento",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Informar data e local entrega",
+        "user": "Consultor"
+      },
+      {
+        "message": "Equipamentos liberados para entrega",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Equipamentos entregue e termos assinados"
+  },
+  {
+    "id": "TASK0933890",
+    "createdAt": "05\/04\/2024 09:45:04",
+    "updatedAt": "03\/05\/2024 09:42:44",
+    "reportStatus": "Resolvido",
+    "reportDate": "05\/03\/2024",
+    "reportCategory": "Acessos",
+    "reportSubcategory": "Criar Perfil SAP",
+    "symptom": "Criar perfil SAP",
+    "groupAssignment": "N1-SAP",
+    "category": "Service Desk",
+    "assigned": "Analista Service Desk",
+    "priority": "3 - Baixo",
+    "closedAt": "03\/05\/2024 09:42:44",
+    "applicant": "ADM Sistemas",
+    "local": "Escritório central",
+    "description": "Criar Perfil SAP",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar aval gestor imediato para seguirmos com criação do acesso ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Realizado envio das informações solicitadas",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Ralizado a criação do acesso, enviado ao gestor imediato as informações."
+  },
+  {
+    "id": "TASK0935862",
+    "createdAt": "09\/04\/2024 09:32:28",
+    "updatedAt": "02\/05\/2024 14:22:32",
+    "reportStatus": "Resolvido",
+    "reportDate": "05\/02\/2024",
+    "reportCategory": "Equipamento de TI",
+    "reportSubcategory": "Configuração de Equipamento",
+    "symptom": "Configuração de Equipamento",
+    "groupAssignment": "N2-FS-NA",
+    "category": "Field Service",
+    "assigned": "Analista Field",
+    "priority": "3 - Baixo",
+    "closedAt": "02\/05\/2024 14:22:33",
+    "applicant": "ADM Sistemas",
+    "local": "Fábrica 1",
+    "description": "Configuração de Equipamento",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Configurar Smartphone XXXX",
+        "user": "Consultor"
+      },
+      {
+        "message": "informar melhor horário para atendimento ",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Realizado a configuração do smartphone conforme solicitado"
+  },
+  {
+    "id": "TASK0937918",
+    "createdAt": "11\/04\/2024 12:02:32",
+    "updatedAt": "01\/05\/2024 10:02:12",
+    "reportStatus": "Fechado",
+    "reportDate": "04\/26\/2024",
+    "reportCategory": "Equipamento de TI",
+    "reportSubcategory": "Devolução de Equipamento",
+    "symptom": "Colaborador Interno",
+    "symptomQualification": "Capitais e Regiões Metropolitanas",
+    "groupAssignment": "N2-FS-NA",
+    "category": "Field Service",
+    "assigned": "Analista Field",
+    "priority": "3 - Baixo",
+    "closedAt": "01\/05\/2024 10:02:12",
+    "applicant": "ADM Sistemas",
+    "local": "Fábrica 1",
+    "description": "Devolução de Equipamento",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Realizar entrega dos equipamentos ao time de gestão de ativos",
+        "user": "Consultor"
+      },
+      {
+        "message": "Realizado entrega dos equipamentos",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Equipamentos devolvidos ao estoque local "
+  },
+  {
+    "id": "TASK0939623",
+    "createdAt": "15\/04\/2024 10:39:31",
+    "updatedAt": "01\/05\/2024 11:02:04",
+    "reportStatus": "Fechado",
+    "reportDate": "04\/26\/2024",
+    "reportCategory": "Serviços de TI",
+    "reportSubcategory": "Infraestrutura - Soluções",
+    "symptom": "Aquisição \/ Renovação de Aplicativo",
+    "groupAssignment": "N1-OUTROS",
+    "category": "Service Desk",
+    "assigned": "Analista Service Desk",
+    "priority": "3 - Baixo",
+    "closedAt": "01\/05\/2024 11:02:04",
+    "applicant": "ADM Sistemas",
+    "local": "Centro de Distribuição",
+    "description": "Solicito novo ponto de rede",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Informar local e aval para criação ponto de rede",
+        "user": "Consultor"
+      },
+      {
+        "message": "Aguardando passagem do cabeamento",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Pontos criados e ativados"
+  },
+  {
+    "id": "TASK0942133",
+    "createdAt": "17\/04\/2024 18:12:59",
+    "updatedAt": "01\/05\/2024 10:02:56",
+    "reportStatus": "Fechado",
+    "reportDate": "04\/26\/2024",
+    "reportCategory": "Sistemas",
+    "reportSubcategory": "Admissão",
+    "symptom": "Admissão",
+    "groupAssignment": "N1-OUTROS",
+    "category": "Service Desk",
+    "assigned": "Analista Service Desk",
+    "priority": "3 - Baixo",
+    "closedAt": "01\/05\/2024 10:02:56",
+    "applicant": "ADM Sistemas",
+    "local": "Fábrica 1",
+    "description": "Criar usuário de rede ",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Anexar aval e planilha de acesso ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Realizado envio das informações solicitadas",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Usuário de rede criado e enviado os dados ao gestor imediato"
+  },
+  {
+    "id": "TASK0944627",
+    "createdAt": "22\/04\/2024 12:12:06",
+    "updatedAt": "02\/05\/2024 19:54:09",
+    "reportStatus": "Resolvido",
+    "reportDate": "05\/02\/2024",
+    "reportCategory": "Acessos",
+    "reportSubcategory": "Prorrogação de Acessos",
+    "symptom": "Prorrogação de Acessos SAP",
+    "groupAssignment": "N1-ACESSOS-SAP",
+    "category": "Acesso",
+    "assigned": "Analista Acesso ",
+    "priority": "3 - Baixo",
+    "closedAt": "02\/05\/2024 19:54:09",
+    "applicant": "ADM Sistemas",
+    "local": "Escritório central",
+    "description": "Prorrogação de Acessos",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Anexar aval e planilha de acesso ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Realizado envio das informações solicitadas",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Realizado a prorrogação dos acessos conforme solicitado"
+  },
+  {
+    "id": "TASK0944775",
+    "createdAt": "22\/04\/2024 14:25:11",
+    "updatedAt": "01\/05\/2024 14:03:05",
+    "reportStatus": "Fechado",
+    "reportDate": "04\/26\/2024",
+    "reportCategory": "Equipamento de TI",
+    "reportSubcategory": "Empréstimo de Equipamento",
+    "symptom": "Empréstimo de Equipamento",
+    "groupAssignment": "N2-FS-NA",
+    "category": "Field Service",
+    "assigned": "Analista Field",
+    "priority": "3 - Baixo",
+    "closedAt": "01\/05\/2024 14:03:05",
+    "applicant": "ADM Sistemas",
+    "local": "Fábrica 1",
+    "description": "Empréstimo de Equipamento",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Solicito notebook para utilizar ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Retirar equipamento junto ao time de Field Service",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Equipamento entregue conforme termo assinado e anexado"
+  },
+  {
+    "id": "TASK0945016",
+    "createdAt": "22\/04\/2024 16:39:18",
+    "updatedAt": "03\/05\/2024 09:14:25",
+    "reportStatus": "Resolvido",
+    "reportDate": "05\/03\/2024",
+    "reportCategory": "Acessos",
+    "reportSubcategory": "Alteração de Perfil",
+    "symptom": "Remediação Solicitadas por Controles Internos (CI)",
+    "symptomQualification": "Com SAP",
+    "groupAssignment": "N1-ACESSOS-SAP",
+    "category": "Acesso",
+    "assigned": "Analista Acesso ",
+    "priority": "3 - Baixo",
+    "closedAt": "03\/05\/2024 09:14:25",
+    "applicant": "ADM Sistemas",
+    "local": "Centro de Distribuição",
+    "description": "Alteração de Perfil",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Informar perfil espelho",
+        "user": "Consultor"
+      },
+      {
+        "message": "Usar perfil espelho XXXXXXX",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Realizado conforme solicitado o espelhamento do perfil "
+  },
+  {
+    "id": "TASK0945485",
+    "createdAt": "23\/04\/2024 10:20:43",
+    "updatedAt": "03\/05\/2024 11:11:47",
+    "reportStatus": "Fechado",
+    "reportDate": "05\/02\/2024",
+    "reportCategory": "Acessos",
+    "reportSubcategory": "Suporte Acessos",
+    "symptom": "Análise de usuários Ativos \/ Inativos",
+    "symptomQualification": "Sistema Não SAP",
+    "groupAssignment": "N1-ACESSOS",
+    "category": "Acesso",
+    "assigned": "Analista Acesso ",
+    "priority": "3 - Baixo",
+    "closedAt": "03\/05\/2024 11:11:47",
+    "applicant": "ADM Sistemas",
+    "local": "Centro de Distribuição",
+    "description": "Suporte Acessos",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Anexar aval e planilha de acesso ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Realizado envio das informações solicitadas",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Usuário de rede criado e enviado os dados ao gestor imediato"
+  },
+  {
+    "id": "TASK0946570",
+    "createdAt": "24\/04\/2024 11:33:29",
+    "updatedAt": "01\/05\/2024 10:05:04",
+    "reportStatus": "Fechado",
+    "reportDate": "04\/26\/2024",
+    "reportCategory": "Outras Solicitações",
+    "reportSubcategory": "Outras Solicitações",
+    "symptom": "Dúvida",
+    "symptomQualification": "Informação",
+    "groupAssignment": "TELEFONIA",
+    "category": "Field Service",
+    "assigned": "Analista Field",
+    "priority": "3 - Baixo",
+    "closedAt": "01\/05\/2024 10:05:04",
+    "applicant": "ADM Sistemas",
+    "local": "Centro de Distribuição",
+    "description": "Configuração de Equipamento",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Configurar Smartphone XXXX",
+        "user": "Consultor"
+      },
+      {
+        "message": "informar melhor horário para atendimento ",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Realizado a configuração do smartphone conforme solicitado"
+  },
+  {
+    "id": "TASK0946697",
+    "createdAt": "24\/04\/2024 13:23:11",
+    "updatedAt": "01\/05\/2024 12:06:46",
+    "reportStatus": "Fechado",
+    "reportDate": "04\/26\/2024",
+    "reportCategory": "Equipamento de TI",
+    "reportSubcategory": "Manutenção de Equipamento Locado",
+    "symptom": "Manutenção de Equipamento Locado",
+    "symptomQualification": "Simpress",
+    "groupAssignment": "N2-FS-NA",
+    "category": "Field Service",
+    "assigned": "Analista Field",
+    "priority": "3 - Baixo",
+    "closedAt": "01\/05\/2024 12:06:46",
+    "applicant": "ADM Sistemas",
+    "local": "Centro de Distribuição",
+    "description": "Manutenção de Equipamento Locado",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Equipamento danificado",
+        "user": "Consultor"
+      },
+      {
+        "message": "Trocar carcaça ",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Realizado a troca da carcaça "
+  },
+  {
+    "id": "TASK0946794",
+    "createdAt": "24\/04\/2024 14:44:00",
+    "updatedAt": "01\/05\/2024 18:02:03",
+    "reportStatus": "Fechado",
+    "reportDate": "04\/26\/2024",
+    "reportCategory": "Acessos",
+    "reportSubcategory": "Reset\/Desbloqueio de Senha",
+    "symptom": "Reset\/Desbloqueio de Senha de Sistemas",
+    "groupAssignment": "N1-ACESSOS",
+    "category": "Acesso",
+    "assigned": "Analista Acesso ",
+    "priority": "1 - Alto",
+    "closedAt": "01\/05\/2024 18:02:03",
+    "applicant": "ADM Sistemas",
+    "local": "Escritório central",
+    "description": "Reset\/Desbloqueio de Senha",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Não consigo logar em minha maquina",
+        "user": "Consultor"
+      },
+      {
+        "message": "Informar os dados abaixo",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Realizado desbloqueio da senha de rede"
+  },
+  {
+    "id": "TASK0947172",
+    "createdAt": "25\/04\/2024 08:46:11",
+    "updatedAt": "02\/05\/2024 15:37:36",
+    "reportStatus": "Resolvido",
+    "reportDate": "05\/02\/2024",
+    "reportCategory": "Acessos",
+    "reportSubcategory": "Delegação de Aprovações",
+    "symptom": "Delegação de Aprovações",
+    "symptomQualification": "Sem SAP",
+    "groupAssignment": "N1-ACESSOS",
+    "category": "Acesso",
+    "assigned": "Analista Acesso ",
+    "priority": "3 - Baixo",
+    "closedAt": "02\/05\/2024 15:37:37",
+    "applicant": "ADM Sistemas",
+    "local": "Fábrica 1",
+    "description": "Troca de Acessos",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Informar perfil espelho",
+        "user": "Consultor"
+      },
+      {
+        "message": "Usar perfil espelho XXXXXXX",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Realizado conforme solicitado o espelhamento do perfil "
+  },
+  {
+    "id": "TASK0947321",
+    "createdAt": "25\/04\/2024 10:26:02",
+    "updatedAt": "01\/05\/2024 17:04:12",
+    "reportStatus": "Fechado",
+    "reportDate": "04\/26\/2024",
+    "reportCategory": "Outros Sistemas",
+    "reportSubcategory": "DMDocs",
+    "symptom": "Dúvida",
+    "symptomQualification": "Informação",
+    "groupAssignment": "N2-LEG-SAT",
+    "category": "AMS-Não SAP",
+    "assigned": "Analista AMS",
+    "priority": "3 - Baixo",
+    "closedAt": "01\/05\/2024 17:04:12",
+    "applicant": "ADM Sistemas",
+    "local": "Escritório central",
+    "description": "Sistema lento",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Somente em sua maquina ?",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em todo departamento",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Solução aplicada Reinciado serviço database"
+  },
+  {
+    "id": "TASK0947870",
+    "createdAt": "25\/04\/2024 18:02:24",
+    "updatedAt": "01\/05\/2024 10:07:52",
+    "reportStatus": "Fechado",
+    "reportDate": "04\/26\/2024",
+    "reportCategory": "Acessos",
+    "reportSubcategory": "Atualização de Acesso",
+    "symptom": "Atualização de Acesso",
+    "groupAssignment": "N1-ACESSOS",
+    "category": "Acesso",
+    "assigned": "Analista Acesso ",
+    "priority": "3 - Baixo",
+    "closedAt": "01\/05\/2024 10:07:52",
+    "applicant": "ADM Sistemas",
+    "local": "Fábrica 1",
+    "description": "Atualização de Acesso",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Informar acesso a ser liberado ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Por favor liberar acesso a pasta XXXXXX",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Acesso liberado de leitura na pasta XXXXXXX"
+  },
+  {
+    "id": "TASK0947940",
+    "createdAt": "26\/04\/2024 07:37:03",
+    "updatedAt": "03\/05\/2024 11:51:07",
+    "reportStatus": "Resolvido",
+    "reportDate": "05\/03\/2024",
+    "reportCategory": "Outros Sistemas",
+    "reportSubcategory": "Sistema Labware",
+    "symptom": "Outros",
+    "groupAssignment": "N2-LEG-SAT",
+    "category": "AMS-Não SAP",
+    "assigned": "Analista AMS",
+    "priority": "3 - Baixo",
+    "closedAt": "03\/05\/2024 11:51:07",
+    "applicant": "ADM Sistemas",
+    "local": "Fábrica 1",
+    "description": "Sistema lento",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Somente em sua maquina ?",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em todo departamento",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Solução aplicada Reinciado serviço database"
+  },
+  {
+    "id": "TASK0948052",
+    "createdAt": "26\/04\/2024 09:46:43",
+    "updatedAt": "01\/05\/2024 11:07:17",
+    "reportStatus": "Fechado",
+    "reportDate": "04\/26\/2024",
+    "reportCategory": "Equipamento de TI",
+    "reportSubcategory": "Item de Configuração",
+    "symptom": "Criar Item de Configuração – Aplicações",
+    "groupAssignment": "N2-ATIVOS-IC",
+    "category": "Ativos",
+    "assigned": "Analista Service Desk",
+    "priority": "3 - Baixo",
+    "closedAt": "01\/05\/2024 11:07:17",
+    "applicant": "ADM Sistemas",
+    "local": "Centro de Distribuição",
+    "description": "Item de Configuração",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Preencher planilha em anexo para criação das Ics ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Planilha enviada com informações solicitadas",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Raealizado a criação das Ics solicitadas."
+  },
+  {
+    "id": "TASK0948363",
+    "createdAt": "26\/04\/2024 14:36:09",
+    "updatedAt": "01\/05\/2024 17:06:56",
+    "reportStatus": "Fechado",
+    "reportDate": "04\/26\/2024",
+    "reportCategory": "Acessos",
+    "reportSubcategory": "Revogação de Acesso",
+    "symptom": "Revogação de Acesso",
+    "symptomQualification": "Sem SAP",
+    "groupAssignment": "N1-ACESSOS",
+    "category": "Acesso",
+    "assigned": "Analista Acesso ",
+    "priority": "3 - Baixo",
+    "closedAt": "01\/05\/2024 17:06:56",
+    "applicant": "ADM Sistemas",
+    "local": "Escritório central",
+    "description": "Revogação de Acesso",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Anexar aval e planilha de acesso ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Realizado envio das informações solicitadas",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Realizado a revogação dos acessos conforme solicitado"
+  },
+  {
+    "id": "TASK0948365",
+    "createdAt": "26\/04\/2024 14:39:07",
+    "updatedAt": "03\/05\/2024 09:35:45",
+    "reportStatus": "Resolvido",
+    "reportDate": "05\/03\/2024",
+    "reportCategory": "Acessos",
+    "reportSubcategory": "Liberação de Acesso",
+    "symptom": "Reativação de Acessos",
+    "symptomQualification": "Com SAP",
+    "groupAssignment": "N1-ACESSOS-SAP",
+    "category": "Acesso",
+    "assigned": "Analista Acesso ",
+    "priority": "2 - Médio",
+    "closedAt": "03\/05\/2024 08:05:24",
+    "applicant": "ADM Sistemas",
+    "local": "Fábrica 1",
+    "description": "Liberação de Acesso",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Anexar aval e planilha de acesso ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Realizado envio das informações solicitadas",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Usuário de rede criado e enviado os dados ao gestor imediato"
+  },
+  {
+    "id": "TASK0948800",
+    "createdAt": "29\/04\/2024 09:29:21",
+    "updatedAt": "02\/05\/2024 10:00:14",
+    "reportStatus": "Resolvido",
+    "reportDate": "05\/02\/2024",
+    "reportCategory": "Equipamento de TI",
+    "reportSubcategory": "Solicitação de Equipamento",
+    "symptom": "Colaborador Interno",
+    "symptomQualification": "Capitais e Regiões Metropolitanas",
+    "groupAssignment": "N2-FS-NA",
+    "category": "Ativos",
+    "assigned": "Analista Service Desk",
+    "priority": "3 - Baixo",
+    "closedAt": "02\/05\/2024 10:00:14",
+    "applicant": "ADM Sistemas",
+    "local": "Fábrica 1",
+    "description": "Solicitação de Equipamento",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Informar data e local entrega",
+        "user": "Consultor"
+      },
+      {
+        "message": "Equipamentos liberados para entrega",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Equipamentos entregue e termos assinados"
+  },
+  {
+    "id": "TASK0948949",
+    "createdAt": "29\/04\/2024 11:15:10",
+    "updatedAt": "03\/05\/2024 13:43:13",
+    "reportStatus": "Resolvido",
+    "reportDate": "05\/03\/2024",
+    "reportCategory": "Equipamento de TI",
+    "reportSubcategory": "Hands on",
+    "symptom": "Hands on",
+    "groupAssignment": "N2-FS-NA",
+    "category": "Ativos",
+    "assigned": "Analista Service Desk",
+    "priority": "3 - Baixo",
+    "closedAt": "03\/05\/2024 13:43:14",
+    "applicant": "ADM Sistemas",
+    "local": "Fábrica 1",
+    "description": "Solicito novo ponto de rede",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Informar local e aval para criação ponto de rede",
+        "user": "Consultor"
+      },
+      {
+        "message": "Aguardando passagem do cabeamento",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Pontos criados e ativados"
+  },
+  {
+    "id": "TASK0950427",
+    "createdAt": "02\/05\/2024 05:37:17",
+    "updatedAt": "03\/05\/2024 00:34:26",
+    "reportStatus": "Resolvido",
+    "reportDate": "05\/03\/2024",
+    "reportCategory": "Serviços de TI",
+    "reportSubcategory": "Infraestrutura - Soluções",
+    "symptom": "Instalação de Aplicativos",
+    "symptomQualification": "Suporte a Instalação e Configuração de Aplicativos",
+    "groupAssignment": "N2-FS-NA",
+    "category": "Field Service",
+    "assigned": "Analista Field",
+    "priority": "3 - Baixo",
+    "closedAt": "03\/05\/2024 00:34:26",
+    "applicant": "ADM Sistemas",
+    "local": "Fábrica 1",
+    "description": "Solicito novo ponto de rede",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Informar local e aval para criação ponto de rede",
+        "user": "Consultor"
+      },
+      {
+        "message": "Aguardando passagem do cabeamento",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Pontos criados e ativados"
+  },
+  {
+    "id": "TASK0950560",
+    "createdAt": "02\/05\/2024 09:02:47",
+    "updatedAt": "02\/05\/2024 15:13:57",
+    "reportStatus": "Resolvido",
+    "reportDate": "05\/02\/2024",
+    "reportCategory": "Equipamento de TI",
+    "reportSubcategory": "Controle de Acesso e Relógio de Ponto",
+    "symptom": "Suporte",
+    "symptomQualification": "Porta",
+    "groupAssignment": "N2-FS-NA",
+    "category": "Field Service",
+    "assigned": "Analista Field",
+    "priority": "3 - Baixo",
+    "closedAt": "02\/05\/2024 15:13:57",
+    "applicant": "ADM Sistemas",
+    "local": "Escritório central",
+    "description": "Controle de Acesso e Relógio de Ponto",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Porta lenta ao abrir",
+        "user": "Consultor"
+      },
+      {
+        "message": "Por favor informar local ",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Realizado restart do serviço local "
+  },
+  {
+    "id": "TASK0950674",
+    "createdAt": "02\/05\/2024 09:43:30",
+    "updatedAt": "02\/05\/2024 13:03:35",
+    "reportStatus": "Resolvido",
+    "reportDate": "05\/02\/2024",
+    "reportCategory": "Equipamento de TI",
+    "reportSubcategory": "Controle de Acesso e Relógio de Ponto",
+    "symptom": "Suporte",
+    "symptomQualification": "REP",
+    "groupAssignment": "N2-FS-NA",
+    "category": "Field Service",
+    "assigned": "Analista Field",
+    "priority": "3 - Baixo",
+    "closedAt": "02\/05\/2024 13:03:35",
+    "applicant": "ADM Sistemas",
+    "local": "Centro de Distribuição",
+    "description": "Controle de Acesso e Relógio de Ponto",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Porta lenta ao abrir",
+        "user": "Consultor"
+      },
+      {
+        "message": "Por favor informar local ",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Realizado restart do serviço local "
+  },
+  {
+    "id": "TASK0950875",
+    "createdAt": "02\/05\/2024 11:33:41",
+    "updatedAt": "02\/05\/2024 16:30:38",
+    "reportStatus": "Fechado",
+    "reportDate": "05\/02\/2024",
+    "reportCategory": "Outros Sistemas",
+    "reportSubcategory": "DocNix",
+    "symptom": "Outros",
+    "groupAssignment": "N2-LEG-SAT",
+    "category": "AMS-Não SAP",
+    "assigned": "Analista AMS",
+    "priority": "3 - Baixo",
+    "closedAt": "02\/05\/2024 16:30:36",
+    "applicant": "ADM Sistemas",
+    "local": "Fábrica 1",
+    "description": "Sistema lento",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Somente em sua maquina ?",
+        "user": "Consultor"
+      },
+      {
+        "message": "Somente na minha maquina",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Solução aplicada Reinciado sistema operacional local "
+  },
+  {
+    "id": "TASK0951510",
+    "createdAt": "03\/05\/2024 08:37:13",
+    "updatedAt": "03\/05\/2024 09:57:23",
+    "reportStatus": "Resolvido",
+    "reportDate": "05\/03\/2024",
+    "reportCategory": "Outros Sistemas",
+    "reportSubcategory": "Dynamics",
+    "symptom": "Auditoria Interna",
+    "symptomQualification": "Outros",
+    "groupAssignment": "N2-LEG-SAT",
+    "category": "AMS-Não SAP",
+    "assigned": "Analista AMS",
+    "priority": "3 - Baixo",
+    "closedAt": "03\/05\/2024 09:57:23",
+    "applicant": "ADM Sistemas",
+    "local": "Centro de Distribuição",
+    "description": "Sistema lento",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Somente em sua maquina ?",
+        "user": "Consultor"
+      },
+      {
+        "message": "Somente na minha maquina",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Solução aplicada Reinciado sistema operacional local "
+  },
+  {
+    "id": "TASK0951667",
+    "createdAt": "03\/05\/2024 09:44:47",
+    "updatedAt": "03\/05\/2024 09:49:36",
+    "reportStatus": "Resolvido",
+    "reportDate": "05\/03\/2024",
+    "reportCategory": "Equipamento de TI",
+    "reportSubcategory": "Hands on",
+    "symptom": "Ativar Ponto de Rede",
+    "groupAssignment": "N2-FS-NA",
+    "category": "Field Service",
+    "assigned": "Analista Field",
+    "priority": "3 - Baixo",
+    "closedAt": "03\/05\/2024 09:49:36",
+    "applicant": "ADM Sistemas",
+    "local": "Escritório central",
+    "description": "Sistema lento",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Somente em sua maquina ?",
+        "user": "Consultor"
+      },
+      {
+        "message": "Somente na minha maquina",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Solução aplicada Reinciado sistema operacional local "
+  },
+  {
+    "id": "TASK0951715",
+    "createdAt": "03\/05\/2024 10:04:45",
+    "updatedAt": "03\/05\/2024 17:17:11",
+    "reportStatus": "Resolvido",
+    "reportDate": "05\/03\/2024",
+    "reportCategory": "Outros Sistemas",
+    "reportSubcategory": "HCA",
+    "symptom": "Dúvida",
+    "symptomQualification": "Informação",
+    "groupAssignment": "N2-LEG-SAT",
+    "category": "AMS-Não SAP",
+    "assigned": "Analista AMS",
+    "priority": "3 - Baixo",
+    "closedAt": "03\/05\/2024 17:17:11",
+    "applicant": "ADM Sistemas",
+    "local": "Escritório central",
+    "description": "Sistema lento",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Somente em sua maquina ?",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em todo departamento",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Solução aplicada Reinciado serviço database"
+  },
+  {
+    "id": "TASK0951951",
+    "createdAt": "03\/05\/2024 12:55:09",
+    "updatedAt": "03\/05\/2024 13:18:47",
+    "reportStatus": "Resolvido",
+    "reportDate": "05\/03\/2024",
+    "reportCategory": "Equipamento de TI",
+    "reportSubcategory": "Hands on",
+    "symptom": "Solicitação de NF Entrada\\Saída",
+    "groupAssignment": "N2-AT-EXTERNOS",
+    "category": "Ativos",
+    "assigned": "Analista Service Desk",
+    "priority": "3 - Baixo",
+    "closedAt": "03\/05\/2024 12:59:36",
+    "applicant": "ADM Sistemas",
+    "local": "Centro de Distribuição",
+    "description": "Sistema lento",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Somente em sua maquina ?",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em todo departamento",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Solução aplicada Reinciado serviço database"
+  },
+  {
+    "id": "TASK0951957",
+    "createdAt": "03\/05\/2024 13:02:51",
+    "updatedAt": "03\/05\/2024 13:18:29",
+    "reportStatus": "Resolvido",
+    "reportDate": "05\/03\/2024",
+    "reportCategory": "Equipamento de TI",
+    "reportSubcategory": "Hands on",
+    "symptom": "Solicitação de NF Entrada\\Saída",
+    "groupAssignment": "N2-AT-EXTERNOS",
+    "category": "Ativos",
+    "assigned": "Analista Service Desk",
+    "priority": "3 - Baixo",
+    "closedAt": "03\/05\/2024 13:06:37",
+    "applicant": "ADM Sistemas",
+    "local": "Centro de Distribuição",
+    "description": "Sistema lento",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Somente em sua maquina ?",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em todo departamento",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Solução aplicada Reinciado serviço database"
+  },
+  {
+    "id": "TASK0951959",
+    "createdAt": "03\/05\/2024 13:06:27",
+    "updatedAt": "03\/05\/2024 13:34:03",
+    "reportStatus": "Resolvido",
+    "reportDate": "05\/03\/2024",
+    "reportCategory": "Impressoras",
+    "reportSubcategory": "Suporte Impressoras",
+    "symptom": "Troca de Toner",
+    "groupAssignment": "N2-FS-NA",
+    "category": "Field Service",
+    "assigned": "Analista Field",
+    "priority": "3 - Baixo",
+    "closedAt": "03\/05\/2024 13:34:03",
+    "applicant": "ADM Sistemas",
+    "local": "Centro de Distribuição",
+    "description": "Suporte Impressoras",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Papel atolado",
+        "user": "Consultor"
+      },
+      {
+        "message": "informar local da impressora?",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Realizado a retirada dos papeis atolados"
+  },
+  {
+    "id": "TASK0951964",
+    "createdAt": "03\/05\/2024 13:15:34",
+    "updatedAt": "03\/05\/2024 13:18:10",
+    "reportStatus": "Resolvido",
+    "reportDate": "05\/03\/2024",
+    "reportCategory": "Equipamento de TI",
+    "reportSubcategory": "Hands on",
+    "symptom": "Solicitação de NF Entrada\\Saída",
+    "groupAssignment": "N2-AT-EXTERNOS",
+    "category": "Ativos",
+    "assigned": "Analista Service Desk",
+    "priority": "3 - Baixo",
+    "closedAt": "03\/05\/2024 13:18:10",
+    "applicant": "ADM Sistemas",
+    "local": "Centro de Distribuição",
+    "description": "Configuração de Equipamento",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Configurar Smartphone XXXX",
+        "user": "Consultor"
+      },
+      {
+        "message": "informar melhor horário para atendimento ",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Realizado a configuração do smartphone conforme solicitado"
+  },
+  {
+    "id": "TASK0951989",
+    "createdAt": "03\/05\/2024 13:51:37",
+    "updatedAt": "03\/05\/2024 13:53:26",
+    "reportStatus": "Resolvido",
+    "reportDate": "05\/03\/2024",
+    "reportCategory": "Equipamento de TI",
+    "reportSubcategory": "Hands on",
+    "symptom": "Transferência de Equipamento",
+    "groupAssignment": "N2-FS-NA",
+    "category": "Ativos",
+    "assigned": "Analista Service Desk",
+    "priority": "3 - Baixo",
+    "closedAt": "03\/05\/2024 13:53:26",
+    "applicant": "ADM Sistemas",
+    "local": "Centro de Distribuição",
+    "description": "Transferência de Equipamento",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Informar numero da nota de entrada",
+        "user": "Consultor"
+      },
+      {
+        "message": "Informação anxeada conforme solicitado",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Nota de saida anexada e enviada para seguir com transferencia"
+  },
+  {
+    "id": "TASK0952138",
+    "createdAt": "03\/05\/2024 15:52:12",
+    "updatedAt": "03\/05\/2024 16:26:54",
+    "reportStatus": "Resolvido",
+    "reportDate": "05\/03\/2024",
+    "reportCategory": "Suporte a Equipamento",
+    "reportSubcategory": "Roaming Internacional",
+    "symptom": "Liberação de Roaming Internacional",
+    "groupAssignment": "TELEFONIA",
+    "category": "Field Service",
+    "assigned": "Analista Field",
+    "priority": "3 - Baixo",
+    "closedAt": "03\/05\/2024 16:26:54",
+    "applicant": "ADM Sistemas",
+    "local": "Centro de Distribuição",
+    "description": "Roaming Internacional",
+    "messages": [
+      {
+        "message": "Aguardando atendimento ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Em atendimento",
+        "user": "Consultor"
+      },
+      {
+        "message": "Enviar evidencias ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Evidencias Anexadas",
+        "user": "Consultor"
+      },
+      {
+        "message": "Problema Persiste",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nivel 2 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Acionando Nvel 3 ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Informar data para ativação ",
+        "user": "Consultor"
+      },
+      {
+        "message": "Data informadas conforme solicitado",
+        "user": "Consultor"
+      }
+    ],
+    "solution": "Ativação do Roaming Internacional concluida conforme solicitado"
+  }
+]
