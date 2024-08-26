@@ -14,13 +14,15 @@ import { createFileRoute } from '@tanstack/react-router'
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as PrivateImport } from './routes/_private'
-import { Route as PrivateTicketAbertoClienteImport } from './routes/_private/ticket-aberto-cliente'
 
 // Create Virtual Routes
 
-const IndexLazyImport = createFileRoute('/')()
+const PrivateIndexLazyImport = createFileRoute('/_private/')()
 const PrivateTicketAbertoConsultorLazyImport = createFileRoute(
   '/_private/ticket-aberto-consultor',
+)()
+const PrivateTicketAbertoClienteLazyImport = createFileRoute(
+  '/_private/ticket-aberto-cliente',
 )()
 const PrivateOpenedTicketLazyImport = createFileRoute(
   '/_private/opened-ticket',
@@ -28,7 +30,6 @@ const PrivateOpenedTicketLazyImport = createFileRoute(
 const PrivateMeusChamadosLazyImport = createFileRoute(
   '/_private/meus-chamados',
 )()
-const PrivateDashboardLazyImport = createFileRoute('/_private/dashboard')()
 
 // Create/Update Routes
 
@@ -37,10 +38,12 @@ const PrivateRoute = PrivateImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
-const IndexLazyRoute = IndexLazyImport.update({
+const PrivateIndexLazyRoute = PrivateIndexLazyImport.update({
   path: '/',
-  getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/index.lazy').then((d) => d.Route))
+  getParentRoute: () => PrivateRoute,
+} as any).lazy(() =>
+  import('./routes/_private/index.lazy').then((d) => d.Route),
+)
 
 const PrivateTicketAbertoConsultorLazyRoute =
   PrivateTicketAbertoConsultorLazyImport.update({
@@ -50,6 +53,14 @@ const PrivateTicketAbertoConsultorLazyRoute =
     import('./routes/_private/ticket-aberto-consultor.lazy').then(
       (d) => d.Route,
     ),
+  )
+
+const PrivateTicketAbertoClienteLazyRoute =
+  PrivateTicketAbertoClienteLazyImport.update({
+    path: '/ticket-aberto-cliente',
+    getParentRoute: () => PrivateRoute,
+  } as any).lazy(() =>
+    import('./routes/_private/ticket-aberto-cliente.lazy').then((d) => d.Route),
   )
 
 const PrivateOpenedTicketLazyRoute = PrivateOpenedTicketLazyImport.update({
@@ -66,51 +77,16 @@ const PrivateMeusChamadosLazyRoute = PrivateMeusChamadosLazyImport.update({
   import('./routes/_private/meus-chamados.lazy').then((d) => d.Route),
 )
 
-const PrivateDashboardLazyRoute = PrivateDashboardLazyImport.update({
-  path: '/dashboard',
-  getParentRoute: () => PrivateRoute,
-} as any).lazy(() =>
-  import('./routes/_private/dashboard.lazy').then((d) => d.Route),
-)
-
-const PrivateTicketAbertoClienteRoute = PrivateTicketAbertoClienteImport.update(
-  {
-    path: '/ticket-aberto-cliente',
-    getParentRoute: () => PrivateRoute,
-  } as any,
-)
-
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexLazyImport
-      parentRoute: typeof rootRoute
-    }
     '/_private': {
       id: '/_private'
       path: ''
       fullPath: ''
       preLoaderRoute: typeof PrivateImport
       parentRoute: typeof rootRoute
-    }
-    '/_private/ticket-aberto-cliente': {
-      id: '/_private/ticket-aberto-cliente'
-      path: '/ticket-aberto-cliente'
-      fullPath: '/ticket-aberto-cliente'
-      preLoaderRoute: typeof PrivateTicketAbertoClienteImport
-      parentRoute: typeof PrivateImport
-    }
-    '/_private/dashboard': {
-      id: '/_private/dashboard'
-      path: '/dashboard'
-      fullPath: '/dashboard'
-      preLoaderRoute: typeof PrivateDashboardLazyImport
-      parentRoute: typeof PrivateImport
     }
     '/_private/meus-chamados': {
       id: '/_private/meus-chamados'
@@ -126,11 +102,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivateOpenedTicketLazyImport
       parentRoute: typeof PrivateImport
     }
+    '/_private/ticket-aberto-cliente': {
+      id: '/_private/ticket-aberto-cliente'
+      path: '/ticket-aberto-cliente'
+      fullPath: '/ticket-aberto-cliente'
+      preLoaderRoute: typeof PrivateTicketAbertoClienteLazyImport
+      parentRoute: typeof PrivateImport
+    }
     '/_private/ticket-aberto-consultor': {
       id: '/_private/ticket-aberto-consultor'
       path: '/ticket-aberto-consultor'
       fullPath: '/ticket-aberto-consultor'
       preLoaderRoute: typeof PrivateTicketAbertoConsultorLazyImport
+      parentRoute: typeof PrivateImport
+    }
+    '/_private/': {
+      id: '/_private/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof PrivateIndexLazyImport
       parentRoute: typeof PrivateImport
     }
   }
@@ -139,13 +129,12 @@ declare module '@tanstack/react-router' {
 // Create and export the route tree
 
 export const routeTree = rootRoute.addChildren({
-  IndexLazyRoute,
   PrivateRoute: PrivateRoute.addChildren({
-    PrivateTicketAbertoClienteRoute,
-    PrivateDashboardLazyRoute,
     PrivateMeusChamadosLazyRoute,
     PrivateOpenedTicketLazyRoute,
+    PrivateTicketAbertoClienteLazyRoute,
     PrivateTicketAbertoConsultorLazyRoute,
+    PrivateIndexLazyRoute,
   }),
 })
 
@@ -157,30 +146,18 @@ export const routeTree = rootRoute.addChildren({
     "__root__": {
       "filePath": "__root.jsx",
       "children": [
-        "/",
         "/_private"
       ]
-    },
-    "/": {
-      "filePath": "index.lazy.jsx"
     },
     "/_private": {
       "filePath": "_private.jsx",
       "children": [
-        "/_private/ticket-aberto-cliente",
-        "/_private/dashboard",
         "/_private/meus-chamados",
         "/_private/opened-ticket",
-        "/_private/ticket-aberto-consultor"
+        "/_private/ticket-aberto-cliente",
+        "/_private/ticket-aberto-consultor",
+        "/_private/"
       ]
-    },
-    "/_private/ticket-aberto-cliente": {
-      "filePath": "_private/ticket-aberto-cliente.jsx",
-      "parent": "/_private"
-    },
-    "/_private/dashboard": {
-      "filePath": "_private/dashboard.lazy.jsx",
-      "parent": "/_private"
     },
     "/_private/meus-chamados": {
       "filePath": "_private/meus-chamados.lazy.jsx",
@@ -190,8 +167,16 @@ export const routeTree = rootRoute.addChildren({
       "filePath": "_private/opened-ticket.lazy.jsx",
       "parent": "/_private"
     },
+    "/_private/ticket-aberto-cliente": {
+      "filePath": "_private/ticket-aberto-cliente.lazy.jsx",
+      "parent": "/_private"
+    },
     "/_private/ticket-aberto-consultor": {
       "filePath": "_private/ticket-aberto-consultor.lazy.jsx",
+      "parent": "/_private"
+    },
+    "/_private/": {
+      "filePath": "_private/index.lazy.jsx",
       "parent": "/_private"
     }
   }

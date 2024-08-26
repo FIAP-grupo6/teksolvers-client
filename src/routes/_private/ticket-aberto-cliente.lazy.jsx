@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { createFileRoute } from '@tanstack/react-router';
+import { createLazyFileRoute } from '@tanstack/react-router';
 import { Helmet } from 'react-helmet';
 
 
@@ -23,7 +23,7 @@ import {
 } from "@/components/ui/tabs";
 import { SendIcon } from 'lucide-react';
 
-export const Route = createFileRoute('/_private/ticket-aberto-cliente')({
+export const Route = createLazyFileRoute('/_private/ticket-aberto-cliente')({
   component: OpenTicket
 })
 
