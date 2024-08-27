@@ -1,4 +1,4 @@
-import InputCardInfos from '@/components/opened-ticket/input-card-infos/index'
+import InputCardInfos from '@/components/input-card-infos/index'
 import { createLazyFileRoute } from '@tanstack/react-router'
 import { Helmet } from 'react-helmet'
 
