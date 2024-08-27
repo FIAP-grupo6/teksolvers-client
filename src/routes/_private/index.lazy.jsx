@@ -1,26 +1,64 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { createLazyFileRoute } from "@tanstack/react-router";
+import { useMemo, useState } from "react";
 import { Helmet } from "react-helmet";
+import { Pie, PieChart, Label as PieLabel } from "recharts"
+import {
+  ChartContainer,
+  ChartTooltip,
+  ChartTooltipContent,
+} from "@/components/ui/chart"
 
 export const Route = createLazyFileRoute("/_private/")({
   component: Dashboard,
 });
 
+const chartData = [
+  { time: "Suporte", chamados: 52, fill: "var(--color-suporte)" },
+  { time: "Tributário", chamados: 23, fill: "var(--color-tributario)" },
+  { time: "Comercial", chamados: 15, fill: "var(--color-comercial)" },
+  { time: "Legado", chamados: 12, fill: "var(--color-legado)" },
+]
+const chartConfig = {
+  suporte: {
+    label: "Suporte",
+    color: "hsl(var(--chart-2))",
+  },
+  tributario: {
+    label: "Tributário",
+    color: "hsl(var(--chart-1))",
+  },
+  comercial: {
+    label: "Comercial",
+    color: "hsl(var(--chart-4))",
+  },
+  legado: {
+    label: "Legado",
+    color: "hsl(var(--chart-3))",
+  },
+} 
+
 function Dashboard() {
+  const [isSwitchChecked, setIsSwitchChecked] = useState(false);
+
+  function handleSwitchChange() {
+    setIsSwitchChecked(!isSwitchChecked);
+  }
+
+  const totalChamados = useMemo(() => {
+    return chartData.reduce((acc, curr) => acc + curr.chamados, 0)
+  }, [])
+
   return (
     <>
       <Helmet>
@@ -28,242 +66,261 @@ function Dashboard() {
       </Helmet>
 
       <main className="grid flex-1 max-w-8xl m-0 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
-        <Tabs defaultValue="p1" className="w-full">
-          <TabsList className="grid w-full grid-cols-4">
-            <TabsTrigger value="p1">Plataforma 1</TabsTrigger>
-            <TabsTrigger value="p2">Plataforma 2</TabsTrigger>
-            <TabsTrigger value="p3">Plataforma 3</TabsTrigger>
-            <TabsTrigger value="todas">Todas</TabsTrigger>
-          </TabsList>
-          <TabsContent value="p1" className="space-y-4">
-            <Card>
-              <CardHeader>
-                <CardTitle>Dashboard</CardTitle>
-                <CardDescription>
-                  Analytics
-                </CardDescription>
+        <Card>
+          <CardHeader>
+            <CardTitle>Dashboard</CardTitle>
+            <CardDescription>
+              Analytics
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="grid w-full grid-cols-3 gap-4">
+            <Card className="flex flex-col">
+              <CardHeader className="items-center pb-0">
+                <CardTitle>Tickets abertos</CardTitle>
+                <CardDescription>Por equipe</CardDescription>
               </CardHeader>
-              <CardContent className="space-y-2">
-
+              <CardContent className="flex-1 pb-0">
+                <ChartContainer
+                  config={chartConfig}
+                  className="mx-auto aspect-square max-h-[250px]"
+                >
+                  <PieChart>
+                    <ChartTooltip
+                      cursor={false}
+                      content={<ChartTooltipContent hideLabel />}
+                    />
+                    <Pie
+                      data={chartData}
+                      dataKey="chamados"
+                      nameKey="time"
+                      innerRadius={60}
+                      strokeWidth={5}
+                    >
+                      <PieLabel
+                        content={({ viewBox }) => {
+                          if (viewBox && "cx" in viewBox && "cy" in viewBox) {
+                            return (
+                              <text
+                                x={viewBox.cx}
+                                y={viewBox.cy}
+                                textAnchor="middle"
+                                dominantBaseline="middle"
+                              >
+                                <tspan
+                                  x={viewBox.cx}
+                                  y={viewBox.cy}
+                                  className="fill-foreground text-3xl font-bold"
+                                >
+                                  {totalChamados.toLocaleString()}
+                                </tspan>
+                                <tspan
+                                  x={viewBox.cx}
+                                  y={(viewBox.cy || 0) + 24}
+                                  className="fill-muted-foreground"
+                                >
+                                  Tickets
+                                </tspan>
+                              </text>
+                            )
+                          }
+                        }}
+                      />
+                    </Pie>
+                  </PieChart>
+                </ChartContainer>
               </CardContent>
             </Card>
+          </CardContent>
+        </Card>
 
-            <div className="grid grid-cols-[minmax(auto,auto)_minmax(auto,450px)] gap-2">
+        <div className="grid grid-cols-[minmax(auto,auto)_minmax(auto,450px)] gap-2">
+          <Card>
+            <CardHeader>
+              <CardTitle>Agentes</CardTitle>
+              <CardDescription>
+                Robôs Especializados
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="grid w-full grid-cols-3 gap-4">
               <Card>
                 <CardHeader>
-                  <CardTitle>Agentes</CardTitle>
+                  <div className="flex items-center">
+                    <Avatar className="mr-2">
+                      <AvatarImage src="https://api.dicebear.com/9.x/bottts/svg?seed=Boo" alt="@robot" className="bg-slate-50" />
+                      <AvatarFallback>UN</AvatarFallback>
+                    </Avatar>
+                    <CardTitle>Astro</CardTitle>
+                  </div>
                   <CardDescription>
-                    Robôs Especializados
+                    Agente responsável por geras <strong>TAGS</strong> do chamado
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="grid w-full grid-cols-3 gap-4">
-                  <Card>
-                    <CardHeader>
-                      <div className="flex items-center">
-                        <Avatar className="mr-2">
-                          <AvatarImage src="https://api.dicebear.com/9.x/bottts/svg?seed=Boo" alt="@robot" className="bg-slate-50" />
-                          <AvatarFallback>UN</AvatarFallback>
-                        </Avatar>
-                        <CardTitle>Astro</CardTitle>
-                      </div>
-                      <CardDescription>
-                        Agente responsável por geras <strong>TAGS</strong> do chamado
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="flex items-center space-x-2">
-                        <Switch id="astro" />
-                        <Label htmlFor="astro">Agente desligado</Label>
-                      </div>
-                    </CardContent>
-                  </Card>
-                  <Card>
-                    <CardHeader>
-                      <div className="flex items-center">
-                        <Avatar className="mr-2">
-                          <AvatarImage src="https://api.dicebear.com/9.x/bottts/svg?seed=Patches" alt="@robot" className="bg-slate-50" />
-                          <AvatarFallback>UN</AvatarFallback>
-                        </Avatar>
-                        <CardTitle>C-3PO</CardTitle>
-                      </div>
-                      <CardDescription>
-                        Agente responsável por definir a <strong>PRIORIDADE</strong> do chamado
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="flex items-center space-x-2">
-                        <Switch id="c3po" checked />
-                        <Label htmlFor="astro">Agente ligado</Label>
-                      </div>
-                    </CardContent>
-                  </Card>
-                  <Card>
-                    <CardHeader>
-                      <div className="flex items-center">
-                        <Avatar className="mr-2">
-                          <AvatarImage src="https://api.dicebear.com/9.x/bottts/svg?seed=Samantha" alt="@robot" className="bg-slate-50" />
-                          <AvatarFallback>UN</AvatarFallback>
-                        </Avatar>
-                        <CardTitle>R2-D2</CardTitle>
-                      </div>
-                      <CardDescription>
-                        Agente responsável por definir o <strong>RESPONSÁVEL</strong> do chamado
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="flex items-center space-x-2">
-                        <Switch id="r2d2" checked />
-                        <Label htmlFor="astro">Agente ligado</Label>
-                      </div>
-                    </CardContent>
-                  </Card>
-                  <Card>
-                    <CardHeader>
-                      <div className="flex items-center">
-                        <Avatar className="mr-2">
-                          <AvatarImage src="https://api.dicebear.com/9.x/bottts/svg?seed=Sammy" alt="@robot" className="bg-slate-50" />
-                          <AvatarFallback>UN</AvatarFallback>
-                        </Avatar>
-                        <CardTitle>Baymax</CardTitle>
-                      </div>
-                      <CardDescription>
-                        Agente responsável por por definir o <strong>TIPO</strong> do chamado
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="flex items-center space-x-2">
-                        <Switch id="astro" checked />
-                        <Label htmlFor="astro">Agente ligado</Label>
-                      </div>
-                    </CardContent>
-                  </Card>
+                <CardContent>
+                  <div className="flex items-center space-x-2">
+                    <Switch id="astro" onClick={handleSwitchChange} checked={isSwitchChecked} />
+                    <Label htmlFor="astro">{isSwitchChecked ? 'Agente ligado' : 'Agente desligado'}</Label>
+                  </div>
                 </CardContent>
               </Card>
-
               <Card>
                 <CardHeader>
-                  <CardTitle>Integrações</CardTitle>
+                  <div className="flex items-center">
+                    <Avatar className="mr-2">
+                      <AvatarImage src="https://api.dicebear.com/9.x/bottts/svg?seed=Patches" alt="@robot" className="bg-slate-50" />
+                      <AvatarFallback>UN</AvatarFallback>
+                    </Avatar>
+                    <CardTitle>C-3PO</CardTitle>
+                  </div>
                   <CardDescription>
-                    Acompanhe abaixo a saúde das integrações com os sistemas que criam os chamados.
+                    Agente responsável por definir a <strong>PRIORIDADE</strong> do chamado
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="flex flex-col gap-2 items-start">
-                  <Card className="bg-slate-50 rounded-lg shadow-md p-4 w-full">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center">
-                        <h2 className="text-sm font-semibold">ServiceDesk</h2>
-                      </div>
-                      <Tooltip>
-                        <TooltipTrigger>
-                          <div className="h-3 w-3 rounded-full bg-green-500" />
-                        </TooltipTrigger>
-                        <TooltipContent>
-                          <p>Disponível</p>
-                        </TooltipContent>
-                      </Tooltip>
-                    </div>
-                  </Card>
-                  <Card className="bg-slate-50 rounded-lg shadow-md p-4 w-full">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center">
-                        <h2 className="text-sm font-semibold">SAP</h2>
-                      </div>
-                      <Tooltip>
-                        <TooltipTrigger>
-                          <div className="h-3 w-3 rounded-full bg-green-500" />
-                        </TooltipTrigger>
-                        <TooltipContent>
-                          <p>Disponível</p>
-                        </TooltipContent>
-                      </Tooltip>
-                    </div>
-                  </Card>
-                  <Card className="bg-slate-50 rounded-lg shadow-md p-4 w-full">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center">
-                        <h2 className="text-sm font-semibold">AMS</h2>
-                      </div>
-                      <Tooltip>
-                        <TooltipTrigger>
-                          <div className="h-3 w-3 rounded-full bg-red-500" />
-                        </TooltipTrigger>
-                        <TooltipContent>
-                          <p>Indisponível</p>
-                        </TooltipContent>
-                      </Tooltip>
-                    </div>
-                  </Card>
+                <CardContent>
+                  <div className="flex items-center space-x-2">
+                    <Switch id="c3po" checked />
+                    <Label htmlFor="c3po">Agente ligado</Label>
+                  </div>
                 </CardContent>
               </Card>
-            </div>
-          </TabsContent>
+              <Card>
+                <CardHeader>
+                  <div className="flex items-center">
+                    <Avatar className="mr-2">
+                      <AvatarImage src="https://api.dicebear.com/9.x/bottts-neutral/svg?seed=Spooky&flip=true&backgroundColor=3949ab,d1d4f9&backgroundType=solid,gradientLinear&backgroundRotation=360,-360,-330,-320&eyes=sensor&mouth=diagram" alt="@robot" className="bg-slate-50" />
+                      <AvatarFallback>UN</AvatarFallback>
+                    </Avatar>
+                    <CardTitle>R2-D2</CardTitle>
+                  </div>
+                  <CardDescription>
+                    Agente responsável por definir o <strong>RESPONSÁVEL</strong> do chamado
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex items-center space-x-2">
+                    <Switch id="r2d2" checked />
+                    <Label htmlFor="r2d2">Agente ligado</Label>
+                  </div>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <div className="flex items-center">
+                    <Avatar className="mr-2">
+                      <AvatarImage src="https://api.dicebear.com/9.x/bottts/svg?seed=Sammy" alt="@robot" className="bg-slate-50" />
+                      <AvatarFallback>UN</AvatarFallback>
+                    </Avatar>
+                    <CardTitle>Baymax</CardTitle>
+                  </div>
+                  <CardDescription>
+                    Agente responsável por por definir o <strong>TIPO</strong> do chamado
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex items-center space-x-2">
+                    <Switch id="baymax" checked />
+                    <Label htmlFor="baymax">Agente ligado</Label>
+                  </div>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <div className="flex items-center">
+                    <Avatar className="mr-2">
+                      <AvatarImage src="https://api.dicebear.com/9.x/bottts-neutral/svg?seed=Harley" alt="@robot" className="bg-slate-50" />
+                      <AvatarFallback>UN</AvatarFallback>
+                    </Avatar>
+                    <CardTitle>WALL-E</CardTitle>
+                  </div>
+                  <CardDescription>
+                    Agente responsável por por definir o <strong>NÍVEL</strong> do chamado
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex items-center space-x-2">
+                    <Switch id="wall-e" checked />
+                    <Label htmlFor="wall-e">Agente ligado</Label>
+                  </div>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <div className="flex items-center">
+                    <Avatar className="mr-2">
+                      <AvatarImage src="https://api.dicebear.com/9.x/bottts-neutral/svg?seed=Boots&eyes=eva&mouth=smile01" alt="@robot" className="bg-slate-50" />
+                      <AvatarFallback>UN</AvatarFallback>
+                    </Avatar>
+                    <CardTitle>EVA</CardTitle>
+                  </div>
+                  <CardDescription>
+                    Agente responsável por por sugerir a <strong>SOLUÇÃO</strong> do chamado
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex items-center space-x-2">
+                    <Switch id="eva" checked />
+                    <Label htmlFor="eva">Agente ligado</Label>
+                  </div>
+                </CardContent>
+              </Card>
+            </CardContent>
+          </Card>
 
-          <TabsContent value="p2">
-            <Card>
-              <CardHeader>
-                <CardTitle>Plataforma 2</CardTitle>
-                <CardDescription>TekSolver | Dashboard</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-2">
-                <div className="space-y-1">
-                  <Label htmlFor="current">Current password</Label>
-                  <Input id="current" type="password" />
+          <Card>
+            <CardHeader>
+              <CardTitle>Integrações</CardTitle>
+              <CardDescription>
+                Acompanhe abaixo a saúde das integrações com os sistemas que criam os chamados.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="flex flex-col gap-2 items-start">
+              <Card className="bg-slate-50 rounded-lg shadow-md p-4 w-full">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center">
+                    <h2 className="text-sm font-semibold">ServiceDesk</h2>
+                  </div>
+                  <Tooltip>
+                    <TooltipTrigger>
+                      <div className="h-3 w-3 rounded-full bg-green-500" />
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>Disponível</p>
+                    </TooltipContent>
+                  </Tooltip>
                 </div>
-                <div className="space-y-1">
-                  <Label htmlFor="new">New password</Label>
-                  <Input id="new" type="password" />
+              </Card>
+              <Card className="bg-slate-50 rounded-lg shadow-md p-4 w-full">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center">
+                    <h2 className="text-sm font-semibold">SAP</h2>
+                  </div>
+                  <Tooltip>
+                    <TooltipTrigger>
+                      <div className="h-3 w-3 rounded-full bg-green-500" />
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>Disponível</p>
+                    </TooltipContent>
+                  </Tooltip>
                 </div>
-              </CardContent>
-              <CardFooter>
-                <Button>Save password</Button>
-              </CardFooter>
-            </Card>
-          </TabsContent>
-
-          <TabsContent value="p3">
-            <Card>
-              <CardHeader>
-                <CardTitle>Plataforma 3</CardTitle>
-                <CardDescription>TekSolver | Dashboard</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-2">
-                <div className="space-y-1">
-                  <Label htmlFor="name">Name</Label>
-                  <Input id="name" defaultValue="Pedro Duarte" />
+              </Card>
+              <Card className="bg-slate-50 rounded-lg shadow-md p-4 w-full">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center">
+                    <h2 className="text-sm font-semibold">AMS</h2>
+                  </div>
+                  <Tooltip>
+                    <TooltipTrigger>
+                      <div className="h-3 w-3 rounded-full bg-red-500" />
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>Indisponível</p>
+                    </TooltipContent>
+                  </Tooltip>
                 </div>
-                <div className="space-y-1">
-                  <Label htmlFor="username">Username</Label>
-                  <Input id="username" defaultValue="@peduarte" />
-                </div>
-              </CardContent>
-              <CardFooter>
-                <Button>Save changes</Button>
-              </CardFooter>
-            </Card>
-          </TabsContent>
-
-          <TabsContent value="todas">
-            <Card>
-              <CardHeader>
-                <CardTitle>Todas plataformas</CardTitle>
-                <CardDescription>TekSolver | Dashboard</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-2">
-                <div className="space-y-1">
-                  <Label htmlFor="current">Current password</Label>
-                  <Input id="current" type="password" />
-                </div>
-                <div className="space-y-1">
-                  <Label htmlFor="new">New password</Label>
-                  <Input id="new" type="password" />
-                </div>
-              </CardContent>
-              <CardFooter>
-                <Button>Save password</Button>
-              </CardFooter>
-            </Card>
-          </TabsContent>
-        </Tabs>
+              </Card>
+            </CardContent>
+          </Card>
+        </div>
       </main>
     </>
   );
