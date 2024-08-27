@@ -3,23 +3,23 @@ import { createLazyFileRoute } from '@tanstack/react-router';
 import { Helmet } from 'react-helmet';
 
 
-import InputCardInfos from '@/components/opened-ticket/input-card-infos/index';
+import InputCardInfos from '@/components/input-card-infos/index';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle
+    Card,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle
 } from "@/components/ui/card";
 import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger
+    Tabs,
+    TabsContent,
+    TabsList,
+    TabsTrigger
 } from "@/components/ui/tabs";
 import { SendIcon } from 'lucide-react';
 

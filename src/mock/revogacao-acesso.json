@@ -1,0 +1,61 @@
+{
+  "chamado": {
+    "numero": "TASK0948363",
+    "status": "Aberto",
+    "data_criacao": "Mon Aug 26 2024 10:45:38 GMT-0300",
+    "data_edicao": "Mon Aug 26 2024 22:14:57 GMT-0300",
+    "usuario": "joana.dep",
+    "consultor": "helio.goncalves",
+    "titulo": "Revogação de acesso",
+    "complexidade": {"id": 1, "label": "Nível 1"},
+    "tipo": {"id": "n1", "label": "N1-Acessos"},
+    "prioridade": "Baixa",
+    "tags": ["acesso", "revogacao"],
+    "arquivos": [],
+    "responsaveis": [{"id": 1, "nome": "Analista Acesso", "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Buster&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile" }],
+    "mensagens": [
+      {
+        "id": 1,
+        "usuario": {"id": 1, "nome": "joana.dep", "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Lily", "perfil": "usuário"},
+        "data": "Mon Aug 26 2024 21:57:38 GMT-0300",
+        "mensagem": "Solicito a revogação de acesso do usuario jani.adm os sistema Vaxus"
+      },
+      
+      {
+        "id": 2,
+        "usuario": {"id": 2, "nome": "helio.goncalves", "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Buster&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile", "perfil": "consultorN1"},
+        "data": "Mon Aug 26 2024 22:00:57 GMT-0300",
+        "mensagem": "Boa tarde! Obrigado pela mensagem e já estamos executando o procedimento de revogação de acesso solicitado."
+      },
+
+      {
+        "id": 3,
+        "usuario": {"id": 2, "nome": "helio.goncalves", "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Buster&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile", "perfil": "consultorN1"},
+        "data": "Mon Aug 26 2024 22:05:38 GMT-0300",
+        "mensagem": "Revogação do acesso ao sistema Vaxus efetuada com sucesso. Caso esteja de acordo encerraremos esse chamado."
+      },
+      
+      {
+        "id": 4,
+        "usuario": {"id": 1, "nome": "joana.dep", "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Lily", "perfil": "usuário"},
+        "data": "Mon Aug 26 2024 22:16:57 GMT-0300",
+        "mensagem": "De acordo. Podemos encerrar esse chamado. Tenha uma boa tarde."
+      }
+    ],
+    "assistentes": [
+      {
+        "id": 1,
+        "assistente": { "id": 1, "nome": "WALL-E", "imagem":"https://api.dicebear.com/9.x/avataaars/svg?seed=Jasper&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile" },
+        "data": "Mon Aug 26 2024 22:12:57 GMT-0300",
+        "mensagem": "Historicamente, esse tipo de chamado é encaminhado e resolvido pelo nível N1-Acessos. Você pode aceitar esta sugestão e automaticamente será encaminhado ou analisar o chamado e encaminhar mais tarde caso seja necessário."
+      },
+
+      {
+        "id": 2,
+        "assistente": { "id": 2, "nome": "EVA", "imagem":"https://api.dicebear.com/9.x/avataaars/svg?seed=Jasper&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile" },
+        "data": "Mon Aug 26 2024 22:14:57 GMT-0300",
+        "mensagem": "Para remoção de acesso ao APLICATIVO Vaxus: No SISTEMA Y (SISTEMA Y -> Configurações -> Segurança -> Usuários), selecione o usuário e retire TODOS direitos de Acesso da lista, clicando em ‘Gerenciar Funções’. Caso a remoção de acesso seja PARCIAL, ou seja, o usuário terá acesso a outros Aplicativos, deve-se adotar o procedimento descrito pelos Aplicativos mantidos para realocar à nova Unidade de Negócio. Caso a remoção de acesso seja TOTAL, deve-se: 1) Retirar o direito de acesso “Colaboração” ao usuário no Sharepoint Online para os sites: 2) Retirar ou Revisar a Licença aos Produtos no Centro de Administração do Office 365."
+      }
+    ]
+  }
+}

@@ -24,6 +24,9 @@ const PrivateTicketAbertoConsultorLazyImport = createFileRoute(
 const PrivateTicketAbertoClienteLazyImport = createFileRoute(
   '/_private/ticket-aberto-cliente',
 )()
+const PrivateOpenedTicketLazyImport = createFileRoute(
+  '/_private/opened-ticket',
+)()
 const PrivateMeusChamadosLazyImport = createFileRoute(
   '/_private/meus-chamados',
 )()
@@ -60,6 +63,13 @@ const PrivateTicketAbertoClienteLazyRoute =
     import('./routes/_private/ticket-aberto-cliente.lazy').then((d) => d.Route),
   )
 
+const PrivateOpenedTicketLazyRoute = PrivateOpenedTicketLazyImport.update({
+  path: '/opened-ticket',
+  getParentRoute: () => PrivateRoute,
+} as any).lazy(() =>
+  import('./routes/_private/opened-ticket.lazy').then((d) => d.Route),
+)
+
 const PrivateMeusChamadosLazyRoute = PrivateMeusChamadosLazyImport.update({
   path: '/meus-chamados',
   getParentRoute: () => PrivateRoute,
@@ -83,6 +93,13 @@ declare module '@tanstack/react-router' {
       path: '/meus-chamados'
       fullPath: '/meus-chamados'
       preLoaderRoute: typeof PrivateMeusChamadosLazyImport
+      parentRoute: typeof PrivateImport
+    }
+    '/_private/opened-ticket': {
+      id: '/_private/opened-ticket'
+      path: '/opened-ticket'
+      fullPath: '/opened-ticket'
+      preLoaderRoute: typeof PrivateOpenedTicketLazyImport
       parentRoute: typeof PrivateImport
     }
     '/_private/ticket-aberto-cliente': {
@@ -114,6 +131,7 @@ declare module '@tanstack/react-router' {
 export const routeTree = rootRoute.addChildren({
   PrivateRoute: PrivateRoute.addChildren({
     PrivateMeusChamadosLazyRoute,
+    PrivateOpenedTicketLazyRoute,
     PrivateTicketAbertoClienteLazyRoute,
     PrivateTicketAbertoConsultorLazyRoute,
     PrivateIndexLazyRoute,
@@ -135,6 +153,7 @@ export const routeTree = rootRoute.addChildren({
       "filePath": "_private.jsx",
       "children": [
         "/_private/meus-chamados",
+        "/_private/opened-ticket",
         "/_private/ticket-aberto-cliente",
         "/_private/ticket-aberto-consultor",
         "/_private/"
@@ -142,6 +161,10 @@ export const routeTree = rootRoute.addChildren({
     },
     "/_private/meus-chamados": {
       "filePath": "_private/meus-chamados.lazy.jsx",
+      "parent": "/_private"
+    },
+    "/_private/opened-ticket": {
+      "filePath": "_private/opened-ticket.lazy.jsx",
       "parent": "/_private"
     },
     "/_private/ticket-aberto-cliente": {
