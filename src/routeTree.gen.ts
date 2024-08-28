@@ -18,18 +18,7 @@ import { Route as PrivateImport } from './routes/_private'
 // Create Virtual Routes
 
 const PrivateIndexLazyImport = createFileRoute('/_private/')()
-const PrivateTicketAbertoConsultorLazyImport = createFileRoute(
-  '/_private/ticket-aberto-consultor',
-)()
-const PrivateTicketAbertoClienteLazyImport = createFileRoute(
-  '/_private/ticket-aberto-cliente',
-)()
-const PrivateOpenedTicketLazyImport = createFileRoute(
-  '/_private/opened-ticket',
-)()
-const PrivateMeusChamadosLazyImport = createFileRoute(
-  '/_private/meus-chamados',
-)()
+const PrivateChamadosLazyImport = createFileRoute('/_private/chamados')()
 const PrivateChamadoIdConsultorLazyImport = createFileRoute(
   '/_private/chamado/$id/consultor',
 )()
@@ -51,36 +40,11 @@ const PrivateIndexLazyRoute = PrivateIndexLazyImport.update({
   import('./routes/_private/index.lazy').then((d) => d.Route),
 )
 
-const PrivateTicketAbertoConsultorLazyRoute =
-  PrivateTicketAbertoConsultorLazyImport.update({
-    path: '/ticket-aberto-consultor',
-    getParentRoute: () => PrivateRoute,
-  } as any).lazy(() =>
-    import('./routes/_private/ticket-aberto-consultor.lazy').then(
-      (d) => d.Route,
-    ),
-  )
-
-const PrivateTicketAbertoClienteLazyRoute =
-  PrivateTicketAbertoClienteLazyImport.update({
-    path: '/ticket-aberto-cliente',
-    getParentRoute: () => PrivateRoute,
-  } as any).lazy(() =>
-    import('./routes/_private/ticket-aberto-cliente.lazy').then((d) => d.Route),
-  )
-
-const PrivateOpenedTicketLazyRoute = PrivateOpenedTicketLazyImport.update({
-  path: '/opened-ticket',
+const PrivateChamadosLazyRoute = PrivateChamadosLazyImport.update({
+  path: '/chamados',
   getParentRoute: () => PrivateRoute,
 } as any).lazy(() =>
-  import('./routes/_private/opened-ticket.lazy').then((d) => d.Route),
-)
-
-const PrivateMeusChamadosLazyRoute = PrivateMeusChamadosLazyImport.update({
-  path: '/meus-chamados',
-  getParentRoute: () => PrivateRoute,
-} as any).lazy(() =>
-  import('./routes/_private/meus-chamados.lazy').then((d) => d.Route),
+  import('./routes/_private/chamados.lazy').then((d) => d.Route),
 )
 
 const PrivateChamadoIdConsultorLazyRoute =
@@ -110,32 +74,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivateImport
       parentRoute: typeof rootRoute
     }
-    '/_private/meus-chamados': {
-      id: '/_private/meus-chamados'
-      path: '/meus-chamados'
-      fullPath: '/meus-chamados'
-      preLoaderRoute: typeof PrivateMeusChamadosLazyImport
-      parentRoute: typeof PrivateImport
-    }
-    '/_private/opened-ticket': {
-      id: '/_private/opened-ticket'
-      path: '/opened-ticket'
-      fullPath: '/opened-ticket'
-      preLoaderRoute: typeof PrivateOpenedTicketLazyImport
-      parentRoute: typeof PrivateImport
-    }
-    '/_private/ticket-aberto-cliente': {
-      id: '/_private/ticket-aberto-cliente'
-      path: '/ticket-aberto-cliente'
-      fullPath: '/ticket-aberto-cliente'
-      preLoaderRoute: typeof PrivateTicketAbertoClienteLazyImport
-      parentRoute: typeof PrivateImport
-    }
-    '/_private/ticket-aberto-consultor': {
-      id: '/_private/ticket-aberto-consultor'
-      path: '/ticket-aberto-consultor'
-      fullPath: '/ticket-aberto-consultor'
-      preLoaderRoute: typeof PrivateTicketAbertoConsultorLazyImport
+    '/_private/chamados': {
+      id: '/_private/chamados'
+      path: '/chamados'
+      fullPath: '/chamados'
+      preLoaderRoute: typeof PrivateChamadosLazyImport
       parentRoute: typeof PrivateImport
     }
     '/_private/': {
@@ -166,10 +109,7 @@ declare module '@tanstack/react-router' {
 
 export const routeTree = rootRoute.addChildren({
   PrivateRoute: PrivateRoute.addChildren({
-    PrivateMeusChamadosLazyRoute,
-    PrivateOpenedTicketLazyRoute,
-    PrivateTicketAbertoClienteLazyRoute,
-    PrivateTicketAbertoConsultorLazyRoute,
+    PrivateChamadosLazyRoute,
     PrivateIndexLazyRoute,
     PrivateChamadoIdClienteLazyRoute,
     PrivateChamadoIdConsultorLazyRoute,
@@ -190,29 +130,14 @@ export const routeTree = rootRoute.addChildren({
     "/_private": {
       "filePath": "_private.jsx",
       "children": [
-        "/_private/meus-chamados",
-        "/_private/opened-ticket",
-        "/_private/ticket-aberto-cliente",
-        "/_private/ticket-aberto-consultor",
+        "/_private/chamados",
         "/_private/",
         "/_private/chamado/$id/cliente",
         "/_private/chamado/$id/consultor"
       ]
     },
-    "/_private/meus-chamados": {
-      "filePath": "_private/meus-chamados.lazy.jsx",
-      "parent": "/_private"
-    },
-    "/_private/opened-ticket": {
-      "filePath": "_private/opened-ticket.lazy.jsx",
-      "parent": "/_private"
-    },
-    "/_private/ticket-aberto-cliente": {
-      "filePath": "_private/ticket-aberto-cliente.lazy.jsx",
-      "parent": "/_private"
-    },
-    "/_private/ticket-aberto-consultor": {
-      "filePath": "_private/ticket-aberto-consultor.lazy.jsx",
+    "/_private/chamados": {
+      "filePath": "_private/chamados.lazy.jsx",
       "parent": "/_private"
     },
     "/_private/": {

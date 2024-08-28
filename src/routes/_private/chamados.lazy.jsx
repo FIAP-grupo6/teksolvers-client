@@ -37,8 +37,9 @@ import {
   Tabs,
   TabsContent
 } from "@/components/ui/tabs";
+import { Link } from '@tanstack/react-router';
 
-export const Route = createLazyFileRoute('/_private/meus-chamados')({
+export const Route = createLazyFileRoute('/_private/chamados')({
   component: MyTickets
 })
 
@@ -152,8 +153,12 @@ export function MyTickets() {
                             </DropdownMenuTrigger>
                             <DropdownMenuContent align="end">
                               <DropdownMenuLabel>Ações</DropdownMenuLabel>
-                              <DropdownMenuItem>Ver</DropdownMenuItem>
-                              <DropdownMenuItem>Remover</DropdownMenuItem>
+                              <DropdownMenuItem>
+                                <Link to="/chamado/12938/consultor">Ver como consultor</Link>
+                              </DropdownMenuItem>
+                              <DropdownMenuItem>
+                                <Link to="/chamado/12938/cliente">Ver como cliente</Link>
+                              </DropdownMenuItem>
                             </DropdownMenuContent>
                           </DropdownMenu>
                         </TableCell>

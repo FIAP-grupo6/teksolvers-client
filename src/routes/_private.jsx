@@ -52,7 +52,7 @@ function LayoutComponent() {
                     Dashboard
                   </Link>
                   <Link
-                    to="/meus-chamados"
+                    to="/chamados"
                     className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
                   >
                     <Ticket className="h-5 w-5" />
