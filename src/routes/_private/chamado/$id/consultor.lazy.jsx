@@ -23,9 +23,11 @@ import {
   TabsTrigger
 } from "@/components/ui/tabs";
 import items from '@/mock/tickets.json';
-import { format } from 'date-fns';
 import { Check, SendIcon } from 'lucide-react';
 import { useMemo } from 'react';
+
+import { format, formatDistance } from 'date-fns';
+import ptBR from 'date-fns/locale/pt-BR';
 
 export const Route = createLazyFileRoute('/_private/chamado/$id/consultor')({
   component: TicketConsultor
@@ -87,7 +89,11 @@ function TicketConsultor() {
                           <div>
                             <CardTitle className="font-medium text-sm">{item.usuario.nome}</CardTitle>
                             <CardDescription className="text-xs text-muted-foreground">
-                              5 dias atrás
+                            {formatDistance(
+                            new Date(item.data),
+                            new Date(),
+                            { addSuffix: true, locale: ptBR }
+                          )}
                             </CardDescription>
                           </div>
                           <p className="text-xs text-muted-foreground"></p>
@@ -120,96 +126,35 @@ function TicketConsultor() {
               <CardHeader className="flex flex-row justify-between">
                 <div>
                   <CardTitle>
-                    TASK0944775
+                    {mock.numero}
                   </CardTitle>
-                  <span className="text-xs text-muted-foreground">23/04/2024</span>
+                  <span className="text-xs text-muted-foreground">{format(new Date(mock.data_criacao), 'dd-MM-yyyy')}</span>
                 </div>
-                <Badge variant="secondary">Aberto</Badge>
+                <Badge variant="secondary">{mock.status}</Badge>
               </CardHeader>
 
               <CardContent className="p-4 space-y-4 overflow-y-auto h-[calc(100vh-16rem)] pt-0 pr-0">
                 <ScrollArea className="h-full flex flex-col pr-4">
-                  <Card x-chunk="dashboard-01-chunk-0" className="mb-4 bg-muted">
-                    <CardHeader className="flex flex-row gap-2">
-                      <Avatar>
-                        <AvatarImage src="https://api.dicebear.com/9.x/bottts/svg?seed=Patches" alt="@person" className="bg-slate-50" />
-                        <AvatarFallback>UN</AvatarFallback>
-                      </Avatar>
-
-                      <div className="flex items-center justify-between w-full">
-                        <div>
-                          <CardTitle className="font-medium text-sm">C-3PO</CardTitle>
-                          <CardDescription className="text-xs text-muted-foreground">
-                            5 minutos atrás
-                          </CardDescription>
-                        </div>
-                        <p className="text-xs text-muted-foreground"></p>
-                      </div>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-sm">Olá! <br /><br /> Classifiquei este chamado com prioridade <Badge className="bg-green-500">Baixa</Badge> levando em consideração os critérios descritos. <br />Você pode alterar manualmente a prioridade caso considere necessário.</p>
-                    </CardContent>
-                  </Card>
-
-                  <Card x-chunk="dashboard-01-chunk-0" className="mb-4 bg-muted">
-                    <CardHeader className="flex flex-row gap-2">
-                      <Avatar>
-                        <AvatarImage src="https://api.dicebear.com/9.x/bottts/svg?seed=Samantha" alt="@person" className="bg-slate-50" />
-                        <AvatarFallback>UN</AvatarFallback>
-                      </Avatar>
-
-                      <div className="flex items-center justify-between w-full">
-                        <div>
-                          <CardTitle className="font-medium text-sm">R2-D2</CardTitle>
-                          <CardDescription className="text-xs text-muted-foreground">
-                            2 minutos atrás
-                          </CardDescription>
-                        </div>
-                        <p className="text-xs text-muted-foreground"></p>
-                      </div>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-sm">Hey! <br /><br /> Atribuí algumas pessoas que podem lhe ajudar a resolver este </p>
-                      <div className="flex gap-2 mt-4">
-                        <Badge className="rounded-3xl p-0.5 pr-2 bg-muted-foreground">
-                          <Avatar className="w-8 h-8">
-                            <AvatarImage src="https://api.dicebear.com/9.x/big-ears-neutral/svg?seed=Precious" alt="@shadcn" />
-                            <AvatarFallback>CN</AvatarFallback>
-                          </Avatar>
-                          <p className="pl-2">Consultor júnior</p>
-                        </Badge>
-
-                        <Badge className="rounded-3xl p-0.5 pr-2 bg-muted-foreground">
-                          <Avatar className="w-8 h-8">
-                            <AvatarImage src="https://api.dicebear.com/9.x/big-ears-neutral/svg?seed=Lola" alt="@shadcn" />
-                            <AvatarFallback>CN</AvatarFallback>
-                          </Avatar>
-                          <p className="pl-2">Consultor sênior</p>
-                        </Badge>
-                      </div>
-                    </CardContent>
-                  </Card>
-
-                  {Array.from({ length: 0 }).map((_, i) => (
-                    <Card x-chunk="dashboard-01-chunk-0" key={`card_${i}`} className="mb-4 bg-muted">
+                  {mock.assistentes.map((item) => (
+                    <Card key={`assistant_message_${item.id}`} x-chunk="dashboard-01-chunk-0" className="mb-4 bg-muted">
                       <CardHeader className="flex flex-row gap-2">
                         <Avatar>
-                          <AvatarImage src="https://api.dicebear.com/9.x/personas/svg" alt="@person" className="bg-slate-50" />
+                          <AvatarImage src={item.assistente.imagem} alt="@person" className="bg-slate-50" />
                           <AvatarFallback>UN</AvatarFallback>
                         </Avatar>
 
                         <div className="flex items-center justify-between w-full">
                           <div>
-                            <CardTitle className="font-medium text-sm">Usuário novo</CardTitle>
+                            <CardTitle className="font-medium text-sm">{item.assistente.nome}</CardTitle>
                             <CardDescription className="text-xs text-muted-foreground">
-                              5 dias atrás
+                              5 minutos atrás
                             </CardDescription>
                           </div>
                           <p className="text-xs text-muted-foreground"></p>
                         </div>
                       </CardHeader>
                       <CardContent>
-                        <p className="text-sm">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam distinctio dolores libero sint hic, rem, eum dolor at consequuntur in laborum, perferendis quia vel odit tempora placeat expedita nihil perspiciatis!</p>
+                        <p className="text-sm">{item.mensagem}</p>
                       </CardContent>
                     </Card>
                   ))}
