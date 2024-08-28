@@ -3,7 +3,6 @@ import { createLazyFileRoute } from '@tanstack/react-router';
 import { Helmet } from 'react-helmet';
 
 import {
-  ListFilter,
   MoreHorizontal
 } from "lucide-react";
 
@@ -18,12 +17,10 @@ import {
 } from "@/components/ui/card";
 import {
   DropdownMenu,
-  DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
+  DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu";
 import {
   Table,
@@ -37,13 +34,17 @@ import {
   Tabs,
   TabsContent
 } from "@/components/ui/tabs";
+import mock from '@/mock/tickets.json';
 import { Link } from '@tanstack/react-router';
+import { format, formatDistance } from 'date-fns';
+import ptBR from 'date-fns/locale/pt-BR';
 
 export const Route = createLazyFileRoute('/_private/chamados')({
   component: MyTickets
 })
 
 export function MyTickets() {
+  console.log(mock)
   return (
     <>
       <Helmet>
@@ -62,7 +63,7 @@ export function MyTickets() {
               </TabsTrigger>
             </TabsList> */}
             <div className="ml-auto flex items-center gap-2">
-              <DropdownMenu>
+              {/* <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant="outline" size="sm" className="h-8 gap-1">
                     <ListFilter className="h-3.5 w-3.5" />
@@ -82,8 +83,8 @@ export function MyTickets() {
                     Concluídos
                   </DropdownMenuCheckboxItem>
                 </DropdownMenuContent>
-              </DropdownMenu>
-              
+              </DropdownMenu> */}
+
               {/* <Button size="sm" className="h-8 gap-1">
                 <PlusCircle className="h-3.5 w-3.5" />
                 <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">
@@ -106,7 +107,7 @@ export function MyTickets() {
                   <TableHeader>
                     <TableRow>
                       <TableHead className="hidden w-[100px] sm:table-cell">
-                        <span className="sr-only">ID</span>
+                        <span className="">#</span>
                       </TableHead>
                       <TableHead>Titulo</TableHead>
                       <TableHead>Status</TableHead>
@@ -117,27 +118,32 @@ export function MyTickets() {
                         Criado em
                       </TableHead>
                       <TableHead>
-                        <span className="sr-only">Actions</span>
+                        <span>Ações</span>
                       </TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
-                    {Array.from({ length: 10 }).map((_, i) => (
+                    {mock.map((item, i) => (
                       <TableRow key={i}>
-                        <TableCell className="hidden sm:table-cell">
-                          #12938                        
+                        <TableCell className="hidden sm:table-cell text-xs">
+                          {item.numero}
                         </TableCell>
                         <TableCell className="font-medium">
-                          Titulo do chamado
+                          {item.titulo}
                         </TableCell>
                         <TableCell>
-                          <Badge variant="outline" className="bg-green-400">Aberto</Badge>
+                          <Badge variant="secondary">{item.status}</Badge>
                         </TableCell>
                         <TableCell className="hidden md:table-cell">
-                          <Badge variant="destructive">Alta</Badge>
+                          <Badge variant="outline">{item.prioridade}</Badge>
                         </TableCell>
-                        <TableCell className="hidden md:table-cell">
-                          2023-07-12 10:42 AM
+                        <TableCell className="hidden md:table-cell space-x-2">
+                          {format(new Date(item.data_criacao), 'dd-MM-yyyy')}
+                          <p className="text-xs text-muted-foreground">{formatDistance(
+                            new Date(item.data_criacao),
+                            new Date(),
+                            { addSuffix: true, locale: ptBR }
+                          )}</p>
                         </TableCell>
                         <TableCell>
                           <DropdownMenu>
@@ -154,10 +160,10 @@ export function MyTickets() {
                             <DropdownMenuContent align="end">
                               <DropdownMenuLabel>Ações</DropdownMenuLabel>
                               <DropdownMenuItem>
-                                <Link to="/chamado/12938/consultor">Ver como consultor</Link>
+                                <Link to={`/chamado/${item.numero}/consultor`}>Ver como consultor</Link>
                               </DropdownMenuItem>
                               <DropdownMenuItem>
-                                <Link to="/chamado/12938/cliente">Ver como cliente</Link>
+                                <Link to={`/chamado/${item.numero}/cliente`}>Ver como cliente</Link>
                               </DropdownMenuItem>
                             </DropdownMenuContent>
                           </DropdownMenu>
@@ -169,7 +175,7 @@ export function MyTickets() {
               </CardContent>
               <CardFooter>
                 <div className="text-xs text-muted-foreground">
-                  Exibindo <strong>1-10</strong> de <strong>32</strong>{" "}
+                  Exibindo <strong>1-{mock.length}</strong> de <strong>{mock.length}</strong>{" "}
                   tickets
                 </div>
               </CardFooter>

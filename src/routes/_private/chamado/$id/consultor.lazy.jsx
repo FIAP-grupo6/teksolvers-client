@@ -22,24 +22,32 @@ import {
   TabsList,
   TabsTrigger
 } from "@/components/ui/tabs";
-import mock from '@/mock/revogacao-acesso.json';
+import items from '@/mock/tickets.json';
 import { format } from 'date-fns';
 import { Check, SendIcon } from 'lucide-react';
+import { useMemo } from 'react';
 
 export const Route = createLazyFileRoute('/_private/chamado/$id/consultor')({
   component: TicketConsultor
 })
 
 function TicketConsultor() {
+  const { id } = Route.useParams();
+  console.log(id)
+
   const handleSubmitMessage = (e) => {
     e.preventDefault();
     console.log('submit', e.target.description.value);
   }
 
+  const mock = useMemo(() => {
+    return items.find(item => item.numero === id);
+  }, [id])
+
   return (
     <>
       <Helmet>
-        <title>TekSolvers - #{mock.chamado.numero}</title>
+        <title>TekSolvers - #{mock.numero}</title>
       </Helmet>
 
       <main className="grid flex-1 max-w-7xl m-auto items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
@@ -56,18 +64,18 @@ function TicketConsultor() {
               <CardHeader className="flex flex-row justify-between">
                 <div>
                   <CardTitle className="text-lg">
-                    {mock.chamado.titulo}
+                    {mock.titulo}
                   </CardTitle>
                   <div className="flex gap-2 mt-0">
-                    <p className="text-xs text-muted-foreground">{mock.chamado.numero} - <span className="text-xs text-muted-foreground">{format(new Date(mock.chamado.data_criacao), 'dd-MM-yyyy')}</span></p>
+                    <p className="text-xs text-muted-foreground">{mock.numero} - <span className="text-xs text-muted-foreground">{format(new Date(mock.data_criacao), 'dd-MM-yyyy')}</span></p>
                   </div>
                 </div>
-                <Badge variant="secondary">{mock.chamado.status}</Badge>
+                <Badge variant="secondary">{mock.status}</Badge>
               </CardHeader>
 
               <CardContent className="p-4 space-y-4 overflow-y-auto h-[calc(100vh-16rem)] pt-0 pr-0">
                 <ScrollArea className="h-full flex flex-col pr-4">
-                  {mock.chamado.mensagens.map((item, i) => (
+                  {mock.mensagens.map((item, i) => (
                     <Card x-chunk="dashboard-01-chunk-0" key={`card_${i}`} className={`mb-4 ${i % 2 === 0 ? 'bg-muted' : 'bg-slate-200'}`} >
                       <CardHeader className="flex flex-row gap-2">
                         <Avatar>
@@ -161,7 +169,7 @@ function TicketConsultor() {
                       </div>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-sm">Hey! <br /><br /> Atribuí algumas pessoas que podem lhe ajudar a resolver este chamado.</p>
+                      <p className="text-sm">Hey! <br /><br /> Atribuí algumas pessoas que podem lhe ajudar a resolver este </p>
                       <div className="flex gap-2 mt-4">
                         <Badge className="rounded-3xl p-0.5 pr-2 bg-muted-foreground">
                           <Avatar className="w-8 h-8">
