@@ -26,17 +26,15 @@ import mock from '@/mock/revogacao-acesso.json';
 import { format } from 'date-fns';
 import { Check, SendIcon } from 'lucide-react';
 
-export const Route = createLazyFileRoute('/_private/ticket-aberto-consultor')({
-  component: OpenTicket
+export const Route = createLazyFileRoute('/_private/chamado/$id/consultor')({
+  component: TicketConsultor
 })
 
-function OpenTicket() {
+function TicketConsultor() {
   const handleSubmitMessage = (e) => {
     e.preventDefault();
     console.log('submit', e.target.description.value);
   }
-
-  console.log(mock)
 
   return (
     <>

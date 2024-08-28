@@ -4,8 +4,7 @@ import { Helmet } from 'react-helmet';
 
 import {
   ListFilter,
-  MoreHorizontal,
-  PlusCircle
+  MoreHorizontal
 } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
@@ -84,12 +83,12 @@ export function MyTickets() {
                 </DropdownMenuContent>
               </DropdownMenu>
               
-              <Button size="sm" className="h-8 gap-1">
+              {/* <Button size="sm" className="h-8 gap-1">
                 <PlusCircle className="h-3.5 w-3.5" />
                 <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">
                   Criar ticket
                 </span>
-              </Button>
+              </Button> */}
             </div>
           </div>
 

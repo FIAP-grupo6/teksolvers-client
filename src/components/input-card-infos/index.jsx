@@ -4,6 +4,9 @@ import Tags from "@/components/tags/index"
 import {
   Card,
   CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
 } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
 import {
@@ -19,6 +22,10 @@ import { cn } from "@/lib/utils"
 export default function InputCardInfos({ className }) {
   return (
     <Card className={cn('w-[450px]', className)}>
+      <CardHeader>
+        <CardTitle>Ações</CardTitle>
+        <CardDescription>Veja abaixo as informações complementares que lhe ajudarão a resolver este chamado.</CardDescription>
+      </CardHeader>
       <div className="p-5">
         <Label htmlFor="nivel">Complexidade</Label>
         <Tabs defaultValue="n1">

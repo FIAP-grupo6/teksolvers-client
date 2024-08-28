@@ -3,16 +3,17 @@ import { Button } from '@/components/ui/button';
 import { createFileRoute, Outlet } from '@tanstack/react-router';
 
 import {
-  Home,
-  LineChart,
-  Package,
-  Package2,
+  BookOpenText,
+  LayoutGrid,
   PanelLeft,
-  ShoppingCart,
-  Users2
+  Ticket
 } from "lucide-react";
 
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
+import { Separator } from '@/components/ui/separator';
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Link } from '@tanstack/react-router';
 
 export const Route = createFileRoute('/_private')({
   component: LayoutComponent
@@ -24,7 +25,7 @@ function LayoutComponent() {
       <Sidebar />
 
       <div className="flex min-h-screen w-full flex-col bg-muted/40">
-        <div className="flex flex-col sm:gap-4 sm:py-4 sm:pl-14">
+        <div className="flex flex-col sm:gap-2 sm:py-2 sm:pl-60">
           <header className="sticky top-0 z-30 flex h-14 items-center gap-4 border-b bg-background px-4 sm:static sm:h-auto sm:border-0 sm:bg-transparent sm:px-6">
             <Sheet>
               <SheetTrigger asChild>
@@ -33,70 +34,63 @@ function LayoutComponent() {
                   <span className="sr-only">Toggle Menu</span>
                 </Button>
               </SheetTrigger>
-              
+
               <SheetContent side="left" className="sm:max-w-xs">
                 <nav className="grid gap-6 text-lg font-medium">
-                  <a
-                    href="#"
+                  <Link
+                    to="/"
                     className="group flex h-10 w-10 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:text-base"
                   >
-                    <Package2 className="h-5 w-5 transition-all group-hover:scale-110" />
+                    <Ticket className="h-5 w-5 transition-all group-hover:scale-110" />
                     <span className="sr-only">TekSolvers</span>
-                  </a>
-                  <a
-                    href="#"
+                  </Link>
+                  <Link
+                    to="/"
                     className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
                   >
-                    <Home className="h-5 w-5" />
+                    <LayoutGrid className="h-5 w-5" />
                     Dashboard
-                  </a>
-                  <a
-                    href="#"
+                  </Link>
+                  <Link
+                    to="/meus-chamados"
                     className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
                   >
-                    <ShoppingCart className="h-5 w-5" />
-                    Orders
-                  </a>
-                  <a
-                    href="#"
+                    <Ticket className="h-5 w-5" />
+                    Meus chamados
+                  </Link>
+                  <Link
+                    to="/sobre-o-projeto"
                     className="flex items-center gap-4 px-2.5 text-foreground"
                   >
-                    <Package className="h-5 w-5" />
-                    Products
-                  </a>
-                  <a
-                    href="#"
-                    className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
-                  >
-                    <Users2 className="h-5 w-5" />
-                    Customers
-                  </a>
-                  <a
-                    href="#"
-                    className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
-                  >
-                    <LineChart className="h-5 w-5" />
-                    Settings
-                  </a>
+                    <BookOpenText className="h-5 w-5" />
+                    Sobre o projeto
+                  </Link>
                 </nav>
               </SheetContent>
             </Sheet>
-            {/* <Breadcrumb className="hidden md:flex">
-              <BreadcrumbList>
-                <BreadcrumbItem>
-                  <BreadcrumbLink asChild>
-                    <Link to="/dashboard">Dashboard</Link>
-                  </BreadcrumbLink>
-                </BreadcrumbItem>
-                <BreadcrumbSeparator />
-                <BreadcrumbItem>
-                  <BreadcrumbPage>Meus tickets</BreadcrumbPage>
-                </BreadcrumbItem>
-              </BreadcrumbList>
-            </Breadcrumb> */}
+
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button size="icon" variant="outline" className="overflow-hidden ml-auto rounded-full flex items-center gap-2 cursor-pointer">
+                  <Avatar>
+                    <AvatarImage src="https://api.dicebear.com/9.x/personas/svg?seed=Casper" alt="@robot" className="bg-slate-50" />
+                    <AvatarFallback>NA</AvatarFallback>
+                  </Avatar>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" side="bottom" sideOffset={4}>
+                <DropdownMenuLabel>
+                  Nome do atendente <br />
+                  <span className="font-light text-xs text-muted-foreground">Consultor N1</span>
+                </DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem>Configurações</DropdownMenuItem>
+                <DropdownMenuItem>Sair</DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </header>
 
-          {/* <Separator /> */}
+          <Separator />
 
           <Outlet />
         </div>
