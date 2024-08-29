@@ -79,7 +79,7 @@ export function MyTickets() {
                         Notificações
                       </TableHead>
                       <TableHead className="hidden md:table-cell">
-                        Criado em
+                        Última atualização
                       </TableHead>
                       <TableHead>
                         <span>Ações</span>
@@ -148,9 +148,9 @@ export function MyTickets() {
                           </div>
                         </TableCell>
                         <TableCell className="hidden md:table-cell space-x-2">
-                          {format(new Date(item.data_criacao), 'dd-MM-yyyy')}
+                          {format(new Date(item.data_edicao), 'dd-MM-yyyy')}
                           <p className="text-xs text-muted-foreground">{formatDistance(
-                            new Date(item.data_criacao),
+                            new Date(item.data_edicao),
                             new Date(),
                             { addSuffix: true, locale: ptBR }
                           )}</p>

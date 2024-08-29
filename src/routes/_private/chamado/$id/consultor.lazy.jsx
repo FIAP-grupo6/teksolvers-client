@@ -124,10 +124,12 @@ function TicketConsultor() {
             <Card>
               <CardHeader className="flex flex-row justify-between">
                 <div>
-                  <CardTitle>
-                    {mock.numero}
+                  <CardTitle className="text-lg">
+                    {mock.titulo}
                   </CardTitle>
-                  <span className="text-xs text-muted-foreground">{format(new Date(mock.data_criacao), 'dd-MM-yyyy')}</span>
+                  <div className="flex gap-2 mt-0">
+                    <p className="text-xs text-muted-foreground">{mock.numero} - <span className="text-xs text-muted-foreground">{format(new Date(mock.data_criacao), 'dd-MM-yyyy')}</span></p>
+                  </div>
                 </div>
                 <Badge variant="secondary">{mock.status}</Badge>
               </CardHeader>
@@ -187,8 +189,7 @@ function TicketConsultor() {
                       <AvatarImage src={item.imagem} alt="@robot" className="bg-slate-50" />
                     </Avatar>
                     <CardTitle className="mr-auto">{item.nome}</CardTitle>
-
-                    {mock.assistentes.find(assistant => assistant.assistente.id === item.id) ? (
+                    {mock.assistentes.find(assistant => assistant.assistente.nome === item.nome) ? (
                       <Tooltip>
                         <TooltipTrigger>
                           <Check className="h-4 w-4 text-green-500" />
