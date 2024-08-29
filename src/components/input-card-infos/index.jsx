@@ -19,7 +19,8 @@ import {
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { cn } from "@/lib/utils"
 
-export default function InputCardInfos({ className }) {
+export default function InputCardInfos({ className, item }) {
+  console.log(item)
   return (
     <Card className={cn('w-[450px]', className)}>
       <CardHeader>
@@ -28,11 +29,11 @@ export default function InputCardInfos({ className }) {
       </CardHeader>
       <div className="p-5">
         <Label htmlFor="nivel">Complexidade</Label>
-        <Tabs defaultValue="n1">
+        <Tabs defaultValue={item?.complexidade?.label || 'Nível 1'}>
           <TabsList className="grid w-full grid-cols-3">
-            <TabsTrigger value="n1">Nível 1</TabsTrigger>
-            <TabsTrigger value="n2">Nível 2</TabsTrigger>
-            <TabsTrigger value="n3">Nível 3</TabsTrigger>
+            <TabsTrigger value="Nível 1">Nível 1</TabsTrigger>
+            <TabsTrigger value="Nível 2">Nível 2</TabsTrigger>
+            <TabsTrigger value="Nível 3">Nível 3</TabsTrigger>
           </TabsList>
         </Tabs>
       </div>
@@ -41,35 +42,42 @@ export default function InputCardInfos({ className }) {
           <div className="grid w-full items-center gap-4">
             <div className="flex flex-col space-y-1.5">
               <Label htmlFor="tipo">Tipo</Label>
-              <Select>
+              <Select defaultValue={item?.tipo?.id}>
                 <SelectTrigger id="tipo">
                   <SelectValue placeholder="Selecionar" />
                 </SelectTrigger>
                 <SelectContent position="popper">
-                  <SelectItem value="incidente">Incidente</SelectItem>
-                  <SelectItem value="suporte">Suporte</SelectItem>
+                  <SelectItem value="n1">N1-Acessos</SelectItem>
+                  <SelectItem value="ams">AMS-Não SAP</SelectItem>
+                  <SelectItem value="printer">Impressora-Rede</SelectItem>
+                  <SelectItem value="database">Banco de Dados-Acesso</SelectItem>
+                  <SelectItem value="system">Sistema-Gestão</SelectItem>
+                  <SelectItem value="backup">Serviço-Backup</SelectItem>
+                  <SelectItem value="incident">Incidente</SelectItem>
+                  <SelectItem value="n3">N3-Software</SelectItem>
                 </SelectContent>
               </Select>
             </div>
             <div className="flex flex-col space-y-1.5">
               <Label htmlFor="prioridade">Prioridade</Label>
-              <Select>
+              <Select defaultValue={item?.prioridade || ''}>
                 <SelectTrigger id="prioridade">
                   <SelectValue placeholder="Selecionar" />
                 </SelectTrigger>
                 <SelectContent position="popper">
-                  <SelectItem value="baixa">Baixa</SelectItem>
-                  <SelectItem value="media">Média</SelectItem>
-                  <SelectItem value="alta">Alta</SelectItem>
+                  <SelectItem value="Baixa">Baixa</SelectItem>
+                  <SelectItem value="Média">Média</SelectItem>
+                  <SelectItem value="Alta">Alta</SelectItem>
+                  <SelectItem value="Crítica">Crítica</SelectItem>
                 </SelectContent>
               </Select>
             </div>
             
-            <Files />
+            <Files files={item.arquivos} />
 
-            <Tags />
+            <Tags tags={item.tags} />
 
-            <Responsible />
+            <Responsible responsibles={item.responsaveis} />
           </div>
         </form>
       </CardContent>

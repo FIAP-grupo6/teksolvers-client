@@ -5,8 +5,8 @@ import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 
-export default function Tags() {
-  const [tags, setTags] = useState([])
+export default function Tags({tags = []}) {
+  const [allTags, setTags] = useState(tags)
   const [currentTag, setCurrentTag] = useState("")
 
   const handleAddTag = () => {
@@ -26,7 +26,7 @@ export default function Tags() {
         <Button onClick={handleAddTag}>Adicionar</Button>
       </div>
       <div className="flex flex-wrap gap-2">
-        {tags.map((tag, index) => (
+        {allTags.map((tag, index) => (
           <Badge key={`tag_${index}`} variant="secondary" className="px-3 py-1.5 rounded-2xl">
             <p>{tag}</p>
             <Cross2Icon className="w-3 ml-2 cursor-pointer" onClick={() => handleRemoveTag(tag)} />

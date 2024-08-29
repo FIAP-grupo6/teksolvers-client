@@ -23,29 +23,57 @@ import {
 
 const list = [
   {
-    avatar: 'https://github.com/shadcn.png',
-    value: "junior",
-    label: "Consultor júnior",
+    "id": 1,
+    "nome": "Analista Acesso",
+    "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Buster&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile"
   },
+
   {
-    avatar: 'https://github.com/shadcn.png',
-    value: "pleno",
-    label: "Consultor pleno",
+    "id": 2,
+    "nome": "Analista AMS",
+    "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Buster&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile"
   },
+
   {
-    avatar: 'https://github.com/shadcn.png',
-    value: "senior",
-    label: "Consultor sênior",
+    "id": 3,
+    "nome": "Analista Aplicativo",
+    "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Buster&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile"
   },
+
   {
-    avatar: 'https://github.com/shadcn.png',
-    value: "specialist",
-    label: "Consultor especialista",
-  }
+    "id": 4,
+    "nome": "Analista de Impressoras",
+    "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Analyst&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile"
+  },
+
+  {
+    "id": 5,
+    "nome": "Analista de Banco de Dados",
+    "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Analyst&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile"
+  },
+
+  {
+    "id": 6,
+    "nome": "Analista de Sistemas",
+    "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Analyst&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile"
+  },
+
+  {
+    "id": 7,
+    "nome": "Analista de Backup",
+    "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Backup&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile"
+  },
 ]
 
-export default function Responsible() {
-  const [selected, setSelected] = React.useState([])
+
+
+
+
+
+
+
+export default function Responsible({ responsibles = [] }) {
+  const [selected, setSelected] = React.useState([...responsibles])
 
   const handleRemove = (responsible) => {
     setSelected(s => s.filter(t => t !== responsible))
@@ -55,18 +83,18 @@ export default function Responsible() {
     <div className="flex flex-col space-y-1.5">
       <Label htmlFor="responsavel">Responsáveis</Label>
       <div className="flex space-x-2">
-        <ComboboxPopover selected={selected} onSelectResponsible={(responsible) => setSelected(state => [...state, responsible])} />
+        <ComboboxPopover selected={selected} onSelectResponsible={(responsible) => { console.log('res', responsible); setSelected(state => [...state, responsible])}} />
       </div>
 
       <div className="flex gap-2 flex-wrap">
         {selected.map((responsible) => (
-          <Badge key={responsible.value} variant="secondary" className="rounded-2xl p-0.5">
+          <Badge key={responsible.value} variant="secondary" className="rounded-full p-0.5">
             <Avatar className="w-8 h-8">
-              <AvatarImage src={responsible.avatar} alt="@shadcn" />
+              <AvatarImage src={responsible?.imagem} alt="@shadcn" />
               <AvatarFallback>CN</AvatarFallback>
             </Avatar>
-            <p className="pl-2">{responsible.label}</p>
-            <Cross2Icon className="w-3 mx-2 cursor-pointer" onClick={() => handleRemove(responsible)}/>
+            <p className="pl-2">{responsible.nome}</p>
+            <Cross2Icon className="w-3 mx-2 cursor-pointer" onClick={() => handleRemove(responsible)} />
           </Badge>
         ))}
       </div>
@@ -97,22 +125,21 @@ export function ComboboxPopover({ selected, onSelectResponsible }) {
               <CommandGroup>
                 {list.filter((responsible) => !selected?.includes(responsible)).map((responsible) => (
                   <CommandItem
-                    key={`command_${responsible.value}`}
-                    value={responsible.value}
+                    key={`command_${responsible.id}`}
+                    value={responsible.id}
                     className="flex gap-2"
                     onSelect={(value) => {
                       onSelectResponsible(
-                        list.find((responsible) => responsible.value === value) ||
+                        list.find((responsible) => responsible.nome === value) ||
                         null
                       )
                       setOpen(false)
                     }}
                   >
                     <Avatar className="w-8 h-8">
-                      <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
-                      <AvatarFallback>CN</AvatarFallback>
+                      <AvatarImage src={responsible.imagem} alt="@shadcn" />
                     </Avatar>
-                    <span>{responsible.label}</span>
+                    <span>{responsible.nome}</span>
                   </CommandItem>
                 ))}
               </CommandGroup>

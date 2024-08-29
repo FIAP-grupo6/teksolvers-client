@@ -7,26 +7,29 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import {
+  ChartContainer,
+  ChartLegend,
+  ChartLegendContent,
+  ChartTooltip,
+  ChartTooltipContent,
+} from "@/components/ui/chart";
+import { Label } from "@/components/ui/label";
+import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Label } from "@/components/ui/label";
+import { Separator } from "@/components/ui/separator";
 import { Switch } from "@/components/ui/switch";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import agents from "@/mock/agents";
+import integrations from "@/mock/integrations";
 import { createLazyFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { Helmet } from "react-helmet";
-import { Pie, PieChart, Label as PieLabel, Area, AreaChart, CartesianGrid, XAxis, YAxis, Bar, BarChart } from "recharts"
-import {
-  ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent,
-  ChartLegend,
-  ChartLegendContent,
-} from "@/components/ui/chart"
+import { Area, AreaChart, Bar, BarChart, CartesianGrid, Pie, PieChart, Label as PieLabel, XAxis, YAxis } from "recharts";
 
 export const Route = createLazyFileRoute("/_private/")({
   component: Dashboard,
@@ -55,7 +58,7 @@ const chartConfig = {
     label: "Legado",
     color: "hsl(var(--chart-3))",
   },
-} 
+}
 
 const chartDataTicketsSLA = [
   { date: "2024-08-01", SLA: 222, naoSLA: 150 },
@@ -136,7 +139,7 @@ const chartConfigCategoria = {
     label: "Não Informado",
     color: "hsl(var(--chart-6))",
   },
-} 
+}
 
 const chartDataPendente = [
   { time: "suporte", tickets: 18, fill: "var(--color-suporte)" },
@@ -471,126 +474,28 @@ function Dashboard() {
               </CardDescription>
             </CardHeader>
             <CardContent className="grid w-full grid-cols-3 gap-4">
-              <Card>
-                <CardHeader>
-                  <div className="flex items-center">
-                    <Avatar className="mr-2">
-                      <AvatarImage src="https://api.dicebear.com/9.x/bottts/svg?seed=Boo" alt="@robot" className="bg-slate-50" />
-                      <AvatarFallback>UN</AvatarFallback>
-                    </Avatar>
-                    <CardTitle>Astro</CardTitle>
-                  </div>
-                  <CardDescription>
-                    Agente responsável por geras <strong>TAGS</strong> do chamado
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex items-center space-x-2">
-                    <Switch id="astro" onClick={handleSwitchChange} checked={isSwitchChecked} />
-                    <Label htmlFor="astro">{isSwitchChecked ? 'Agente ligado' : 'Agente desligado'}</Label>
-                  </div>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <div className="flex items-center">
-                    <Avatar className="mr-2">
-                      <AvatarImage src="https://api.dicebear.com/9.x/bottts/svg?seed=Patches" alt="@robot" className="bg-slate-50" />
-                      <AvatarFallback>UN</AvatarFallback>
-                    </Avatar>
-                    <CardTitle>C-3PO</CardTitle>
-                  </div>
-                  <CardDescription>
-                    Agente responsável por definir a <strong>PRIORIDADE</strong> do chamado
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex items-center space-x-2">
-                    <Switch id="c3po" checked />
-                    <Label htmlFor="c3po">Agente ligado</Label>
-                  </div>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <div className="flex items-center">
-                    <Avatar className="mr-2">
-                      <AvatarImage src="https://api.dicebear.com/9.x/bottts-neutral/svg?seed=Spooky&flip=true&backgroundColor=3949ab,d1d4f9&backgroundType=solid,gradientLinear&backgroundRotation=360,-360,-330,-320&eyes=sensor&mouth=diagram" alt="@robot" className="bg-slate-50" />
-                      <AvatarFallback>UN</AvatarFallback>
-                    </Avatar>
-                    <CardTitle>R2-D2</CardTitle>
-                  </div>
-                  <CardDescription>
-                    Agente responsável por definir o <strong>RESPONSÁVEL</strong> do chamado
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex items-center space-x-2">
-                    <Switch id="r2d2" checked />
-                    <Label htmlFor="r2d2">Agente ligado</Label>
-                  </div>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <div className="flex items-center">
-                    <Avatar className="mr-2">
-                      <AvatarImage src="https://api.dicebear.com/9.x/bottts/svg?seed=Sammy" alt="@robot" className="bg-slate-50" />
-                      <AvatarFallback>UN</AvatarFallback>
-                    </Avatar>
-                    <CardTitle>Baymax</CardTitle>
-                  </div>
-                  <CardDescription>
-                    Agente responsável por por definir o <strong>TIPO</strong> do chamado
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex items-center space-x-2">
-                    <Switch id="baymax" checked />
-                    <Label htmlFor="baymax">Agente ligado</Label>
-                  </div>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <div className="flex items-center">
-                    <Avatar className="mr-2">
-                      <AvatarImage src="https://api.dicebear.com/9.x/bottts-neutral/svg?seed=Harley" alt="@robot" className="bg-slate-50" />
-                      <AvatarFallback>UN</AvatarFallback>
-                    </Avatar>
-                    <CardTitle>WALL-E</CardTitle>
-                  </div>
-                  <CardDescription>
-                    Agente responsável por por definir o <strong>NÍVEL</strong> do chamado
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex items-center space-x-2">
-                    <Switch id="wall-e" checked />
-                    <Label htmlFor="wall-e">Agente ligado</Label>
-                  </div>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <div className="flex items-center">
-                    <Avatar className="mr-2">
-                      <AvatarImage src="https://api.dicebear.com/9.x/bottts-neutral/svg?seed=Boots&eyes=eva&mouth=smile01" alt="@robot" className="bg-slate-50" />
-                      <AvatarFallback>UN</AvatarFallback>
-                    </Avatar>
-                    <CardTitle>EVA</CardTitle>
-                  </div>
-                  <CardDescription>
-                    Agente responsável por por sugerir a <strong>SOLUÇÃO</strong> do chamado
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex items-center space-x-2">
-                    <Switch id="eva" checked />
-                    <Label htmlFor="eva">Agente ligado</Label>
-                  </div>
-                </CardContent>
-              </Card>
+              {agents.map((agent) => (
+                <Card key={`agent_item_${agent.id}`}>
+                  <CardHeader>
+                    <div className="flex items-center">
+                      <Avatar className="mr-2">
+                        <AvatarImage src={agent.imagem} alt="@robot" className="bg-slate-50" />
+                        <AvatarFallback>UN</AvatarFallback>
+                      </Avatar>
+                      <CardTitle>{agent.nome}</CardTitle>
+                    </div>
+                    <CardDescription>
+                      {agent.descricao}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex items-center space-x-2">
+                      <Switch id={`agent_switch_${agent.id}`} checked={agent.ativo} />
+                      <Label htmlFor={`agent_switch_${agent.id}`}>{agent.ativo ? 'Agente ligado' : 'Agente desligado'}</Label>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
             </CardContent>
           </Card>
 
@@ -602,55 +507,37 @@ function Dashboard() {
               </CardDescription>
             </CardHeader>
             <CardContent className="flex flex-col gap-2 items-start">
-              <Card className="bg-slate-50 rounded-lg shadow-md p-4 w-full">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center">
-                    <h2 className="text-sm font-semibold">ServiceDesk</h2>
+              {integrations.map((integration) => (
+                <Card key={`integration_item_${integration.id}`} className="bg-slate-50 rounded-lg shadow-md p-4 w-full">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center">
+                      <h2 className="text-sm font-semibold">{integration.nome}</h2>
+                    </div>
+                    <Tooltip>
+                      <TooltipTrigger>
+                        {integration.status === "Disponível" ? (
+                          <div className="h-3 w-3 rounded-full bg-green-500" />
+                        ) : (
+                          <div className="h-3 w-3 rounded-full bg-red-500" />
+                        )}
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p>{integration.status}</p>
+                      </TooltipContent>
+                    </Tooltip>
                   </div>
-                  <Tooltip>
-                    <TooltipTrigger>
-                      <div className="h-3 w-3 rounded-full bg-green-500" />
-                    </TooltipTrigger>
-                    <TooltipContent>
-                      <p>Disponível</p>
-                    </TooltipContent>
-                  </Tooltip>
-                </div>
-              </Card>
-              <Card className="bg-slate-50 rounded-lg shadow-md p-4 w-full">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center">
-                    <h2 className="text-sm font-semibold">SAP</h2>
-                  </div>
-                  <Tooltip>
-                    <TooltipTrigger>
-                      <div className="h-3 w-3 rounded-full bg-green-500" />
-                    </TooltipTrigger>
-                    <TooltipContent>
-                      <p>Disponível</p>
-                    </TooltipContent>
-                  </Tooltip>
-                </div>
-              </Card>
-              <Card className="bg-slate-50 rounded-lg shadow-md p-4 w-full">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center">
-                    <h2 className="text-sm font-semibold">AMS</h2>
-                  </div>
-                  <Tooltip>
-                    <TooltipTrigger>
-                      <div className="h-3 w-3 rounded-full bg-red-500" />
-                    </TooltipTrigger>
-                    <TooltipContent>
-                      <p>Indisponível</p>
-                    </TooltipContent>
-                  </Tooltip>
-                </div>
-              </Card>
+                </Card>
+              ))}
             </CardContent>
           </Card>
         </div>
       </main>
+
+      <Separator className="mt-16" />
+
+      <footer className="flex items-center justify-center w-full py-2 text-sm text-muted-foreground">
+        <span>© 2024 TekSolvers. Todos os direitos reservados.</span>
+      </footer>
     </>
   );
 }

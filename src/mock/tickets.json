@@ -16,6 +16,10 @@
       "label": "N1-Acessos"
     },
     "prioridade": "Baixa",
+    "notificacoes": {
+      "agentes": 3,
+      "mensagens": 4
+    },
     "tags": [
       "acesso",
       "revogacao"
@@ -114,12 +118,24 @@
       "label": "AMS-Não SAP"
     },
     "prioridade": "Baixa",
+    "notificacoes": {
+      "agentes": 0,
+      "mensagens": 0
+    },
     "tags": [
       "sistemas",
       "lentidão",
       "não sap"
     ],
-    "arquivos": [],
+    "arquivos": [
+      {
+        "id": 1,
+        "arquivo": "kb00845642.pdf",
+        "tipo": "pdf",
+        "titulo": "KB00845642",
+        "privado": true
+      }
+    ],
     "responsaveis": [
       {
         "id": 1,
@@ -192,7 +208,10 @@
           "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Eva&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile"
         },
         "data": "Wed Aug 28 2024 15:20:00 GMT-0300",
-        "mensagem": "Para a solução da lentidão do sistema, você pode seguir o procedimento KB00845642 para reinicialização do serviço Database como uma solução temporária e investigar mais a fundo a causa da lentidão."
+        "mensagem": "Para a solução da lentidão do sistema, você pode seguir o procedimento KB00845642 do documento anexado abaixo para reinicialização do serviço Database como uma solução temporária e investigar mais a fundo a causa da lentidão.",
+        "arquivos": [
+          "kb00845642.pdf"
+        ]
       }
     ]
   },
@@ -213,6 +232,10 @@
       "label": "Impressora-Rede"
     },
     "prioridade": "Média",
+    "notificacoes": {
+      "agentes": 1,
+      "mensagens": 0
+    },
     "tags": [
       "impressora",
       "rede",
@@ -330,6 +353,10 @@
       "label": "Banco de Dados-Acesso"
     },
     "prioridade": "Alta",
+    "notificacoes": {
+      "agentes": 2,
+      "mensagens": 1
+    },
     "tags": [
       "banco de dados",
       "acesso",
@@ -449,6 +476,10 @@
       "label": "Sistema-Gestão"
     },
     "prioridade": "Alta",
+    "notificacoes": {
+      "agentes": 3,
+      "mensagens": 0
+    },
     "tags": [
       "sistema",
       "atualização",
@@ -568,6 +599,10 @@
       "label": "Serviço-Backup"
     },
     "prioridade": "Crítica",
+    "notificacoes": {
+      "agentes": 1,
+      "mensagens": 1
+    },
     "tags": [
       "backup",
       "falha",
@@ -670,7 +705,6 @@
       }
     ]
   },
-
   {
     "numero": "TASK0933890",
     "status": "Aberto",
@@ -679,37 +713,73 @@
     "usuario": "cleiton.siva",
     "consultor": "amanda.rodrigues",
     "titulo": "Criação de usuário do sistema Vaxus",
-    "complexidade": {"id": 1, "label": "Nível 1"},
-    "tipo": {"id": "n1", "label": "N1-Acessos"},
+    "complexidade": {
+      "id": 1,
+      "label": "Nível 1"
+    },
+    "tipo": {
+      "id": "n1",
+      "label": "N1-Acessos"
+    },
     "prioridade": "Baixa",
-    "tags": ["acesso", "criacao"],
+    "notificacoes": {
+      "agentes": 2,
+      "mensagens": 1
+    },
+    "tags": [
+      "acesso",
+      "criacao"
+    ],
     "arquivos": [],
-    "responsaveis": [{"id": 1, "nome": "Analista Acesso", "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Buster&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile" }],
+    "responsaveis": [
+      {
+        "id": 1,
+        "nome": "Analista Acesso",
+        "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Buster&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile"
+      }
+    ],
     "mensagens": [
       {
         "id": 1,
-        "usuario": {"id": 5, "nome": "cleiton.siva", "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Lily", "perfil": "usuário"},
+        "usuario": {
+          "id": 5,
+          "nome": "cleiton.siva",
+          "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Lily",
+          "perfil": "usuário"
+        },
         "data": "Mon Aug 28 2024 21:57:38 GMT-0300",
         "mensagem": "Solicito a criação do usuário de acesso do usuario alessandro.gomes ao sistema Vaxus"
       },
-      
       {
         "id": 2,
-        "usuario": {"id": 6, "nome": "amanda.rodrigues", "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Buster&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile", "perfil": "consultorN1"},
+        "usuario": {
+          "id": 6,
+          "nome": "amanda.rodrigues",
+          "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Buster&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile",
+          "perfil": "consultorN1"
+        },
         "data": "Mon Aug 28 2024 22:00:57 GMT-0300",
         "mensagem": "Boa tarde! Obrigado pela mensagem e já estamos executando o procedimento de criação de acesso solicitado."
       },
-
       {
         "id": 3,
-        "usuario": {"id": 6, "nome": "amanda.rodrigues", "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Buster&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile", "perfil": "consultorN1"},
+        "usuario": {
+          "id": 6,
+          "nome": "amanda.rodrigues",
+          "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Buster&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile",
+          "perfil": "consultorN1"
+        },
         "data": "Mon Aug 28 2024 22:05:38 GMT-0300",
         "mensagem": "Criação de usuário para o acesso ao sistema Vaxus efetuada com sucesso. Caso esteja de acordo encerraremos esse chamado."
       },
-      
       {
         "id": 4,
-        "usuario": {"id": 5, "nome": "cleiton.siva", "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Lily", "perfil": "usuário"},
+        "usuario": {
+          "id": 5,
+          "nome": "cleiton.siva",
+          "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Lily",
+          "perfil": "usuário"
+        },
         "data": "Mon Aug 28 2024 22:16:57 GMT-0300",
         "mensagem": "Obrigado, acabei de verificar e o acesso está funcionando direito. Boa tarde."
       }
@@ -717,20 +787,26 @@
     "assistentes": [
       {
         "id": 1,
-        "assistente": { "id": 1, "nome": "WALL-E", "imagem":"https://api.dicebear.com/9.x/avataaars/svg?seed=Jasper&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile" },
+        "assistente": {
+          "id": 1,
+          "nome": "WALL-E",
+          "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Jasper&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile"
+        },
         "data": "Mon Aug 26 2024 22:12:57 GMT-0300",
         "mensagem": "Historicamente, esse tipo de chamado é encaminhado e resolvido pelo nível N1-Acessos. Você pode aceitar esta sugestão e automaticamente será encaminhado ou analisar o chamado e encaminhar mais tarde caso seja necessário."
       },
-
       {
         "id": 2,
-        "assistente": { "id": 2, "nome": "EVA", "imagem":"https://api.dicebear.com/9.x/avataaars/svg?seed=Jasper&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile" },
+        "assistente": {
+          "id": 2,
+          "nome": "EVA",
+          "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Jasper&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile"
+        },
         "data": "Mon Aug 26 2024 22:14:57 GMT-0300",
         "mensagem": "Para criação de acesso ao APLICATIVO Vaxus: No SISTEMA Y (SISTEMA Y -> Configurações -> Segurança -> Usuários), tendo em mãos os seguintes dados: Nome completo do usuário e e-mail corporativo do usuário e a criação deste usuário deve ser realizada mediante aprovação do Gestor da Área. Clique em Usuários. Na tela Cadastro de Usuários clique em incluir e preencha o formulário com os dados do solicitante e após clique em Salvar."
       }
     ]
   },
-
   {
     "numero": "INC0194887",
     "status": "Aberto",
@@ -739,37 +815,74 @@
     "usuario": "dagalberto.souza",
     "consultor": "vanderson.nunes",
     "titulo": "Lentidão no Sistema",
-    "complexidade": {"id": 1, "label": "Nível 1"},
-    "tipo": {"id": "n1", "label": "N1-Acessos"},
+    "complexidade": {
+      "id": 1,
+      "label": "Nível 1"
+    },
+    "tipo": {
+      "id": "n1",
+      "label": "N1-Acessos"
+    },
     "prioridade": "Baixa",
-    "tags": ["sistemas", "lentidão", "não sap"],
+    "notificacoes": {
+      "agentes": 0,
+      "mensagens": 1
+    },
+    "tags": [
+      "sistemas",
+      "lentidão",
+      "não sap"
+    ],
     "arquivos": [],
-    "responsaveis": [{"id": 2, "nome": "Analista AMS", "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Buster&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile" }],
+    "responsaveis": [
+      {
+        "id": 2,
+        "nome": "Analista AMS",
+        "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Buster&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile"
+      }
+    ],
     "mensagens": [
       {
         "id": 1,
-        "usuario": {"id": 3, "nome": "dagalberto.souza", "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Lily", "perfil": "usuário"},
+        "usuario": {
+          "id": 3,
+          "nome": "dagalberto.souza",
+          "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Lily",
+          "perfil": "usuário"
+        },
         "data": "Mon Aug 28 2024 21:57:38 GMT-0300",
         "mensagem": "O sistema está muito lento em todo o departamento desde hoje cedo, já realizamos alguns procedimentos como reiniciar as máquinas e reiniciar o modem mas nada adiantou."
       },
-      
       {
         "id": 2,
-        "usuario": {"id": 2, "nome": "vanderson.nunes", "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Buster&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile", "perfil": "consultorN1"},
+        "usuario": {
+          "id": 2,
+          "nome": "vanderson.nunes",
+          "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Buster&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile",
+          "perfil": "consultorN1"
+        },
         "data": "Mon Aug 28 2024 22:00:57 GMT-0300",
         "mensagem": "Bom dia! Obrigado pela mensagem e já estamos analisando. O código do seu chamado é #INC0194887."
       },
-
       {
         "id": 3,
-        "usuario": {"id": 2, "nome": "vanderson.nunes", "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Buster&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile", "perfil": "consultorN1"},
+        "usuario": {
+          "id": 2,
+          "nome": "vanderson.nunes",
+          "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Buster&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile",
+          "perfil": "consultorN1"
+        },
         "data": "Mon Aug 28 2024 22:05:38 GMT-0300",
         "mensagem": "Após análise do ocorrido, efetuamos a pronta reinicialização do serviço database, constatamos normalidade operacional. Caso esteja de acordo encerraremos esse chamado."
       },
-      
       {
         "id": 4,
-        "usuario": {"id": 1, "nome": "agalberto.souza", "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Lily", "perfil": "usuário"},
+        "usuario": {
+          "id": 1,
+          "nome": "agalberto.souza",
+          "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Lily",
+          "perfil": "usuário"
+        },
         "data": "Mon Aug 28 2024 22:16:57 GMT-0300",
         "mensagem": "De acordo. Encerre o chamado. Tenha um bom dia."
       }
@@ -777,14 +890,21 @@
     "assistentes": [
       {
         "id": 1,
-        "assistente": { "id": 1, "nome": "WALL-E", "imagem":"https://api.dicebear.com/9.x/avataaars/svg?seed=Jasper&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile" },
+        "assistente": {
+          "id": 1,
+          "nome": "WALL-E",
+          "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Jasper&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile"
+        },
         "data": "Mon Aug 28 2024 22:12:57 GMT-0300",
         "mensagem": "Historicamente, esse tipo de chamado é encaminhado e resolvido pelo nível 3. Você pode aceitar esta sugestão e automaticamente será encaminhado ou analisar o chamado e encaminhar mais tarde caso seja necessário."
       },
-
       {
         "id": 2,
-        "assistente": { "id": 2, "nome": "EVA", "imagem":"https://api.dicebear.com/9.x/avataaars/svg?seed=Jasper&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile" },
+        "assistente": {
+          "id": 2,
+          "nome": "EVA",
+          "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Jasper&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile"
+        },
         "data": "Mon Aug 26 2024 22:14:57 GMT-0300",
         "mensagem": "Este chamado foi classificado automaticamente como AMS-Não SAP e com prioridade Baixa e com complexidade Nível 3. Abaixo seguem algumas sugestões de como proceder: Em caso de a lentidão estar afetando todo o departamento recomendamos a reinicialização do serviço Database seguindo o procedimento KB00845642 como uma solução temporária e paliativa. Além de posterior investigação da causa da lentidão."
       }
@@ -798,37 +918,74 @@
     "usuario": "joao.silva",
     "consultor": "maria.rodrigues",
     "titulo": "Erro ao acessar sistema",
-    "complexidade": {"id": 2, "label": "Nível 2"},
-    "tipo": {"id": "n2", "label": "N2-Aplicativos"},
+    "complexidade": {
+      "id": 2,
+      "label": "Nível 2"
+    },
+    "tipo": {
+      "id": "n2",
+      "label": "N2-Aplicativos"
+    },
     "prioridade": "Média",
-    "tags": ["sistemas", "erro", "aplicativo"],
+    "notificacoes": {
+      "agentes": 2,
+      "mensagens": 1
+    },
+    "tags": [
+      "sistemas",
+      "erro",
+      "aplicativo"
+    ],
     "arquivos": [],
-    "responsaveis": [{"id": 3, "nome": "Analista Aplicativo", "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Buster&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile" }],
+    "responsaveis": [
+      {
+        "id": 3,
+        "nome": "Analista Aplicativo",
+        "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Buster&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile"
+      }
+    ],
     "mensagens": [
       {
         "id": 1,
-        "usuario": {"id": 4, "nome": "joao.silva", "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Lily", "perfil": "usuário"},
+        "usuario": {
+          "id": 4,
+          "nome": "joao.silva",
+          "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Lily",
+          "perfil": "usuário"
+        },
         "data": "Mon Aug 30 2024 10:57:38 GMT-0300",
         "mensagem": "Estou enfrentando um erro ao tentar acessar o sistema. Aparece uma mensagem de erro informando que não foi possível conectar ao servidor."
       },
-      
       {
         "id": 2,
-        "usuario": {"id": 3, "nome": "maria.rodrigues", "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Buster&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile", "perfil": "consultorN2"},
+        "usuario": {
+          "id": 3,
+          "nome": "maria.rodrigues",
+          "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Buster&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile",
+          "perfil": "consultorN2"
+        },
         "data": "Mon Aug 30 2024 11:00:57 GMT-0300",
         "mensagem": "Bom dia! Obrigada pela mensagem. Vou verificar o que está acontecendo e retornarei em breve."
       },
-
       {
         "id": 3,
-        "usuario": {"id": 3, "nome": "maria.rodrigues", "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Buster&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile", "perfil": "consultorN2"},
+        "usuario": {
+          "id": 3,
+          "nome": "maria.rodrigues",
+          "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Buster&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile",
+          "perfil": "consultorN2"
+        },
         "data": "Mon Aug 30 2024 11:05:38 GMT-0300",
         "mensagem": "Identifiquei o problema e estou trabalhando para resolvê-lo. Em breve, o sistema estará acessível novamente."
       },
-      
       {
         "id": 4,
-        "usuario": {"id": 4, "nome": "joao.silva", "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Lily", "perfil": "usuário"},
+        "usuario": {
+          "id": 4,
+          "nome": "joao.silva",
+          "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Lily",
+          "perfil": "usuário"
+        },
         "data": "Mon Aug 30 2024 11:16:57 GMT-0300",
         "mensagem": "Agradeço pela atenção. Aguardarei a solução do problema."
       }
@@ -836,20 +993,26 @@
     "assistentes": [
       {
         "id": 1,
-        "assistente": { "id": 1, "nome": "WALL-E", "imagem":"https://api.dicebear.com/9.x/avataaars/svg?seed=Jasper&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile" },
+        "assistente": {
+          "id": 1,
+          "nome": "WALL-E",
+          "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Jasper&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile"
+        },
         "data": "Mon Aug 30 2024 11:12:57 GMT-0300",
         "mensagem": "Historicamente, esse tipo de chamado é encaminhado e resolvido pelo nível N2-Aplicativos. Você pode aceitar esta sugestão e automaticamente será encaminhado ou analisar o chamado e encaminhar mais tarde caso seja necessário."
       },
-
       {
         "id": 2,
-        "assistente": { "id": 2, "nome": "EVA", "imagem":"https://api.dicebear.com/9.x/avataaars/svg?seed=Jasper&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile" },
+        "assistente": {
+          "id": 2,
+          "nome": "EVA",
+          "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Jasper&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile"
+        },
         "data": "Mon Aug 30 2024 11:14:57 GMT-0300",
         "mensagem": "Para resolver o erro ao acessar o sistema, sugiro verificar a conexão com o servidor e reiniciar o aplicativo. Se o problema persistir, entre em contato com o suporte técnico para obter assistência adicional."
       }
     ]
   },
-
   {
     "numero": "INC0194889",
     "status": "Aberto",
@@ -858,34 +1021,74 @@
     "usuario": "ana.santos",
     "consultor": "pedro.rocha",
     "titulo": "Problema de impressão",
-    "complexidade": {"id": 1, "label": "Nível 1"},
-    "tipo": {"id": "n1", "label": "N1-Acessos"},
+    "complexidade": {
+      "id": 1,
+      "label": "Nível 1"
+    },
+    "tipo": {
+      "id": "n1",
+      "label": "N1-Acessos"
+    },
     "prioridade": "Baixa",
-    "tags": ["impressão", "problema", "hardware"],
+    "notificacoes": {
+      "agentes": 0,
+      "mensagens": 1
+    },
+    "tags": [
+      "impressão",
+      "problema",
+      "hardware"
+    ],
     "arquivos": [],
-    "responsaveis": [{"id": 2, "nome": "Analista AMS", "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Buster&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile" }],
+    "responsaveis": [
+      {
+        "id": 2,
+        "nome": "Analista AMS",
+        "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Buster&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile"
+      }
+    ],
     "mensagens": [
       {
         "id": 1,
-        "usuario": {"id": 5, "nome": "ana.santos", "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Lily", "perfil": "usuário"},
+        "usuario": {
+          "id": 5,
+          "nome": "ana.santos",
+          "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Lily",
+          "perfil": "usuário"
+        },
         "data": "Mon Aug 31 2024 10:57:38 GMT-0300",
         "mensagem": "Estou com problemas para imprimir documentos. A impressora não está respondendo."
       },
       {
         "id": 2,
-        "usuario": {"id": 6, "nome": "pedro.rocha", "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Buster&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile", "perfil": "consultorN1"},
+        "usuario": {
+          "id": 6,
+          "nome": "pedro.rocha",
+          "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Buster&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile",
+          "perfil": "consultorN1"
+        },
         "data": "Mon Aug 31 2024 11:00:57 GMT-0300",
         "mensagem": "Olá! Obrigado pelo aviso. Vou verificar a situação da impressora e encontrar uma solução para o problema."
       },
       {
         "id": 3,
-        "usuario": {"id": 6, "nome": "pedro.rocha", "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Buster&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile", "perfil": "consultorN1"},
+        "usuario": {
+          "id": 6,
+          "nome": "pedro.rocha",
+          "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Buster&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile",
+          "perfil": "consultorN1"
+        },
         "data": "Mon Aug 31 2024 11:05:38 GMT-0300",
         "mensagem": "Após verificar a impressora, identifiquei um problema de conexão. Vou reiniciar a impressora e verificar se isso resolve o problema."
       },
       {
         "id": 4,
-        "usuario": {"id": 5, "nome": "ana.santos", "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Lily", "perfil": "usuário"},
+        "usuario": {
+          "id": 5,
+          "nome": "ana.santos",
+          "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Lily",
+          "perfil": "usuário"
+        },
         "data": "Mon Aug 31 2024 11:16:57 GMT-0300",
         "mensagem": "Agradeço pela ajuda. Aguardarei a solução do problema."
       }
@@ -893,13 +1096,21 @@
     "assistentes": [
       {
         "id": 1,
-        "assistente": { "id": 1, "nome": "WALL-E", "imagem":"https://api.dicebear.com/9.x/avataaars/svg?seed=Jasper&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile" },
+        "assistente": {
+          "id": 1,
+          "nome": "WALL-E",
+          "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Jasper&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile"
+        },
         "data": "Mon Aug 31 2024 11:12:57 GMT-0300",
         "mensagem": "Historicamente, esse tipo de chamado é encaminhado e resolvido pelo nível N1-Acessos. Você pode aceitar esta sugestão e automaticamente será encaminhado ou analisar o chamado e encaminhar mais tarde caso seja necessário."
       },
       {
         "id": 2,
-        "assistente": { "id": 2, "nome": "EVA", "imagem":"https://api.dicebear.com/9.x/avataaars/svg?seed=Jasper&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile" },
+        "assistente": {
+          "id": 2,
+          "nome": "EVA",
+          "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Jasper&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile"
+        },
         "data": "Mon Aug 31 2024 11:14:57 GMT-0300",
         "mensagem": "Para resolver o problema de impressão, sugiro verificar a conexão da impressora com o computador e reiniciar tanto a impressora quanto o computador. Se o problema persistir, entre em contato com o suporte técnico para obter assistência adicional."
       }
@@ -913,34 +1124,74 @@
     "usuario": "marcos.silva",
     "consultor": "lucas.rodrigues",
     "titulo": "Problema de rede",
-    "complexidade": {"id": 2, "label": "Nível 2"},
-    "tipo": {"id": "n2", "label": "N2-Aplicativos"},
+    "complexidade": {
+      "id": 2,
+      "label": "Nível 2"
+    },
+    "tipo": {
+      "id": "n2",
+      "label": "N2-Aplicativos"
+    },
     "prioridade": "Média",
-    "tags": ["rede", "problema", "conexão"],
+    "notificacoes": {
+      "agentes": 2,
+      "mensagens": 1
+    },
+    "tags": [
+      "rede",
+      "problema",
+      "conexão"
+    ],
     "arquivos": [],
-    "responsaveis": [{"id": 3, "nome": "Analista Aplicativo", "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Buster&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile" }],
+    "responsaveis": [
+      {
+        "id": 3,
+        "nome": "Analista Aplicativo",
+        "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Buster&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile"
+      }
+    ],
     "mensagens": [
       {
         "id": 1,
-        "usuario": {"id": 7, "nome": "marcos.silva", "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Lily", "perfil": "usuário"},
+        "usuario": {
+          "id": 7,
+          "nome": "marcos.silva",
+          "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Lily",
+          "perfil": "usuário"
+        },
         "data": "Mon Sep 01 2024 10:57:38 GMT-0300",
         "mensagem": "Estou com problemas de conexão de rede. Não consigo acessar a internet."
       },
       {
         "id": 2,
-        "usuario": {"id": 8, "nome": "lucas.rodrigues", "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Buster&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile", "perfil": "consultorN2"},
+        "usuario": {
+          "id": 8,
+          "nome": "lucas.rodrigues",
+          "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Buster&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile",
+          "perfil": "consultorN2"
+        },
         "data": "Mon Sep 01 2024 11:00:57 GMT-0300",
         "mensagem": "Olá! Obrigado pelo aviso. Vou verificar a situação da rede e encontrar uma solução para o problema."
       },
       {
         "id": 3,
-        "usuario": {"id": 8, "nome": "lucas.rodrigues", "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Buster&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile", "perfil": "consultorN2"},
+        "usuario": {
+          "id": 8,
+          "nome": "lucas.rodrigues",
+          "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Buster&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile",
+          "perfil": "consultorN2"
+        },
         "data": "Mon Sep 01 2024 11:05:38 GMT-0300",
         "mensagem": "Identifiquei um problema na configuração da rede. Vou realizar alguns ajustes e verificar se isso resolve o problema de conexão."
       },
       {
         "id": 4,
-        "usuario": {"id": 7, "nome": "marcos.silva", "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Lily", "perfil": "usuário"},
+        "usuario": {
+          "id": 7,
+          "nome": "marcos.silva",
+          "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Lily",
+          "perfil": "usuário"
+        },
         "data": "Mon Sep 01 2024 11:16:57 GMT-0300",
         "mensagem": "Agradeço pela ajuda. Aguardarei a solução do problema."
       }
@@ -948,13 +1199,21 @@
     "assistentes": [
       {
         "id": 1,
-        "assistente": { "id": 1, "nome": "WALL-E", "imagem":"https://api.dicebear.com/9.x/avataaars/svg?seed=Jasper&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile" },
+        "assistente": {
+          "id": 1,
+          "nome": "WALL-E",
+          "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Jasper&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile"
+        },
         "data": "Mon Sep 01 2024 11:12:57 GMT-0300",
         "mensagem": "Historicamente, esse tipo de chamado é encaminhado e resolvido pelo nível N2-Aplicativos. Você pode aceitar esta sugestão e automaticamente será encaminhado ou analisar o chamado e encaminhar mais tarde caso seja necessário."
       },
       {
         "id": 2,
-        "assistente": { "id": 2, "nome": "EVA", "imagem":"https://api.dicebear.com/9.x/avataaars/svg?seed=Jasper&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile" },
+        "assistente": {
+          "id": 2,
+          "nome": "EVA",
+          "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Jasper&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile"
+        },
         "data": "Mon Sep 01 2024 11:14:57 GMT-0300",
         "mensagem": "Para resolver o problema de rede, sugiro verificar a conexão do cabo de rede, reiniciar o roteador e verificar as configurações de rede no computador. Se o problema persistir, entre em contato com o suporte técnico para obter assistência adicional."
       }
@@ -968,34 +1227,74 @@
     "usuario": "carla.santos",
     "consultor": "rafael.rocha",
     "titulo": "Problema de software",
-    "complexidade": {"id": 3, "label": "Nível 3"},
-    "tipo": {"id": "n3", "label": "N3-Software"},
+    "complexidade": {
+      "id": 3,
+      "label": "Nível 3"
+    },
+    "tipo": {
+      "id": "n3",
+      "label": "N3-Software"
+    },
     "prioridade": "Alta",
-    "tags": ["software", "problema", "aplicativo"],
+    "notificacoes": {
+      "agentes": 3,
+      "mensagens": 1
+    },
+    "tags": [
+      "software",
+      "problema",
+      "aplicativo"
+    ],
     "arquivos": [],
-    "responsaveis": [{"id": 4, "nome": "Analista Software", "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Buster&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile" }],
+    "responsaveis": [
+      {
+        "id": 4,
+        "nome": "Analista Software",
+        "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Buster&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile"
+      }
+    ],
     "mensagens": [
       {
         "id": 1,
-        "usuario": {"id": 9, "nome": "carla.santos", "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Lily", "perfil": "usuário"},
+        "usuario": {
+          "id": 9,
+          "nome": "carla.santos",
+          "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Lily",
+          "perfil": "usuário"
+        },
         "data": "Mon Sep 02 2024 10:57:38 GMT-0300",
         "mensagem": "Estou com problemas ao utilizar um software específico. O programa está travando constantemente."
       },
       {
         "id": 2,
-        "usuario": {"id": 10, "nome": "rafael.rocha", "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Buster&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile", "perfil": "consultorN3"},
+        "usuario": {
+          "id": 10,
+          "nome": "rafael.rocha",
+          "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Buster&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile",
+          "perfil": "consultorN3"
+        },
         "data": "Mon Sep 02 2024 11:00:57 GMT-0300",
         "mensagem": "Olá! Obrigado pelo aviso. Vou verificar o software e encontrar uma solução para o problema de travamento."
       },
       {
         "id": 3,
-        "usuario": {"id": 10, "nome": "rafael.rocha", "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Buster&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile", "perfil": "consultorN3"},
+        "usuario": {
+          "id": 10,
+          "nome": "rafael.rocha",
+          "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Buster&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile",
+          "perfil": "consultorN3"
+        },
         "data": "Mon Sep 02 2024 11:05:38 GMT-0300",
         "mensagem": "Identifiquei um problema de incompatibilidade do software com o sistema operacional. Vou realizar algumas configurações e atualizações para resolver o problema de travamento."
       },
       {
         "id": 4,
-        "usuario": {"id": 9, "nome": "carla.santos", "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Lily", "perfil": "usuário"},
+        "usuario": {
+          "id": 9,
+          "nome": "carla.santos",
+          "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Lily",
+          "perfil": "usuário"
+        },
         "data": "Mon Sep 02 2024 11:16:57 GMT-0300",
         "mensagem": "Agradeço pela ajuda. Aguardarei a solução do problema."
       }
@@ -1003,13 +1302,21 @@
     "assistentes": [
       {
         "id": 1,
-        "assistente": { "id": 1, "nome": "WALL-E", "imagem":"https://api.dicebear.com/9.x/avataaars/svg?seed=Jasper&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile" },
+        "assistente": {
+          "id": 1,
+          "nome": "WALL-E",
+          "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Jasper&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile"
+        },
         "data": "Mon Sep 02 2024 11:12:57 GMT-0300",
         "mensagem": "Historicamente, esse tipo de chamado é encaminhado e resolvido pelo nível N3-Software. Você pode aceitar esta sugestão e automaticamente será encaminhado ou analisar o chamado e encaminhar mais tarde caso seja necessário."
       },
       {
         "id": 2,
-        "assistente": { "id": 2, "nome": "EVA", "imagem":"https://api.dicebear.com/9.x/avataaars/svg?seed=Jasper&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile" },
+        "assistente": {
+          "id": 2,
+          "nome": "EVA",
+          "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Jasper&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile"
+        },
         "data": "Mon Sep 02 2024 11:14:57 GMT-0300",
         "mensagem": "Para resolver o problema de software, sugiro verificar se há atualizações disponíveis para o software e para o sistema operacional. Além disso, verifique se o software possui requisitos mínimos de hardware e se o seu computador atende a esses requisitos. Se o problema persistir, entre em contato com o suporte técnico do software para obter assistência adicional."
       }

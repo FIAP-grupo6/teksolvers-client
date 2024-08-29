@@ -34,17 +34,19 @@ import {
   Tabs,
   TabsContent
 } from "@/components/ui/tabs";
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
+import { cn } from '@/lib/utils';
 import mock from '@/mock/tickets.json';
 import { Link } from '@tanstack/react-router';
 import { format, formatDistance } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
+import { BotIcon, CheckCheck, Clock10, MessageCircle, Star } from 'lucide-react';
 
 export const Route = createLazyFileRoute('/_private/chamados')({
   component: MyTickets
 })
 
 export function MyTickets() {
-  console.log(mock)
   return (
     <>
       <Helmet>
@@ -53,47 +55,6 @@ export function MyTickets() {
 
       <main className="grid flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
         <Tabs defaultValue="all">
-          <div className="flex items-center">
-            {/*<TabsList>
-              <TabsTrigger value="all">Todos</TabsTrigger>
-               <TabsTrigger value="active">Abertos</TabsTrigger>
-              <TabsTrigger value="draft">Encerrados</TabsTrigger>
-              <TabsTrigger value="archived" className="hidden sm:flex">
-                Arquivados
-              </TabsTrigger>
-            </TabsList> */}
-            <div className="ml-auto flex items-center gap-2">
-              {/* <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="outline" size="sm" className="h-8 gap-1">
-                    <ListFilter className="h-3.5 w-3.5" />
-                    <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">
-                      Filtrar
-                    </span>
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="end">
-                  <DropdownMenuLabel>Filtrar por</DropdownMenuLabel>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuCheckboxItem checked>
-                    Abertos
-                  </DropdownMenuCheckboxItem>
-                  <DropdownMenuCheckboxItem>Em andamento</DropdownMenuCheckboxItem>
-                  <DropdownMenuCheckboxItem>
-                    Concluídos
-                  </DropdownMenuCheckboxItem>
-                </DropdownMenuContent>
-              </DropdownMenu> */}
-
-              {/* <Button size="sm" className="h-8 gap-1">
-                <PlusCircle className="h-3.5 w-3.5" />
-                <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">
-                  Criar ticket
-                </span>
-              </Button> */}
-            </div>
-          </div>
-
           <TabsContent value="all">
             <Card x-chunk="dashboard-06-chunk-0">
               <CardHeader>
@@ -115,6 +76,9 @@ export function MyTickets() {
                         Prioridade
                       </TableHead>
                       <TableHead className="hidden md:table-cell">
+                        Notificações
+                      </TableHead>
+                      <TableHead className="hidden md:table-cell">
                         Criado em
                       </TableHead>
                       <TableHead>
@@ -132,10 +96,56 @@ export function MyTickets() {
                           {item.titulo}
                         </TableCell>
                         <TableCell>
-                          <Badge variant="secondary">{item.status}</Badge>
+                          <Badge variant="secondary" className="flex gap-1 w-fit items-center">
+                            {/* <StarIcon className="h-4 w-4" /> */}
+                            {item.status === "Em andamento" && (<Clock10 className="text-orange-300 h-4 w-4" />)}
+                            {item.status === "Pendente" && (<Clock10 className="text-orange-300 h-4 w-4" />)}
+                            {item.status === "Aberto" && (<Star className="text-blue-300 h-4 w-4" />)}
+                            {item.status === "Concluído" && (<CheckCheck className="text-green-300 h-4 w-4" />)}
+                            {item.status}
+                          </Badge>
                         </TableCell>
                         <TableCell className="hidden md:table-cell">
-                          <Badge variant="outline">{item.prioridade}</Badge>
+                          <Badge className={cn({
+                            'bg-red-700': item.prioridade === 'Crítica',
+                            'bg-red-400': item.prioridade === 'Alta',
+                            'bg-yellow-400': item.prioridade === 'Média',
+                            'bg-green-400': item.prioridade === 'Baixa',
+                            'text-white': item.prioridade === 'Crítica'
+                          })}>{item.prioridade}</Badge>
+                        </TableCell>
+                        <TableCell className="hidden md:table-cell">
+                          <div className="flex gap-1">
+                            <Tooltip>
+                              <TooltipTrigger>
+                                <Badge variant="secondary" className="flex items-center gap-1">
+                                  <BotIcon className="h-4 w-4" /> {item.notificacoes.agentes}
+                                </Badge>
+                              </TooltipTrigger>
+                              <TooltipContent>
+                                {item.notificacoes.agentes > 0 ? (
+                                  <p>Você tem {item.notificacoes.agentes} {item.notificacoes.agentes > 1 ? 'mensagens' : 'mensagem'} de assistentes </p>
+                                ) : (
+                                  <p>Você não tem novas mensagens de assistentes</p>
+                                )}
+                              </TooltipContent>
+                            </Tooltip>
+
+                            <Tooltip>
+                              <TooltipTrigger>
+                                <Badge variant="secondary" className="flex items-center gap-1">
+                                  <MessageCircle className="h-4 w-4" /> {item.notificacoes.mensagens}
+                                </Badge>
+                              </TooltipTrigger>
+                              <TooltipContent>
+                                {item.notificacoes.mensagens > 0 ? (
+                                  <p>Você tem {item.notificacoes.mensagens} {item.notificacoes.mensagens > 1 ? 'mensagens' : 'mensagem'} do cliente</p>
+                                ) : (
+                                  <p>Você não tem novas mensagens do cliente</p>
+                                )}
+                              </TooltipContent>
+                            </Tooltip>
+                          </div>
                         </TableCell>
                         <TableCell className="hidden md:table-cell space-x-2">
                           {format(new Date(item.data_criacao), 'dd-MM-yyyy')}
