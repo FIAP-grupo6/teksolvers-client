@@ -17,7 +17,8 @@ import { Route as PrivateImport } from './routes/_private'
 
 // Create Virtual Routes
 
-const PrivateIndexLazyImport = createFileRoute('/_private/')()
+const IndexLazyImport = createFileRoute('/')()
+const PrivateDashboardLazyImport = createFileRoute('/_private/dashboard')()
 const PrivateChamadosLazyImport = createFileRoute('/_private/chamados')()
 const PrivateChamadoIdConsultorLazyImport = createFileRoute(
   '/_private/chamado/$id/consultor',
@@ -33,11 +34,16 @@ const PrivateRoute = PrivateImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
-const PrivateIndexLazyRoute = PrivateIndexLazyImport.update({
+const IndexLazyRoute = IndexLazyImport.update({
   path: '/',
+  getParentRoute: () => rootRoute,
+} as any).lazy(() => import('./routes/index.lazy').then((d) => d.Route))
+
+const PrivateDashboardLazyRoute = PrivateDashboardLazyImport.update({
+  path: '/dashboard',
   getParentRoute: () => PrivateRoute,
 } as any).lazy(() =>
-  import('./routes/_private/index.lazy').then((d) => d.Route),
+  import('./routes/_private/dashboard.lazy').then((d) => d.Route),
 )
 
 const PrivateChamadosLazyRoute = PrivateChamadosLazyImport.update({
@@ -67,6 +73,13 @@ const PrivateChamadoIdClienteLazyRoute =
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexLazyImport
+      parentRoute: typeof rootRoute
+    }
     '/_private': {
       id: '/_private'
       path: ''
@@ -81,11 +94,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivateChamadosLazyImport
       parentRoute: typeof PrivateImport
     }
-    '/_private/': {
-      id: '/_private/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof PrivateIndexLazyImport
+    '/_private/dashboard': {
+      id: '/_private/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof PrivateDashboardLazyImport
       parentRoute: typeof PrivateImport
     }
     '/_private/chamado/$id/cliente': {
@@ -108,9 +121,10 @@ declare module '@tanstack/react-router' {
 // Create and export the route tree
 
 export const routeTree = rootRoute.addChildren({
+  IndexLazyRoute,
   PrivateRoute: PrivateRoute.addChildren({
     PrivateChamadosLazyRoute,
-    PrivateIndexLazyRoute,
+    PrivateDashboardLazyRoute,
     PrivateChamadoIdClienteLazyRoute,
     PrivateChamadoIdConsultorLazyRoute,
   }),
@@ -124,14 +138,18 @@ export const routeTree = rootRoute.addChildren({
     "__root__": {
       "filePath": "__root.jsx",
       "children": [
+        "/",
         "/_private"
       ]
+    },
+    "/": {
+      "filePath": "index.lazy.jsx"
     },
     "/_private": {
       "filePath": "_private.jsx",
       "children": [
         "/_private/chamados",
-        "/_private/",
+        "/_private/dashboard",
         "/_private/chamado/$id/cliente",
         "/_private/chamado/$id/consultor"
       ]
@@ -140,8 +158,8 @@ export const routeTree = rootRoute.addChildren({
       "filePath": "_private/chamados.lazy.jsx",
       "parent": "/_private"
     },
-    "/_private/": {
-      "filePath": "_private/index.lazy.jsx",
+    "/_private/dashboard": {
+      "filePath": "_private/dashboard.lazy.jsx",
       "parent": "/_private"
     },
     "/_private/chamado/$id/cliente": {

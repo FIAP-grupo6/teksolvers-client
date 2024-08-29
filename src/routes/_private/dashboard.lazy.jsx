@@ -31,7 +31,7 @@ import { useMemo, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Area, AreaChart, Bar, BarChart, CartesianGrid, Pie, PieChart, Label as PieLabel, XAxis, YAxis } from "recharts";
 
-export const Route = createLazyFileRoute("/_private/")({
+export const Route = createLazyFileRoute("/_private/dashboard")({
   component: Dashboard,
 });
 
