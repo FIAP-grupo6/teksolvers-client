@@ -189,7 +189,7 @@ function TicketConsultor() {
                       </CardHeader>
                       <CardContent>
                         <p className="text-sm">{item.mensagem}</p>
-                        
+
                         {item.usuario.nome === "Jarvis" && (
                           <div className="mt-6">
                             <CommentRatings rating={2.5} totalStars={5} />
@@ -215,7 +215,7 @@ function TicketConsultor() {
             <InputCardInfos className="sticky top-6 w-full hidden sm:flex" item={mock} />
           </TabsContent>
 
-          <TabsContent value="assistants" className="mt-0 grid grid-cols-[minmax(auto,65%)_minmax(auto,450px)] gap-2 items-start">
+          <TabsContent value="assistants" className="grid md:grid-cols-[minmax(auto,65%)_minmax(auto,450px)] grid-cols-1 gap-2 items-start">
             <Card>
               <CardHeader className="flex flex-row justify-between">
                 <div>
@@ -226,11 +226,11 @@ function TicketConsultor() {
                     <p className="text-xs text-muted-foreground">{mock.numero} - <span className="text-xs text-muted-foreground">{format(new Date(mock.data_criacao), 'dd-MM-yyyy')}</span></p>
                   </div>
                 </div>
-                <div className="flex gap-2">
+                <div className="flex md:flex-row flex-col gap-2">
                   {mock.status !== "Concluído" && (
                     <Button className="text-xs">Aceitar todas as sugestões</Button>
                   )}
-                  <Badge variant="secondary">{mock.status}</Badge>
+                  <Badge variant="secondary" className="w-fit">{mock.status}</Badge>
                 </div>
               </CardHeader>
 
@@ -278,7 +278,7 @@ function TicketConsultor() {
               </CardFooter>
             </Card>
 
-            <Card className="w-[450px]">
+            <Card className="md:w-[450px] w-full">
               <CardHeader>
                 <CardTitle>Seus assistentes</CardTitle>
                 <CardDescription>Acompanhe abaixo o progresso do trabalho de seus assistentes.</CardDescription>
