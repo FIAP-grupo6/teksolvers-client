@@ -45,7 +45,7 @@ function LayoutComponent() {
                     <span className="sr-only">DeskBots</span>
                   </Link>
                   <Link
-                    to="/"
+                    to="/dashboard"
                     className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
                   >
                     <LayoutGrid className="h-5 w-5" />
@@ -59,7 +59,7 @@ function LayoutComponent() {
                     Meus chamados
                   </Link>
                   <Link
-                    to="/sobre-o-projeto"
+                    to="/"
                     className="flex items-center gap-4 px-2.5 text-foreground"
                   >
                     <BookOpenText className="h-5 w-5" />

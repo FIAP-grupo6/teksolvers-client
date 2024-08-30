@@ -5,7 +5,7 @@ import './index.css'
 
 import { routeTree } from './routeTree.gen'
 
-const router = createRouter({ routeTree })
+const router = createRouter({ basepath: "/", routeTree })
 
 const rootElement = document.getElementById('root')
 if (!rootElement.innerHTML) {
