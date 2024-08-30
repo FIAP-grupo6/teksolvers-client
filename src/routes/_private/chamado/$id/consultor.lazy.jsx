@@ -22,9 +22,11 @@ import {
   TabsTrigger
 } from "@/components/ui/tabs";
 import items from '@/mock/tickets.json';
-import { Check, Clock10, SendIcon } from 'lucide-react';
+import { Check, Clock10, FileIcon, SendIcon, Settings } from 'lucide-react';
 import { useMemo } from 'react';
 
+import { CommentRatings } from '@/components/ratings/index';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import agents from '@/mock/agents';
 import { format, formatDistance } from 'date-fns';
@@ -46,10 +48,84 @@ function TicketConsultor() {
     return items.find(item => item.numero === id);
   }, [id])
 
+  const renderOptions = (item, mock) => {
+    if (item.assistente.nome === "Sophia") {
+      return (
+        <>
+          <div className="mt-6">
+            {item.arquivos?.map((file, index) => (
+              <Tooltip key={`it_file_${index}`}>
+                <TooltipTrigger>
+                  <Badge variant="outline" className="rounded-full px-3 py-1.5">
+                    <FileIcon className="w-4 mr-2" />
+                    <p>{file.arquivo}</p>
+                  </Badge>
+                </TooltipTrigger>
+                <TooltipContent>
+                  Baixar arquivo
+                </TooltipContent>
+              </Tooltip>
+            ))}
+          </div>
+
+          {item.novo && (
+            <div className="text-xs w-full flex flex-col items-start space-y-2 mt-8">
+              <p>Você deseja disponibilizar este arquivo para sua equipe?</p>
+              <div className="flex gap-2">
+                <Button className="text-xs" variant="outline">Não</Button>
+                <Button className="text-xs">Sim</Button>
+              </div>
+            </div>
+          )}
+        </>
+      )
+    }
+
+    if (item.assistente.nome === "EVA") {
+      if (mock.status === "Concluído") {
+        return (
+          <Badge variant="outline" className="text-xs w-fit flex flex-row items-center mt-8">
+            <p>Você aceitou minha resposta como solução.</p>
+          </Badge>
+        )
+      }
+
+      return (
+        <div className="text-xs w-full flex flex-col items-start space-y-2 mt-8">
+          <p>Minha resposta ajudou a solucionar o problema?</p>
+          <div className="flex gap-2">
+            <Button className="text-xs" variant="outline">Não</Button>
+            <Button className="text-xs">Sim</Button>
+          </div>
+        </div>
+      )
+    }
+
+    if (item.assistente.nome === "WALL-E") {
+      if (mock.status === "Concluído") {
+        return (
+          <Badge variant="outline" className="text-xs w-fit flex flex-row items-center mt-8">
+            <p>Você aceitou minha sugestão de complexidade.</p>
+          </Badge>
+        )
+      }
+
+      return (
+        <div className="text-xs w-full flex flex-col items-start space-y-2 mt-8">
+          <p>Você deseja aceitar minha sugestão?</p>
+          <div className="flex gap-2">
+            <Button className="text-xs" variant="outline">Recusar</Button>
+            <Button className="text-xs">Aceitar</Button>
+          </div>
+        </div>
+      )
+    }
+  }
+
   return (
     <>
       <Helmet>
-        <title>TekSolvers - #{mock.numero}</title>
+        <title>DeskBots - #{mock.numero}</title>
       </Helmet>
 
       <main className="grid flex-1 max-w-7xl m-auto items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
@@ -59,9 +135,22 @@ function TicketConsultor() {
               <TabsTrigger value="main">Histórico</TabsTrigger>
               <TabsTrigger value="assistants">Assistentes A.I</TabsTrigger>
             </TabsList>
+
+            <Sheet className="ml-auto">
+              <SheetTrigger asChild>
+                <Button size="icon" variant="outline" className="ml-auto sm:hidden">
+                  <Settings className="h-5 w-5" />
+                  <span className="sr-only">Toggle Menu</span>
+                </Button>
+              </SheetTrigger>
+
+              <SheetContent side="right" className="w-[95%] sm:max-w-2xl">
+                <InputCardInfos className="mt-6 w-full" item={mock} />
+              </SheetContent>
+            </Sheet>
           </div>
 
-          <TabsContent value="main" className="grid grid-cols-[minmax(auto,65%)_minmax(auto,450px)] gap-2 items-start">
+          <TabsContent value="main" className="grid md:grid-cols-[minmax(auto,65%)_minmax(auto,450px)] grid-cols-1 gap-2 items-start">
             <Card>
               <CardHeader className="flex flex-row justify-between">
                 <div>
@@ -75,7 +164,7 @@ function TicketConsultor() {
                 <Badge variant="secondary">{mock.status}</Badge>
               </CardHeader>
 
-              <CardContent className="p-4 space-y-4 overflow-y-auto h-[calc(100vh-16rem)] pt-0 pr-0">
+              <CardContent className="p-4 space-y-4 overflow-y-auto h-[calc(100vh-19rem)] md:h-[calc(100vh-18rem)] pt-0 pr-0">
                 <ScrollArea className="h-full flex flex-col pr-4">
                   {mock.mensagens.map((item, i) => (
                     <Card x-chunk="dashboard-01-chunk-0" key={`card_${i}`} className={`mb-4 bg-muted`} >
@@ -100,6 +189,12 @@ function TicketConsultor() {
                       </CardHeader>
                       <CardContent>
                         <p className="text-sm">{item.mensagem}</p>
+
+                        {item.usuario.nome === "Jarvis" && (
+                          <div className="mt-6">
+                            <CommentRatings rating={2.5} totalStars={5} />
+                          </div>
+                        )}
                       </CardContent>
                     </Card>
                   ))}
@@ -117,10 +212,10 @@ function TicketConsultor() {
               </CardFooter>
             </Card>
 
-            <InputCardInfos className="sticky top-6 w-full" item={mock} />
+            <InputCardInfos className="sticky top-6 w-full hidden sm:block" item={mock} />
           </TabsContent>
 
-          <TabsContent value="assistants" className="mt-0 grid grid-cols-[minmax(auto,65%)_minmax(auto,450px)] gap-2 items-start">
+          <TabsContent value="assistants" className="grid md:grid-cols-[minmax(auto,65%)_minmax(auto,450px)] grid-cols-1 gap-2 items-start">
             <Card>
               <CardHeader className="flex flex-row justify-between">
                 <div>
@@ -131,7 +226,12 @@ function TicketConsultor() {
                     <p className="text-xs text-muted-foreground">{mock.numero} - <span className="text-xs text-muted-foreground">{format(new Date(mock.data_criacao), 'dd-MM-yyyy')}</span></p>
                   </div>
                 </div>
-                <Badge variant="secondary">{mock.status}</Badge>
+                <div className="flex md:flex-row flex-col gap-2">
+                  {mock.status !== "Concluído" && (
+                    <Button className="text-xs">Aceitar todas as sugestões</Button>
+                  )}
+                  <Badge variant="secondary" className="w-fit">{mock.status}</Badge>
+                </div>
               </CardHeader>
 
               <CardContent className="p-4 space-y-4 overflow-y-auto h-[calc(100vh-16rem)] pt-0 pr-0">
@@ -159,6 +259,8 @@ function TicketConsultor() {
                       </CardHeader>
                       <CardContent>
                         <p className="text-sm">{item.mensagem}</p>
+
+                        {renderOptions(item, mock)}
                       </CardContent>
                     </Card>
                   ))}
@@ -176,7 +278,7 @@ function TicketConsultor() {
               </CardFooter>
             </Card>
 
-            <Card className="w-[450px]">
+            <Card className="md:w-[450px] w-full">
               <CardHeader>
                 <CardTitle>Seus assistentes</CardTitle>
                 <CardDescription>Acompanhe abaixo o progresso do trabalho de seus assistentes.</CardDescription>

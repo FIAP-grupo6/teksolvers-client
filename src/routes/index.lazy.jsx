@@ -19,10 +19,10 @@ export const Route = createLazyFileRoute("/")({
 
 function Dashboard() {
   return (
-  <>
-    <Helmet>
-      <title>Desk Bots - Sobre o projeto</title>
-    </Helmet>
+    <>
+      <Helmet>
+        <title>DeskBots - Sobre o projeto</title>
+      </Helmet>
 
     <div className="flex flex-col min-h-[100dvh]">
       <header className="px-4 lg:px-6 h-14 flex items-center">

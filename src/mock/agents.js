@@ -46,4 +46,20 @@ export default [
     "descricao": "Assistente responsável por sugerir uma SOLUÇÃO para chamado",
     "imagem": "https://api.dicebear.com/9.x/bottts-neutral/svg?seed=Boots&eyes=eva&mouth=smile01"
   },
+
+  {
+    "id": 7,
+    "ativo": true,
+    "nome": "Sophia",
+    "descricao": "Assistente responsável por documentar INSTRUÇÕES DE TRABALHO quando necessário",
+    "imagem": "https://api.dicebear.com/9.x/bottts/svg?seed=Fluffy"
+  },
+
+  {
+    "id": 8,
+    "ativo": true,
+    "nome": "Jarvis",
+    "descricao": "Assistente responsável por coletar feedbacks e medir a SATISFAÇÃO do cliente",
+    "imagem": "https://api.dicebear.com/9.x/bottts/svg?seed=Snickers"
+  }
 ]

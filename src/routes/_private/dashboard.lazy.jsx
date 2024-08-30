@@ -195,7 +195,7 @@ function Dashboard() {
   return (
     <>
       <Helmet>
-        <title>TekSolvers - Dashboard</title>
+        <title>DeskBots - Dashboard</title>
       </Helmet>
 
       <main className="grid flex-1 max-w-8xl m-0 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
@@ -531,7 +531,7 @@ function Dashboard() {
       <Separator className="mt-16" />
 
       <footer className="flex items-center justify-center w-full py-2 text-sm text-muted-foreground">
-        <span>© 2024 TekSolvers. Todos os direitos reservados.</span>
+        <span>© 2024 DeskBots. Todos os direitos reservados.</span>
       </footer>
     </>
   );
