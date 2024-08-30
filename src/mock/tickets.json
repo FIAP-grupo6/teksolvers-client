@@ -509,6 +509,26 @@
         },
         "data": "Tue Aug 03 2024 15:40:00 GMT-0300",
         "mensagem": "Para solucionar a falha no serviço de backup, revise os logs de erro para identificar a causa. Pode ser necessário reiniciar o serviço ou verificar as configurações de backup para resolver o problema."
+      },
+      {
+        "id": 3,
+        "assistente": {
+          "id": 7,
+          "nome": "Sophia",
+          "imagem": "https://api.dicebear.com/9.x/bottts/svg?seed=Fluffy"
+        },
+        "data": "Wed Aug 28 2024 15:20:00 GMT-0300",
+        "mensagem": "Para este problema eu não encontrei uma Instrução de Trabalho disponível. Criei um novo documento e você pode acessá-lo abaixo para mais informações.",
+        "novo": true,
+        "arquivos": [
+          {
+            "id": 1,
+            "arquivo": "kb008432123.pdf",
+            "tipo": "pdf",
+            "titulo": "KB008432123",
+            "privado": true
+          }
+        ]
       }
     ]
   },
@@ -614,109 +634,7 @@
       }
     ]
   },
-  {
-    "numero": "INC0194887",
-    "status": "Aberto",
-    "data_criacao": "Mon Aug 28 2024 09:01:01 GMT-0300",
-    "data_edicao": "Mon Aug 28 2024 16:23:33 GMT-0300",
-    "usuario": "dagalberto.souza",
-    "consultor": "vanderson.nunes",
-    "titulo": "Lentidão no Sistema",
-    "complexidade": {
-      "id": 1,
-      "label": "Nível 1"
-    },
-    "tipo": {
-      "id": "n1",
-      "label": "N1-Acessos"
-    },
-    "prioridade": "Baixa",
-    "notificacoes": {
-      "agentes": 0,
-      "mensagens": 1
-    },
-    "tags": [
-      "sistemas",
-      "lentidão",
-      "não sap"
-    ],
-    "arquivos": [],
-    "responsaveis": [
-      {
-        "id": 2,
-        "nome": "Analista AMS",
-        "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Buster&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile"
-      }
-    ],
-    "mensagens": [
-      {
-        "id": 1,
-        "usuario": {
-          "id": 3,
-          "nome": "dagalberto.souza",
-          "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Lily",
-          "perfil": "usuário"
-        },
-        "data": "Mon Aug 28 2024 21:57:38 GMT-0300",
-        "mensagem": "O sistema está muito lento em todo o departamento desde hoje cedo, já realizamos alguns procedimentos como reiniciar as máquinas e reiniciar o modem mas nada adiantou."
-      },
-      {
-        "id": 2,
-        "usuario": {
-          "id": 2,
-          "nome": "vanderson.nunes",
-          "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Buster&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile",
-          "perfil": "consultorN1"
-        },
-        "data": "Mon Aug 28 2024 22:00:57 GMT-0300",
-        "mensagem": "Bom dia! Obrigado pela mensagem e já estamos analisando. O código do seu chamado é #INC0194887."
-      },
-      {
-        "id": 3,
-        "usuario": {
-          "id": 2,
-          "nome": "vanderson.nunes",
-          "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Buster&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile",
-          "perfil": "consultorN1"
-        },
-        "data": "Mon Aug 28 2024 22:05:38 GMT-0300",
-        "mensagem": "Após análise do ocorrido, efetuamos a pronta reinicialização do serviço database, constatamos normalidade operacional. Caso esteja de acordo encerraremos esse chamado."
-      },
-      {
-        "id": 4,
-        "usuario": {
-          "id": 1,
-          "nome": "agalberto.souza",
-          "imagem": "https://api.dicebear.com/9.x/avataaars/svg?seed=Lily",
-          "perfil": "usuário"
-        },
-        "data": "Mon Aug 28 2024 22:16:57 GMT-0300",
-        "mensagem": "De acordo. Encerre o chamado. Tenha um bom dia."
-      }
-    ],
-    "assistentes": [
-      {
-        "id": 1,
-        "assistente": {
-          "id": 1,
-          "nome": "WALL-E",
-          "imagem": "https://api.dicebear.com/9.x/bottts-neutral/svg?seed=Harley"
-        },
-        "data": "Mon Aug 28 2024 22:12:57 GMT-0300",
-        "mensagem": "Historicamente, esse tipo de chamado é encaminhado e resolvido pelo nível 3. Você pode aceitar esta sugestão e automaticamente será encaminhado ou analisar o chamado e encaminhar mais tarde caso seja necessário."
-      },
-      {
-        "id": 2,
-        "assistente": {
-          "id": 2,
-          "nome": "EVA",
-          "imagem": "https://api.dicebear.com/9.x/bottts-neutral/svg?seed=Boots&eyes=eva&mouth=smile01"
-        },
-        "data": "Mon Aug 26 2024 22:14:57 GMT-0300",
-        "mensagem": "Este chamado foi classificado automaticamente como AMS-Não SAP e com prioridade Baixa e com complexidade Nível 3. Abaixo seguem algumas sugestões de como proceder: Em caso de a lentidão estar afetando todo o departamento recomendamos a reinicialização do serviço Database seguindo o procedimento KB00845642 como uma solução temporária e paliativa. Além de posterior investigação da causa da lentidão."
-      }
-    ]
-  },
+  
   {
     "numero": "INC0194888",
     "status": "Aberto",
@@ -1339,6 +1257,26 @@
         },
         "data": "Wed Aug 28 2024 15:20:00 GMT-0300",
         "mensagem": "Para a solução da lentidão do sistema, você pode seguir o procedimento KB00845642 do documento anexado abaixo para reinicialização do serviço Database como uma solução temporária e investigar mais a fundo a causa da lentidão.",
+        "arquivos": [
+          {
+            "id": 1,
+            "arquivo": "kb00845642.pdf",
+            "tipo": "pdf",
+            "titulo": "KB00845642",
+            "privado": true
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "assistente": {
+          "id": 7,
+          "nome": "Sophia",
+          "imagem": "https://api.dicebear.com/9.x/bottts/svg?seed=Fluffy"
+        },
+        "data": "Wed Aug 28 2024 15:20:00 GMT-0300",
+        "mensagem": "Para este problema encontrei uma Instrução de Trabalho disponível que pode ajudar na resolução. Você pode acessar o documento abaixo para mais informações.",
+        "novo": false,
         "arquivos": [
           {
             "id": 1,

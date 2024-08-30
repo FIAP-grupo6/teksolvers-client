@@ -22,7 +22,7 @@ import {
   TabsTrigger
 } from "@/components/ui/tabs";
 import items from '@/mock/tickets.json';
-import { Check, Clock10, SendIcon } from 'lucide-react';
+import { Check, Clock10, FileIcon, SendIcon } from 'lucide-react';
 import { useMemo } from 'react';
 
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
@@ -45,6 +45,80 @@ function TicketConsultor() {
   const mock = useMemo(() => {
     return items.find(item => item.numero === id);
   }, [id])
+
+  const renderOptions = (item, mock) => {
+    if (item.assistente.nome === "Sophia") {
+      return (
+        <>
+          <div className="mt-6">
+            {item.arquivos?.map((file, index) => (
+              <Tooltip key={`it_file_${index}`}>
+                <TooltipTrigger>
+                  <Badge variant="outline" className="rounded-full px-3 py-1.5">
+                    <FileIcon className="w-4 mr-2" />
+                    <p>{file.arquivo}</p>
+                  </Badge>
+                </TooltipTrigger>
+                <TooltipContent>
+                  Baixar arquivo
+                </TooltipContent>
+              </Tooltip>
+            ))}
+          </div>
+
+          {item.novo && (
+            <div className="text-xs w-full flex flex-col items-start space-y-2 mt-8">
+              <p>Você deseja disponibilizar este arquivo para sua equipe?</p>
+              <div className="flex gap-2">
+                <Button className="text-xs" variant="outline">Não</Button>
+                <Button className="text-xs">Sim</Button>
+              </div>
+            </div>
+          )}
+        </>
+      )
+    }
+
+    if (item.assistente.nome === "EVA") {
+      if (mock.status === "Concluído") {
+        return (
+          <Badge variant="outline" className="text-xs w-fit flex flex-row items-center mt-8">
+            <p>Você aceitou minha resposta como solução.</p>
+          </Badge>
+        )
+      }
+
+      return (
+        <div className="text-xs w-full flex flex-col items-start space-y-2 mt-8">
+          <p>Minha resposta ajudou a solucionar o problema?</p>
+          <div className="flex gap-2">
+            <Button className="text-xs" variant="outline">Não</Button>
+            <Button className="text-xs">Sim</Button>
+          </div>
+        </div>
+      )
+    }
+
+    if (item.assistente.nome === "WALL-E") {
+      if (mock.status === "Concluído") {
+        return (
+          <Badge variant="outline" className="text-xs w-fit flex flex-row items-center mt-8">
+            <p>Você aceitou minha sugestão de complexidade.</p>
+          </Badge>
+        )
+      }
+
+      return (
+        <div className="text-xs w-full flex flex-col items-start space-y-2 mt-8">
+          <p>Você deseja aceitar minha sugestão?</p>
+          <div className="flex gap-2">
+            <Button className="text-xs" variant="outline">Recusar</Button>
+            <Button className="text-xs">Aceitar</Button>
+          </div>
+        </div>
+      )
+    }
+  }
 
   return (
     <>
@@ -131,7 +205,12 @@ function TicketConsultor() {
                     <p className="text-xs text-muted-foreground">{mock.numero} - <span className="text-xs text-muted-foreground">{format(new Date(mock.data_criacao), 'dd-MM-yyyy')}</span></p>
                   </div>
                 </div>
-                <Badge variant="secondary">{mock.status}</Badge>
+                <div className="flex gap-2">
+                  {mock.status !== "Concluído" && (
+                    <Button className="text-xs">Aceitar todas as sugestões</Button>
+                  )}
+                  <Badge variant="secondary">{mock.status}</Badge>
+                </div>
               </CardHeader>
 
               <CardContent className="p-4 space-y-4 overflow-y-auto h-[calc(100vh-16rem)] pt-0 pr-0">
@@ -159,6 +238,8 @@ function TicketConsultor() {
                       </CardHeader>
                       <CardContent>
                         <p className="text-sm">{item.mensagem}</p>
+
+                        {renderOptions(item, mock)}
                       </CardContent>
                     </Card>
                   ))}
