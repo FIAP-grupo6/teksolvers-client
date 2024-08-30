@@ -135,7 +135,7 @@ function TicketCliente() {
               </CardFooter>
             </Card>
 
-            <InputCardInfosCliente className="sticky top-6 w-full hidden sm:flex" />
+            <InputCardInfosCliente className="sticky top-6 w-full hidden sm:block" />
           </TabsContent>
         </Tabs>
       </main>
