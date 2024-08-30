@@ -173,12 +173,7 @@ const chartConfigPendente = {
 }
 
 function Dashboard() {
-  const [isSwitchChecked, setIsSwitchChecked] = useState(false);
   const [timeRange, setTimeRange] = useState("90d")
-
-  function handleSwitchChange() {
-    setIsSwitchChecked(!isSwitchChecked);
-  }
 
   const totalChamados = useMemo(() => {
     return chartData.reduce((acc, curr) => acc + curr.chamados, 0)

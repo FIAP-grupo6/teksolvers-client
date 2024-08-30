@@ -17,7 +17,7 @@ export default function Sidebar() {
         </Link>
 
         <Link
-          to="/"
+          to="/dashboard"
           className="inline-flex items-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground px-4 py-2 w-full justify-start h-10 mb-1"
         >
           <LayoutGrid className="mr-4 h-5 w-5" />
@@ -33,7 +33,7 @@ export default function Sidebar() {
         </Link>
 
         <Link
-          to="/sobre-o-projeto"
+          to="/"
           className="inline-flex items-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground px-4 py-2 w-full justify-start h-10 mb-1"
         >
           <BookOpenText className="h-5 w-5 mr-4" />
