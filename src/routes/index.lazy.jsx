@@ -28,7 +28,7 @@ function Dashboard() {
       <header className="px-4 lg:px-6 h-14 flex items-center">
         <Link href="#" className="flex items-center justify-center" >
           <Ticket className="w-6 h-6 mr-2" />
-          <h1 className="font-bold text-lg whitespace-nowrap transition-[transform,opacity,display] ease-in-out duration-300 translate-x-0 opacity-100">Desk Bots</h1>
+          <h1 className="font-bold text-lg whitespace-nowrap transition-[transform,opacity,display] ease-in-out duration-300 translate-x-0 opacity-100">DeskBots</h1>
         </Link>
         <nav className="ml-auto flex gap-4 sm:gap-6">
           <Link href="#" className="text-sm font-medium hover:underline underline-offset-4" >
