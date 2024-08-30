@@ -212,7 +212,7 @@ function TicketConsultor() {
               </CardFooter>
             </Card>
 
-            <InputCardInfos className="sticky top-6 w-full hidden sm:flex" item={mock} />
+            <InputCardInfos className="sticky top-6 w-full hidden sm:block" item={mock} />
           </TabsContent>
 
           <TabsContent value="assistants" className="grid md:grid-cols-[minmax(auto,65%)_minmax(auto,450px)] grid-cols-1 gap-2 items-start">
