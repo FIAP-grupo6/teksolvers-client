@@ -13,7 +13,7 @@ export default function Sidebar() {
       <nav className="flex flex-col items-center px-2">
         <Link className="mb-8 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 text-primary underline-offset-4 hover:underline h-9 px-4 py-2 transition-transform ease-in-out duration-300 translate-x-0 gap-2" href="/dashboard">
           <Ticket className="w-6 h-6 mr-1" />
-          <h1 className="font-bold text-lg whitespace-nowrap transition-[transform,opacity,display] ease-in-out duration-300 translate-x-0 opacity-100">TekSolvers</h1>
+          <h1 className="font-bold text-lg whitespace-nowrap transition-[transform,opacity,display] ease-in-out duration-300 translate-x-0 opacity-100">DeskBots</h1>
         </Link>
 
         <Link

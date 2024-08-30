@@ -22,9 +22,11 @@ import {
   TabsTrigger
 } from "@/components/ui/tabs";
 import items from '@/mock/tickets.json';
-import { Check, Clock10, FileIcon, SendIcon } from 'lucide-react';
+import { Check, Clock10, FileIcon, SendIcon, Settings } from 'lucide-react';
 import { useMemo } from 'react';
 
+import { CommentRatings } from '@/components/ratings/index';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import agents from '@/mock/agents';
 import { format, formatDistance } from 'date-fns';
@@ -123,7 +125,7 @@ function TicketConsultor() {
   return (
     <>
       <Helmet>
-        <title>TekSolvers - #{mock.numero}</title>
+        <title>DeskBots - #{mock.numero}</title>
       </Helmet>
 
       <main className="grid flex-1 max-w-7xl m-auto items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
@@ -133,9 +135,22 @@ function TicketConsultor() {
               <TabsTrigger value="main">Histórico</TabsTrigger>
               <TabsTrigger value="assistants">Assistentes A.I</TabsTrigger>
             </TabsList>
+
+            <Sheet className="ml-auto">
+              <SheetTrigger asChild>
+                <Button size="icon" variant="outline" className="ml-auto sm:hidden">
+                  <Settings className="h-5 w-5" />
+                  <span className="sr-only">Toggle Menu</span>
+                </Button>
+              </SheetTrigger>
+
+              <SheetContent side="right" className="w-[95%] sm:max-w-2xl">
+                <InputCardInfos className="mt-6 w-full" item={mock} />
+              </SheetContent>
+            </Sheet>
           </div>
 
-          <TabsContent value="main" className="grid grid-cols-[minmax(auto,65%)_minmax(auto,450px)] gap-2 items-start">
+          <TabsContent value="main" className="grid md:grid-cols-[minmax(auto,65%)_minmax(auto,450px)] grid-cols-1 gap-2 items-start">
             <Card>
               <CardHeader className="flex flex-row justify-between">
                 <div>
@@ -149,7 +164,7 @@ function TicketConsultor() {
                 <Badge variant="secondary">{mock.status}</Badge>
               </CardHeader>
 
-              <CardContent className="p-4 space-y-4 overflow-y-auto h-[calc(100vh-16rem)] pt-0 pr-0">
+              <CardContent className="p-4 space-y-4 overflow-y-auto h-[calc(100vh-19rem)] md:h-[calc(100vh-18rem)] pt-0 pr-0">
                 <ScrollArea className="h-full flex flex-col pr-4">
                   {mock.mensagens.map((item, i) => (
                     <Card x-chunk="dashboard-01-chunk-0" key={`card_${i}`} className={`mb-4 bg-muted`} >
@@ -174,6 +189,12 @@ function TicketConsultor() {
                       </CardHeader>
                       <CardContent>
                         <p className="text-sm">{item.mensagem}</p>
+                        
+                        {item.usuario.nome === "Jarvis" && (
+                          <div className="mt-6">
+                            <CommentRatings rating={2.5} totalStars={5} />
+                          </div>
+                        )}
                       </CardContent>
                     </Card>
                   ))}
@@ -191,7 +212,7 @@ function TicketConsultor() {
               </CardFooter>
             </Card>
 
-            <InputCardInfos className="sticky top-6 w-full" item={mock} />
+            <InputCardInfos className="sticky top-6 w-full hidden sm:flex" item={mock} />
           </TabsContent>
 
           <TabsContent value="assistants" className="mt-0 grid grid-cols-[minmax(auto,65%)_minmax(auto,450px)] gap-2 items-start">
