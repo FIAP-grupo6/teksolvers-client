@@ -15,4 +15,6 @@ O projeto conta com 5 telas que podem ser acessadas através da página inicial:
 - Dashboard - Tela de entrada da plataforma desenvolvida e pode ser acessada através do botão "Conheça a solução" na página inicial;
 - Meus chamados - Tela de listagem de chamados do atendente/cliente. Pode ser acessada através do menu lateral no link "Meus chamados";
 - Tela de detalhe do chamado (visão cliente): Tela de descrição do chamado pela visão do cliente. Pode ser acessada através do botão de ação dentro do menu que abre ao clicar no ícone "..." e em seguida no link "Ver como cliente" na tela "Meus chamados"; 
-- Tela de detalhe do chamado (visão consultor): Tela de descrição do chamado pela visão do consultor. Pode ser acessada através do botão de ação dentro do menu que abre ao clicar no ícone "..." e em seguida no link "Ver como consultor" na tela "Meus chamados" 
+- Tela de detalhe do chamado (visão consultor): Tela de descrição do chamado pela visão do consultor. Pode ser acessada através do botão de ação dentro do menu que abre ao clicar no ícone "..." e em seguida no link "Ver como consultor" na tela "Meus chamados";
+
+O projeto também pode ser acessado através do seguinte endereço: https://deskbots.netlify.app/
