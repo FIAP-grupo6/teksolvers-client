@@ -1,0 +1,18 @@
+Requisitos para rodar o projeto:
+- NodeJs: versão 20 ou superior instalado na sua máquina;
+- NPM: versão 10 ou superior instalado na sua máquina;
+
+Para rodar o projeto a versão de produção localmente você precisa
+rodar o seguinte comando no seu terminal ou prompt de comando na pasta raiz do projeto:
+npx live-server ./dist/
+
+Para rodar a versão de desenvolvimento, basta rodar os seguintes comandos na pasta raiz do projeto:
+npm install - irá instalar todas as dependências do projeto
+npm run dev - irá rodar o projeto na seguinte url: http://localhost:3000
+
+O projeto conta com 5 telas que podem ser acessadas através da página inicial:
+- Página inicial - Contendo informações sobre o projeto em geral;
+- Dashboard - Tela de entrada da plataforma desenvolvida e pode ser acessada através do botão "Conheça a solução" na página inicial;
+- Meus chamados - Tela de listagem de chamados do atendente/cliente. Pode ser acessada através do menu lateral no link "Meus chamados";
+- Tela de detalhe do chamado (visão cliente): Tela de descrição do chamado pela visão do cliente. Pode ser acessada através do botão de ação dentro do menu que abre ao clicar no ícone "..." e em seguida no link "Ver como cliente" na tela "Meus chamados"; 
+- Tela de detalhe do chamado (visão consultor): Tela de descrição do chamado pela visão do consultor. Pode ser acessada através do botão de ação dentro do menu que abre ao clicar no ícone "..." e em seguida no link "Ver como consultor" na tela "Meus chamados" 
