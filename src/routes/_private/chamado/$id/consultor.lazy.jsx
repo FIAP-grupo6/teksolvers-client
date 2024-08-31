@@ -49,7 +49,7 @@ function TicketConsultor() {
   }, [id])
 
   const renderOptions = (item, mock) => {
-    if (item.assistente.nome === "Sophia") {
+    if (item.assistente.nome === "Ultron") {
       return (
         <>
           <div className="mt-6">

@@ -56,9 +56,9 @@ function Dashboard() {
               <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
                 <div className="space-y-4">
                   <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">A DeskBots</div>
-                  <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Gerencie seus tickets <br/>de forma inteligente.</h2>
+                  <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Gerencie seus tickets <br />de forma inteligente.</h2>
                   <p className="max-w-[600px] text-muted-foreground md:text-xl">
-                    Nosso projeto conta com agentes de I.A treinados para executar tarefas específicas, garantindo a eficiência e assertividade no atendimento ao cliente. 
+                    Nosso projeto conta com agentes de I.A treinados para executar tarefas específicas, garantindo a eficiência e assertividade no atendimento ao cliente.
                   </p>
                   <div className="flex flex-col gap-2 min-[400px]:flex-row">
                     <Link
@@ -97,7 +97,7 @@ function Dashboard() {
                       <h3 className="text-xl font-bold">Escalabilidade</h3>
                       <p className="text-muted-foreground">
                         Nosso projeto conta com múltiplos agentes Inteligentes nomeados de Assistentes de I.A, cada assistente é responsável
-                        por uma funcionalidade do sistema. <br/>
+                        por uma funcionalidade do sistema. <br />
                         A possibilidade de criação de agentes é infinita, assim suprindo
                         todas possíveis necessidades da plataforma. Cada agente utiliza de um LLM treinado e designado para sua tarefa específica, garantindo maior eficácia e assertividade.
                       </p>
@@ -117,7 +117,7 @@ function Dashboard() {
                     <div className="grid gap-1">
                       <h3 className="text-xl font-bold">Automação</h3>
                       <p className="text-muted-foreground">
-                        Os agentes automatizam diversas tarefas manuais, como a sugestão de soluções, criação automática de documentos necessários, classificação e priorização de chamados entre outras tarefas. 
+                        Os agentes automatizam diversas tarefas manuais, como a sugestão de soluções, criação automática de documentos necessários, classificação e priorização de chamados entre outras tarefas.
                         Cada agente é equipado com uma base de dados e um treinamento de IA
                         especializado para o escopo específico a que foi designado, garantindo assim maior assertividade e
                         otimização de tempo.
@@ -126,7 +126,7 @@ function Dashboard() {
                     <div className="grid gap-1">
                       <h3 className="text-xl font-bold">Integração e análise</h3>
                       <p className="text-muted-foreground">
-                        A plataforma possuí integração com diversos sistemas de abertura de chamados.<br/>
+                        A plataforma possuí integração com diversos sistemas de abertura de chamados.<br />
                         Além de um dashboard inteligente para gestão e análise de chamados.
                       </p>
                     </div>
@@ -221,7 +221,7 @@ function Dashboard() {
                     </p>
                   </div>
                 </div>
-                
+
               </div>
             </div>
           </section>
@@ -321,23 +321,29 @@ function Dashboard() {
                 </p>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
-                <div className="aspect-video rounded-xl overflow-hidden">
-                  <iframe
-                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="w-full h-full"
-                  />
+                <div className="flex flex-col gap-2 justify-center">
+                  <div className="aspect-video rounded-xl overflow-hidden">
+                    <iframe
+                      src="https://www.youtube.com/embed/WX8a0ZmAAos"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full"
+                    />
+                  </div>
+                  <p className="w-full text-center">Video pitch 1 - TekSolvers</p>
                 </div>
-                <div className="aspect-video rounded-xl overflow-hidden">
-                  <iframe
-                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="w-full h-full"
-                  />
+                <div className="flex flex-col gap-2 justify-center">
+                  <div className="aspect-video rounded-xl overflow-hidden">
+                    <iframe
+                      src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full"
+                    />
+                  </div>
+                  <p className="w-full text-center">Video pitch 2 - DeskBots</p>
                 </div>
               </div>
             </div>

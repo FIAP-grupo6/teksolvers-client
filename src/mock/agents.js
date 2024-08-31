@@ -50,7 +50,7 @@ export default [
   {
     "id": 7,
     "ativo": true,
-    "nome": "Sophia",
+    "nome": "Ultron",
     "descricao": "Assistente responsável por documentar INSTRUÇÕES DE TRABALHO quando necessário",
     "imagem": "https://api.dicebear.com/9.x/bottts/svg?seed=Fluffy"
   },
