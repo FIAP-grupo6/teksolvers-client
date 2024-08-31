@@ -33,8 +33,8 @@ function Dashboard() {
             <Link to="#overview" className="text-sm font-medium hover:underline underline-offset-4" >
               Visão geral
             </Link>
-            <Link to="#arquitetura-geral" className="text-sm font-medium hover:underline underline-offset-4" >
-              Arquitetura
+            <Link to="#sobre-o-projeto" className="text-sm font-medium hover:underline underline-offset-4" >
+              Sobre o projeto
             </Link>
             <Link to="#diferenciais" className="text-sm font-medium hover:underline underline-offset-4" >
               Diferenciais
@@ -55,7 +55,7 @@ function Dashboard() {
             <div className="container px-4 md:px-6">
               <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
                 <div className="space-y-4">
-                  <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">Visão geral do projeto</div>
+                  <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">A DeskBots</div>
                   <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Gerencie seus tickets <br/>de forma inteligente.</h2>
                   <p className="max-w-[600px] text-muted-foreground md:text-xl">
                     Nosso projeto conta com agentes de I.A treinados para executar tarefas específicas, garantindo a eficiência e assertividade no atendimento ao cliente. 
@@ -77,7 +77,7 @@ function Dashboard() {
               </div>
             </div>
           </section>
-          <section id="arquitetura-geral" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+          <section id="sobre-o-projeto" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
             <div className="container px-4 md:px-6">
               <div className="grid gap-6 lg:grid-cols-[400px_1fr] lg:gap-12 xl:grid-cols-[550px_1fr]">
                 <img
@@ -88,24 +88,24 @@ function Dashboard() {
                   className="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full lg:order-first mix-blend-multiply contrast-100"
                 />
                 <div className="space-y-4">
-                  <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Arquitetura Técnica</h2>
+                  <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Sobre o projeto</h2>
                   <p className="max-w-[600px] text-muted-foreground md:text-xl">
-                    A arquitetura do nosso projeto é focada na escalabilidade e assertividade, aproveitando as melhores
-                    tecnologias e práticas do mercado.
+                    Bem-vindo à inovação no atendimento ao cliente. Nossa plataforma SaaS foi criada para transformar a forma como você interage com seus clientes, oferecendo uma solução inteligente que combina a eficiência dos agentes de inteligência artificial com a expertise humana.
                   </p>
                   <div className="grid gap-4">
                     <div className="grid gap-1">
                       <h3 className="text-xl font-bold">Escalabilidade</h3>
                       <p className="text-muted-foreground">
-                        Nosso projeto conta com múltiplos Robôs Inteligentes nomeados de Agentes, cada Agente é responsável
-                        por uma funcionalidade do sistema, a possibilidade de criação de agentes é infinita, assim suprindo
+                        Nosso projeto conta com múltiplos agentes Inteligentes nomeados de Assistentes de I.A, cada assistente é responsável
+                        por uma funcionalidade do sistema. <br/>
+                        A possibilidade de criação de agentes é infinita, assim suprindo
                         todas possíveis necessidades da plataforma. Cada agente utiliza de um LLM treinado e designado para sua tarefa específica, garantindo maior eficácia e assertividade.
                       </p>
                     </div>
                     <div className="grid gap-1">
                       <h3 className="text-xl font-bold">Ferramentas</h3>
                       <p className="text-muted-foreground">
-                        Utilizamos de ferramentas atuais de inteligência artificial, como a OpenAI, CrewAI, AnythingLLM, para treinar nossos agentes e garantir a assertividade e eficácia no atendimento.
+                        Utilizamos de ferramentas atuais de inteligência artificial, como a OpenAI, CrewAI, AnythingLLM, para treinar nossos agentes e garantir a assertividade nas respostas.
                       </p>
                     </div>
                     <div className="grid gap-1">
@@ -126,8 +126,8 @@ function Dashboard() {
                     <div className="grid gap-1">
                       <h3 className="text-xl font-bold">Integração e análise</h3>
                       <p className="text-muted-foreground">
-                        A plataforma possuí integração com diversos sistemas de abertura de chamados.
-                        Além de um dashboard inteligente para gestão e análise de chamados utilizando métricas de SLA
+                        A plataforma possuí integração com diversos sistemas de abertura de chamados.<br/>
+                        Além de um dashboard inteligente para gestão e análise de chamados.
                       </p>
                     </div>
                   </div>
