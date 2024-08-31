@@ -62,10 +62,14 @@
 }
 
 @layer base {
+  html {
+    @apply scroll-smooth;
+  }
   * {
     @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
+    @apply scroll-smooth;
   }
 }
