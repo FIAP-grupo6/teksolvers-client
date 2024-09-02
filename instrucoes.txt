@@ -18,3 +18,6 @@ O projeto conta com 5 telas que podem ser acessadas através da página inicial:
 - Tela de detalhe do chamado (visão consultor): Tela de descrição do chamado pela visão do consultor. Pode ser acessada através do botão de ação dentro do menu que abre ao clicar no ícone "..." e em seguida no link "Ver como consultor" na tela "Meus chamados";
 
 O projeto também pode ser acessado através do seguinte endereço: https://deskbots.netlify.app/
+
+Link para o video pitch 1: https://www.youtube.com/watch?v=WX8a0ZmAAos
+Link para o video pitch 2: https://www.youtube.com/watch?v=PxrwlPnEV3Q

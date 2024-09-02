@@ -3,7 +3,14 @@ import { StrictMode } from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 
+import mixpanel from "mixpanel-browser"
 import { routeTree } from './routeTree.gen'
+
+mixpanel.init("17cf1377da64a461e08d78a00f8f427d", {
+  debug: true,
+  track_pageview: "full-url",
+  persistence: "localStorage",
+});
 
 const router = createRouter({ basepath: "/", routeTree })
 

@@ -42,10 +42,10 @@ function Dashboard() {
             <Link to="#time" className="text-sm font-medium hover:underline underline-offset-4" >
               Time
             </Link>
-            <Link TO="#video-pitch" className="text-sm font-medium hover:underline underline-offset-4" >
+            <Link to="#video-pitch" className="text-sm font-medium hover:underline underline-offset-4" >
               Vídeo Pitch
             </Link>
-            <Link TO="#tecnologias" className="text-sm font-medium hover:underline underline-offset-4" >
+            <Link to="#tecnologias" className="text-sm font-medium hover:underline underline-offset-4" >
               Tecnologias
             </Link>
           </nav>
@@ -336,7 +336,7 @@ function Dashboard() {
                 <div className="flex flex-col gap-2 justify-center">
                   <div className="aspect-video rounded-xl overflow-hidden">
                     <iframe
-                      src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                      src="https://www.youtube.com/embed/PxrwlPnEV3Q"
                       frameBorder="0"
                       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
