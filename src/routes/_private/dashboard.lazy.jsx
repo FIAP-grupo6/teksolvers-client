@@ -1,4 +1,5 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Settings } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -23,13 +24,16 @@ import {
 } from "@/components/ui/select";
 import { Separator } from "@/components/ui/separator";
 import { Switch } from "@/components/ui/switch";
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import agents from "@/mock/agents";
 import integrations from "@/mock/integrations";
 import { createLazyFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Area, AreaChart, Bar, BarChart, CartesianGrid, Pie, PieChart, Label as PieLabel, XAxis, YAxis } from "recharts";
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 export const Route = createLazyFileRoute("/_private/dashboard")({
   component: Dashboard,
@@ -472,12 +476,53 @@ function Dashboard() {
               {agents.map((agent) => (
                 <Card key={`agent_item_${agent.id}`}>
                   <CardHeader>
-                    <div className="flex items-center">
-                      <Avatar className="mr-2">
-                        <AvatarImage src={agent.imagem} alt="@robot" className="bg-slate-50" />
-                        <AvatarFallback>UN</AvatarFallback>
-                      </Avatar>
-                      <CardTitle>{agent.nome}</CardTitle>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center">
+                        <Avatar className="mr-2">
+                          <AvatarImage src={agent.imagem} alt="@robot" className="bg-slate-50" />
+                          <AvatarFallback>UN</AvatarFallback>
+                        </Avatar>
+                        <CardTitle>{agent.nome}</CardTitle>
+                      </div>
+                      <Dialog>
+                        <TooltipProvider>
+                          <Tooltip>
+                            <TooltipTrigger asChild>
+                              <DialogTrigger asChild>
+                                <Settings className="h-5 w-5 -mr-3 -mt-10 hover:cursor-pointer" />
+                              </DialogTrigger>
+                            </TooltipTrigger>
+                            <TooltipContent>
+                              <p>Configurar Agente</p>
+                            </TooltipContent>
+                          </Tooltip>
+                        </TooltipProvider>
+                        <DialogContent className="sm:max-w-[425px]">
+                          <DialogHeader>
+                            <DialogTitle>{agent.nome}</DialogTitle>
+                            <DialogDescription>
+                              {agent.descricao}
+                            </DialogDescription>
+                          </DialogHeader>
+                          <div className="grid gap-4 py-4">
+                            <div className="grid grid-cols-4 items-center gap-4">
+                              <Label htmlFor="name" className="text-right">
+                                Name
+                              </Label>
+                              <Input id="name" value="Pedro Duarte" className="col-span-3" />
+                            </div>
+                            <div className="grid grid-cols-4 items-center gap-4">
+                              <Label htmlFor="username" className="text-right">
+                                Username
+                              </Label>
+                              <Input id="username" value="@peduarte" className="col-span-3" />
+                            </div>
+                          </div>
+                          <DialogFooter>
+                            <Button type="submit">Salvar mudanças</Button>
+                          </DialogFooter>
+                        </DialogContent>
+                      </Dialog>
                     </div>
                     <CardDescription>
                       {agent.descricao}
