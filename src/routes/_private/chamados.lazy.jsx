@@ -40,7 +40,12 @@ import mock from '@/mock/tickets.json';
 import { Link } from '@tanstack/react-router';
 import { format, formatDistance } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
-import { BotIcon, CheckCheck, Clock10, MessageCircle, Star } from 'lucide-react';
+import { BotIcon, CheckCheck, Clock10, MessageCircle, Star, CirclePlus } from 'lucide-react';
+import { Dialog, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import { Textarea } from '@/components/ui/textarea';
+import { Label } from '@/components/ui/label';
+import { Input } from '@/components/ui/input';
+import Files from '@/components/files/index';
 
 export const Route = createLazyFileRoute('/_private/chamados')({
   component: MyTickets
@@ -57,11 +62,36 @@ export function MyTickets() {
         <Tabs defaultValue="all">
           <TabsContent value="all">
             <Card x-chunk="dashboard-06-chunk-0">
-              <CardHeader>
-                <CardTitle>Tickets</CardTitle>
-                <CardDescription>
-                  Veja abaixo os tickets criados para você.
-                </CardDescription>
+              <CardHeader className="flex justify-between flex-row">
+                <div>
+                  <CardTitle>Tickets</CardTitle>
+                  <CardDescription>
+                    Veja abaixo os tickets criados para você.
+                  </CardDescription>
+                </div>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button variant="secondary">
+                      <CirclePlus className="stroke-1 mr-1" />
+                      <p>Criar Ticket</p>
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="sm:max-w-[90vw] md:max-w-[60vw]">
+                    <DialogTitle>Criando seu Ticket</DialogTitle>
+                    <DialogDescription>
+                      Descreva no campo abaixo o que está acontecendo, detalhe o máximo possível.<br/>
+                      Não esqueça de anexar evidências, elas ajudam muito nosso consultor a direcionar e
+                      resolver o problema mais rapidamente.
+                    </DialogDescription>
+                    <div className="mt-2">
+                      <Label>Assunto</Label>
+                      <Input />
+                    </div>
+                    <Textarea className="h-40" />
+                    <Files />
+                    <Button className="h-10">Enviar Ticket</Button>
+                  </DialogContent>
+                </Dialog>
               </CardHeader>
               <CardContent>
                 <Table>
@@ -196,5 +226,3 @@ export function MyTickets() {
     </>
   )
 }
-
-

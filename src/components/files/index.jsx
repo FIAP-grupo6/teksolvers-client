@@ -4,10 +4,10 @@ import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 
-export default function Files({ files = [] }) {
+export default function Files({ files = [], label = "Arquivos" }) {
   return (
     <div className="flex flex-col space-y-1.5">
-      <Label htmlFor="name">Arquivos</Label>
+      <Label htmlFor="name">{label}</Label>
       <div className="flex space-x-2">
         <Input id="name" type="file" />
       </div>

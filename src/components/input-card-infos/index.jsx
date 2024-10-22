@@ -73,11 +73,11 @@ export default function InputCardInfos({ className, item }) {
               </Select>
             </div>
             
-            <Files files={item.arquivos} />
+            <Files files={item?.arquivos} />
 
-            <Tags tags={item.tags} />
+            <Tags tags={item?.tags} />
 
-            <Responsible responsibles={item.responsaveis} />
+            <Responsible responsibles={item?.responsaveis} />
           </div>
         </form>
       </CardContent>

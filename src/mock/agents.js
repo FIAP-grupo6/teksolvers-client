@@ -4,7 +4,8 @@ export default [
     "ativo": true,
     "nome": "Astro",
     "descricao": "Assistente responsável por gerar as TAGS do chamado",
-    "imagem": "https://api.dicebear.com/9.x/bottts/svg?seed=Charlie"
+    "imagem": "https://api.dicebear.com/9.x/bottts/svg?seed=Charlie",
+    "funcao": 'Tags'
   },
 
   {
@@ -12,7 +13,8 @@ export default [
     "ativo": true,
     "nome": "C-3PO",
     "descricao": "Assistente responsável por definir a PRIORIDADE do chamado",
-    "imagem": "https://api.dicebear.com/9.x/bottts/svg?seed=Patches"
+    "imagem": "https://api.dicebear.com/9.x/bottts/svg?seed=Patches",
+    "funcao": 'Prioridade'
   },
 
   {
@@ -20,7 +22,8 @@ export default [
     "ativo": true,
     "nome": "R2-D2",
     "descricao": "Assistente responsável por definir o RESPONSÁVEL do chamado",
-    "imagem": "https://api.dicebear.com/9.x/bottts-neutral/svg?seed=Spooky&flip=true&backgroundColor=3949ab,d1d4f9&backgroundType=solid,gradientLinear&backgroundRotation=360,-360,-330,-320&eyes=sensor&mouth=diagram"
+    "imagem": "https://api.dicebear.com/9.x/bottts-neutral/svg?seed=Spooky&flip=true&backgroundColor=3949ab,d1d4f9&backgroundType=solid,gradientLinear&backgroundRotation=360,-360,-330,-320&eyes=sensor&mouth=diagram",
+    "funcao": 'Responsável'
   },
 
   {
@@ -28,7 +31,8 @@ export default [
     "ativo": true,
     "nome": "Baymax",
     "descricao": "Assistente responsável por definir o TIPO do chamado",
-    "imagem": "https://api.dicebear.com/9.x/bottts/svg?seed=Sammy"
+    "imagem": "https://api.dicebear.com/9.x/bottts/svg?seed=Sammy",
+    "funcao": 'Tipo'
   },
 
   {
@@ -36,7 +40,8 @@ export default [
     "ativo": true,
     "nome": "WALL-E",
     "descricao": "Assistente responsável por definir o NÍVEL do chamado",
-    "imagem": "https://api.dicebear.com/9.x/bottts-neutral/svg?seed=Harley"
+    "imagem": "https://api.dicebear.com/9.x/bottts-neutral/svg?seed=Harley",
+    "funcao": 'Nível'
   },
 
   {
@@ -44,7 +49,8 @@ export default [
     "ativo": true,
     "nome": "EVA",
     "descricao": "Assistente responsável por sugerir uma SOLUÇÃO para chamado",
-    "imagem": "https://api.dicebear.com/9.x/bottts-neutral/svg?seed=Boots&eyes=eva&mouth=smile01"
+    "imagem": "https://api.dicebear.com/9.x/bottts-neutral/svg?seed=Boots&eyes=eva&mouth=smile01",
+    "funcao": 'Solução'
   },
 
   {
@@ -52,7 +58,8 @@ export default [
     "ativo": true,
     "nome": "Ultron",
     "descricao": "Assistente responsável por documentar INSTRUÇÕES DE TRABALHO quando necessário",
-    "imagem": "https://api.dicebear.com/9.x/bottts/svg?seed=Fluffy"
+    "imagem": "https://api.dicebear.com/9.x/bottts/svg?seed=Fluffy",
+    "funcao": ' Instruções de Trabalho'
   },
 
   {
@@ -60,6 +67,7 @@ export default [
     "ativo": true,
     "nome": "Jarvis",
     "descricao": "Assistente responsável por coletar feedbacks e medir a SATISFAÇÃO do cliente",
-    "imagem": "https://api.dicebear.com/9.x/bottts/svg?seed=Snickers"
+    "imagem": "https://api.dicebear.com/9.x/bottts/svg?seed=Snickers",
+    "funcao": 'Satisfação'
   }
 ]

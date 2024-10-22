@@ -1,5 +1,5 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Settings } from "lucide-react";
+import { Settings, ListOrdered } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -18,7 +18,9 @@ import { Label } from "@/components/ui/label";
 import {
   Select,
   SelectContent,
+  SelectGroup,
   SelectItem,
+  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
@@ -33,7 +35,8 @@ import { Helmet } from "react-helmet";
 import { Area, AreaChart, Bar, BarChart, CartesianGrid, Pie, PieChart, Label as PieLabel, XAxis, YAxis } from "recharts";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea"
+import Files from "@/components/files/index";
 
 export const Route = createLazyFileRoute("/_private/dashboard")({
   component: Dashboard,
@@ -484,45 +487,108 @@ function Dashboard() {
                         </Avatar>
                         <CardTitle>{agent.nome}</CardTitle>
                       </div>
-                      <Dialog>
-                        <TooltipProvider>
-                          <Tooltip>
-                            <TooltipTrigger asChild>
-                              <DialogTrigger asChild>
-                                <Settings className="h-5 w-5 -mr-3 -mt-10 hover:cursor-pointer" />
-                              </DialogTrigger>
-                            </TooltipTrigger>
-                            <TooltipContent>
-                              <p>Configurar Agente</p>
-                            </TooltipContent>
-                          </Tooltip>
-                        </TooltipProvider>
-                        <DialogContent className="sm:max-w-[425px]">
-                          <DialogHeader>
-                            <DialogTitle>{agent.nome}</DialogTitle>
-                            <DialogDescription>
-                              {agent.descricao}
-                            </DialogDescription>
-                          </DialogHeader>
-                          <div className="grid gap-4 py-4">
-                            <div className="grid grid-cols-4 items-center gap-4">
-                              <Label htmlFor="name" className="text-right">
-                                Name
-                              </Label>
-                              <Input id="name" value="Pedro Duarte" className="col-span-3" />
+                      <div className="-mr-3 -mt-10 flex align-middle gap-3">
+                        <Dialog>
+                          <TooltipProvider>
+                            <Tooltip>
+                              <TooltipTrigger asChild>
+                                <DialogTrigger asChild>
+                                  <ListOrdered className="h-5 w-5 hover:cursor-pointer" />
+                                </DialogTrigger>
+                              </TooltipTrigger>
+                              <TooltipContent>
+                                <p>Visualizar fila de processamento</p>
+                              </TooltipContent>
+                            </Tooltip>
+                          </TooltipProvider>
+                          <DialogContent className="sm:max-w-[80vw] md:max-w-[50vw]">
+                            <DialogHeader>
+                              <DialogTitle>{agent.nome}</DialogTitle>
+                              <DialogDescription>
+                                {agent.descricao}
+                              </DialogDescription>
+                            </DialogHeader>
+                            <div className="gap-4 flex flex-col">
+                              <div>
+                                <Label>Instruções de comando</Label>
+                                <Textarea className="h-24" placeholder="Digite os comandos do Agente"/>
+                              </div>
+                              <div>
+                                <Label>Modelo do Agente</Label>
+                                <Select>
+                                  <SelectTrigger>
+                                    <SelectValue placeholder="Selecione um modelo" />
+                                  </SelectTrigger>
+                                  <SelectContent>
+                                    <SelectGroup>
+                                      <SelectLabel>Modelos</SelectLabel>
+                                      <SelectItem value="GPT-4o">GPT-4o</SelectItem>
+                                      <SelectItem value="GPT-4-Turbo">GPT-4 Turbo</SelectItem>
+                                      <SelectItem value="o1-mini">o1-mini</SelectItem>
+                                      <SelectItem value=">DALL-E">DALL·E</SelectItem>
+                                      <SelectItem value="GPT-3.5-Turbo">GPT-3.5 Turbo</SelectItem>
+                                    </SelectGroup>
+                                  </SelectContent>
+                                </Select>
+                              </div>
+                              <Files label="Arquivos complementares" />
                             </div>
-                            <div className="grid grid-cols-4 items-center gap-4">
-                              <Label htmlFor="username" className="text-right">
-                                Username
-                              </Label>
-                              <Input id="username" value="@peduarte" className="col-span-3" />
+                            <DialogFooter>
+                              <Button type="submit">Salvar Configurações</Button>
+                            </DialogFooter>
+                          </DialogContent>
+                        </Dialog>
+                        <Dialog>
+                          <TooltipProvider>
+                            <Tooltip>
+                              <TooltipTrigger asChild>
+                                <DialogTrigger asChild>
+                                  <Settings className="h-5 w-5 hover:cursor-pointer" />
+                                </DialogTrigger>
+                              </TooltipTrigger>
+                              <TooltipContent>
+                                <p>Configurar Agente</p>
+                              </TooltipContent>
+                            </Tooltip>
+                          </TooltipProvider>
+                          <DialogContent className="sm:max-w-[80vw] md:max-w-[50vw]">
+                            <DialogHeader>
+                              <DialogTitle>{agent.nome}</DialogTitle>
+                              <DialogDescription>
+                                {agent.descricao}
+                              </DialogDescription>
+                            </DialogHeader>
+                            <div className="gap-4 flex flex-col">
+                              <div>
+                                <Label>Instruções de comando</Label>
+                                <Textarea className="h-24" placeholder="Digite os comandos do Agente"/>
+                              </div>
+                              <div>
+                                <Label>Modelo do Agente</Label>
+                                <Select>
+                                  <SelectTrigger>
+                                    <SelectValue placeholder="Selecione um modelo" />
+                                  </SelectTrigger>
+                                  <SelectContent>
+                                    <SelectGroup>
+                                      <SelectLabel>Modelos</SelectLabel>
+                                      <SelectItem value="GPT-4o">GPT-4o</SelectItem>
+                                      <SelectItem value="GPT-4-Turbo">GPT-4 Turbo</SelectItem>
+                                      <SelectItem value="o1-mini">o1-mini</SelectItem>
+                                      <SelectItem value=">DALL-E">DALL·E</SelectItem>
+                                      <SelectItem value="GPT-3.5-Turbo">GPT-3.5 Turbo</SelectItem>
+                                    </SelectGroup>
+                                  </SelectContent>
+                                </Select>
+                              </div>
+                              <Files label="Arquivos complementares" />
                             </div>
-                          </div>
-                          <DialogFooter>
-                            <Button type="submit">Salvar mudanças</Button>
-                          </DialogFooter>
-                        </DialogContent>
-                      </Dialog>
+                            <DialogFooter>
+                              <Button type="submit">Salvar Configurações</Button>
+                            </DialogFooter>
+                          </DialogContent>
+                        </Dialog>
+                      </div>
                     </div>
                     <CardDescription>
                       {agent.descricao}
