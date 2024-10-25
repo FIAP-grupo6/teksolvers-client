@@ -18,9 +18,22 @@ import {
 } from "@/components/ui/select"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { cn } from "@/lib/utils"
+import axios from "axios";
+import { useQuery } from "@tanstack/react-query";
 
 export default function InputCardInfos({ className, item }) {
-  console.log(item)
+  const BASE_URL = "http://157.245.253.201:1337";
+  
+  const { data: priorityData } = useQuery({
+    queryKey: ['priority'],
+    queryFn: () => axios.get(`${BASE_URL}/priority`).then((response) => response.data)
+  });
+
+  const { data: complexityData } = useQuery({
+    queryKey: ['complexity'],
+    queryFn: () => axios.get(`${BASE_URL}/complexity`).then((response) => response.data)
+  });
+
   return (
     <Card className={cn('w-[450px]', className)}>
       <CardHeader>
@@ -29,7 +42,7 @@ export default function InputCardInfos({ className, item }) {
       </CardHeader>
       <div className="p-5">
         <Label htmlFor="nivel">Complexidade</Label>
-        <Tabs defaultValue={item?.complexidade?.label || 'Nível 1'}>
+        <Tabs defaultValue={complexityData?.title || 'Nível 1'}>
           <TabsList className="grid w-full grid-cols-3">
             <TabsTrigger value="Nível 1">Nível 1</TabsTrigger>
             <TabsTrigger value="Nível 2">Nível 2</TabsTrigger>
@@ -60,7 +73,7 @@ export default function InputCardInfos({ className, item }) {
             </div>
             <div className="flex flex-col space-y-1.5">
               <Label htmlFor="prioridade">Prioridade</Label>
-              <Select defaultValue={item?.prioridade || ''}>
+              <Select defaultValue={priorityData?.title || ''}>
                 <SelectTrigger id="prioridade">
                   <SelectValue placeholder="Selecionar" />
                 </SelectTrigger>

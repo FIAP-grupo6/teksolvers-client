@@ -37,6 +37,8 @@ import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, D
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea"
 import Files from "@/components/files/index";
+import axios from "axios";
+import { useQuery } from "@tanstack/react-query";
 
 export const Route = createLazyFileRoute("/_private/dashboard")({
   component: Dashboard,
@@ -180,6 +182,13 @@ const chartConfigPendente = {
 }
 
 function Dashboard() {
+  const BASE_URL = "http://157.245.253.201:1337";
+
+  const { data: assistantsData } = useQuery({
+    queryKey: ['assistants'],
+    queryFn: () => axios.get(`${BASE_URL}/assistants`).then((response) => response.data)
+  });
+
   const [timeRange, setTimeRange] = useState("90d")
 
   const totalChamados = useMemo(() => {

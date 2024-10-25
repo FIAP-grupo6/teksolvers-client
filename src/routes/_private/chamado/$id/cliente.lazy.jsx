@@ -1,6 +1,8 @@
 import { Button } from '@/components/ui/button';
 import { createLazyFileRoute } from '@tanstack/react-router';
 import { Helmet } from 'react-helmet';
+import axios from "axios";
+import { useQuery } from "@tanstack/react-query";
 
 import InputCardInfosCliente from '@/components/input-card-infos/cliente';
 import { Avatar, AvatarImage } from '@/components/ui/avatar';
@@ -36,7 +38,13 @@ export const Route = createLazyFileRoute('/_private/chamado/$id/cliente')({
 })
 
 function TicketCliente() {
+  const BASE_URL = "http://157.245.253.201:1337";
   const { id } = Route.useParams();
+
+  const { data: ticketsDetailData } = useQuery({
+    queryKey: ['ticketsDetail'],
+    queryFn: () => axios.get(`${BASE_URL}/tickets/${id}`).then((response) => response.data)
+  });
 
   const handleSubmitMessage = (e) => {
     e.preventDefault();

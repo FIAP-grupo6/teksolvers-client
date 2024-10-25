@@ -1,6 +1,8 @@
 import { Button } from '@/components/ui/button';
 import { createLazyFileRoute } from '@tanstack/react-router';
 import { Helmet } from 'react-helmet';
+import axios from "axios";
+import { useMutation, useQuery } from "@tanstack/react-query";
 
 import {
   MoreHorizontal
@@ -46,12 +48,44 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import Files from '@/components/files/index';
+import { useState } from 'react';
 
 export const Route = createLazyFileRoute('/_private/chamados')({
   component: MyTickets
 })
 
+const BASE_URL = "http://157.245.253.201:1337";
+
 export function MyTickets() {
+  const [title, setTitle] = useState('');
+  const [message, setMessage] = useState('');
+
+  const mutation = useMutation({
+    mutationFn: () => {
+      return axios.post(`${BASE_URL}/tickets`, {
+        title: title,
+        statusId: "3ffed123-f9e4-4e6a-8668-d1540fa0b33c",
+        priorityId: "9cfbc00b-33c6-432d-949d-87ab58207677",
+        tags: [],
+        userId: "7d8fa820-5c8b-4794-bc15-80b4c6632d39",
+        complexityId: "182cdd6f-d520-4b0c-b77a-6ff86363b6d9",
+        message: message
+      }, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then((response) => response.data);
+    },
+    onSuccess: (data) => {
+      console.log(data);
+    }
+  })
+
+  const { data: ticketData } = useQuery({
+    queryKey: ['tickets'],
+    queryFn: () => axios.get(`${BASE_URL}/tickets`).then((response) => response.data)
+  });
+
   return (
     <>
       <Helmet>
@@ -85,11 +119,11 @@ export function MyTickets() {
                     </DialogDescription>
                     <div className="mt-2">
                       <Label>Assunto</Label>
-                      <Input />
+                      <Input value={title} onChange={(e) => setTitle(e.target.value)} />
                     </div>
-                    <Textarea className="h-40" />
+                    <Textarea cvalue={message} onChange={(e) => setMessage(e.target.value)} />
                     <Files />
-                    <Button className="h-10">Enviar Ticket</Button>
+                    <Button className="h-10" onClick={() => mutation.mutate()}>Enviar Ticket</Button>
                   </DialogContent>
                 </Dialog>
               </CardHeader>

@@ -1,6 +1,8 @@
 import { Button } from '@/components/ui/button';
 import { createLazyFileRoute } from '@tanstack/react-router';
 import { Helmet } from 'react-helmet';
+import axios from "axios";
+import { useQuery } from "@tanstack/react-query";
 
 import InputCardInfos from '@/components/input-card-infos/index';
 import { Avatar, AvatarImage } from '@/components/ui/avatar';
@@ -24,11 +26,9 @@ import {
 import items from '@/mock/tickets.json';
 import { Check, Clock10, FileIcon, SendIcon, Settings } from 'lucide-react';
 import { useMemo } from 'react';
-
 import { CommentRatings } from '@/components/ratings/index';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
-import agents from '@/mock/agents';
 import { format, formatDistance } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
 
@@ -37,7 +37,18 @@ export const Route = createLazyFileRoute('/_private/chamado/$id/consultor')({
 })
 
 function TicketConsultor() {
+  const BASE_URL = "http://157.245.253.201:1337";
   const { id } = Route.useParams();
+
+  const { data: ticketsDetailData } = useQuery({
+    queryKey: ['ticketsDetail'],
+    queryFn: () => axios.get(`${BASE_URL}/tickets/${id}`).then((response) => response.data)
+  });
+
+  const { data: assistantsData } = useQuery({
+    queryKey: ['assistants'],
+    queryFn: () => axios.get(`${BASE_URL}/assistants`).then((response) => response.data)
+  });
 
   const handleSubmitMessage = (e) => {
     e.preventDefault();
@@ -285,33 +296,37 @@ function TicketConsultor() {
               </CardHeader>
 
               <CardContent className="flex flex-col gap-2">
-                {agents.map((item) => (
-                  <Card key={`assistant_${item.id}`} className="flex py-2 px-4 items-center bg-muted">
-                    <Avatar className="mr-2">
-                      <AvatarImage src={item.imagem} alt="@robot" className="bg-slate-50" />
-                    </Avatar>
-                    <CardTitle className="mr-auto">{item.nome}</CardTitle>
-                    {mock.assistentes.find(assistant => assistant.assistente.nome === item.nome) ? (
-                      <Tooltip>
-                        <TooltipTrigger>
-                          <Check className="h-4 w-4 text-green-500" />
-                        </TooltipTrigger>
-                        <TooltipContent>
-                          <p>Finalizado</p>
-                        </TooltipContent>
-                      </Tooltip>
-                    ) : (
-                      <Tooltip>
-                        <TooltipTrigger>
-                          <Clock10 className="ml-auto h-4 w-4 text-orange-500" />
-                        </TooltipTrigger>
-                        <TooltipContent>
-                          <p>Assistente trabalhando</p>
-                        </TooltipContent>
-                      </Tooltip>
-                    )}
-                  </Card>
-                ))}
+                {assistantsData && assistantsData.length > 0 ? (
+                  assistantsData.map((item) => (
+                    <Card key={`assistant_${item.id}`} className="flex py-2 px-4 items-center bg-muted">
+                      <Avatar className="mr-2">
+                        <AvatarImage src={item.avatar} alt="@robot" className="bg-slate-50" />
+                      </Avatar>
+                      <CardTitle className="mr-auto">{item.name}</CardTitle>
+                      {mock.assistentes.find(assistant => assistant.assistente.nome === item.name) ? (
+                        <Tooltip>
+                          <TooltipTrigger>
+                            <Check className="h-4 w-4 text-green-500" />
+                          </TooltipTrigger>
+                          <TooltipContent>
+                            <p>Finalizado</p>
+                          </TooltipContent>
+                        </Tooltip>
+                      ) : (
+                        <Tooltip>
+                          <TooltipTrigger>
+                            <Clock10 className="ml-auto h-4 w-4 text-orange-500" />
+                          </TooltipTrigger>
+                          <TooltipContent>
+                            <p>Assistente trabalhando</p>
+                          </TooltipContent>
+                        </Tooltip>
+                      )}
+                    </Card>
+                  ))
+                ) : (
+                  <p>Nenhum assistente encontrado.</p>
+                )}
               </CardContent>
             </Card>
           </TabsContent>
