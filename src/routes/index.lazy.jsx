@@ -10,6 +10,9 @@ import robot1 from '../assets/robot1.jpeg';
 import robot2 from '../assets/robot2.jpeg';
 import shadcnimg from '../assets/shadcn.svg';
 import tailwindimg from '../assets/tailwind.svg';
+import openAIimg from '../assets/openai.jpeg';
+import digitalOceanimg from '../assets/digitalOcean.jpeg';
+import nodeJsimg from '../assets/nodeJs.png';
 
 
 export const Route = createLazyFileRoute("/")({
@@ -357,7 +360,7 @@ function Dashboard() {
                   Utilizamos o que há de mais atual no mercado para construir um produto escalável e que traga valor aos nossos usuários.
                 </p>
               </div>
-              <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 gap-6 mt-8">
+              <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-6 gap-2 mt-8">
                 <div className="flex flex-col items-center space-y-2">
                   <img
                     src={reactimg}
@@ -397,6 +400,48 @@ function Dashboard() {
                   <div className="text-center text-sm font-medium hover:underline underline-offset-4">
                     <a href="https://ui.shadcn.com" target="_blank">
                       Shadcn/UI
+                    </a>
+                  </div>
+                </div>
+                <div className="flex flex-col items-center space-y-2">
+                  <img
+                    src={openAIimg}
+                    width="65"
+                    height="65"
+                    alt="OpenAI"
+                    className="aspect-square object-contain"
+                  />
+                  <div className="text-center text-sm font-medium hover:underline underline-offset-4">
+                    <a href="https://openai.com" target="_blank">
+                      OpenAI
+                    </a>
+                  </div>
+                </div>
+                <div className="flex flex-col items-center space-y-2">
+                  <img
+                    src={nodeJsimg}
+                    width="65"
+                    height="65"
+                    alt="NodeJS"
+                    className="aspect-square object-contain"
+                  />
+                  <div className="text-center text-sm font-medium hover:underline underline-offset-4">
+                    <a href="https://nodejs.org/en" target="_blank">
+                      NodeJs
+                    </a>
+                  </div>
+                </div>
+                <div className="flex flex-col items-center space-y-2">
+                  <img
+                    src={digitalOceanimg}
+                    width="65"
+                    height="65"
+                    alt="DigitalOcean"
+                    className="aspect-square object-contain"
+                  />
+                  <div className="text-center text-sm font-medium hover:underline underline-offset-4">
+                    <a href="https://www.digitalocean.com" target="_blank">
+                      Digital Ocean
                     </a>
                   </div>
                 </div>
