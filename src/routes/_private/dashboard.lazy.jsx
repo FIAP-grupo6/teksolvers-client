@@ -1,5 +1,5 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Settings, ListOrdered } from "lucide-react";
+import { Settings } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -37,8 +37,6 @@ import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, D
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea"
 import Files from "@/components/files/index";
-import axios from "axios";
-import { useQuery } from "@tanstack/react-query";
 
 export const Route = createLazyFileRoute("/_private/dashboard")({
   component: Dashboard,
@@ -182,13 +180,6 @@ const chartConfigPendente = {
 }
 
 function Dashboard() {
-  const BASE_URL = "http://157.245.253.201:1337";
-
-  const { data: assistantsData } = useQuery({
-    queryKey: ['assistants'],
-    queryFn: () => axios.get(`${BASE_URL}/assistants`).then((response) => response.data)
-  });
-
   const [timeRange, setTimeRange] = useState("90d")
 
   const totalChamados = useMemo(() => {
@@ -497,56 +488,6 @@ function Dashboard() {
                         <CardTitle>{agent.nome}</CardTitle>
                       </div>
                       <div className="-mr-3 -mt-10 flex align-middle gap-3">
-                        <Dialog>
-                          <TooltipProvider>
-                            <Tooltip>
-                              <TooltipTrigger asChild>
-                                <DialogTrigger asChild>
-                                  <ListOrdered className="h-5 w-5 hover:cursor-pointer" />
-                                </DialogTrigger>
-                              </TooltipTrigger>
-                              <TooltipContent>
-                                <p>Visualizar fila de processamento</p>
-                              </TooltipContent>
-                            </Tooltip>
-                          </TooltipProvider>
-                          <DialogContent className="sm:max-w-[80vw] md:max-w-[50vw]">
-                            <DialogHeader>
-                              <DialogTitle>{agent.nome}</DialogTitle>
-                              <DialogDescription>
-                                {agent.descricao}
-                              </DialogDescription>
-                            </DialogHeader>
-                            <div className="gap-4 flex flex-col">
-                              <div>
-                                <Label>Instruções de comando</Label>
-                                <Textarea className="h-24" placeholder="Digite os comandos do Agente"/>
-                              </div>
-                              <div>
-                                <Label>Modelo do Agente</Label>
-                                <Select>
-                                  <SelectTrigger>
-                                    <SelectValue placeholder="Selecione um modelo" />
-                                  </SelectTrigger>
-                                  <SelectContent>
-                                    <SelectGroup>
-                                      <SelectLabel>Modelos</SelectLabel>
-                                      <SelectItem value="GPT-4o">GPT-4o</SelectItem>
-                                      <SelectItem value="GPT-4-Turbo">GPT-4 Turbo</SelectItem>
-                                      <SelectItem value="o1-mini">o1-mini</SelectItem>
-                                      <SelectItem value=">DALL-E">DALL·E</SelectItem>
-                                      <SelectItem value="GPT-3.5-Turbo">GPT-3.5 Turbo</SelectItem>
-                                    </SelectGroup>
-                                  </SelectContent>
-                                </Select>
-                              </div>
-                              <Files label="Arquivos complementares" />
-                            </div>
-                            <DialogFooter>
-                              <Button type="submit">Salvar Configurações</Button>
-                            </DialogFooter>
-                          </DialogContent>
-                        </Dialog>
                         <Dialog>
                           <TooltipProvider>
                             <Tooltip>
