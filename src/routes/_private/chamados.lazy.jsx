@@ -49,6 +49,7 @@ import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import Files from '@/components/files/index';
 import { useState } from 'react';
+import Loader from '@/components/spinner/index';
 
 export const Route = createLazyFileRoute('/_private/chamados')({
   component: MyTickets
@@ -59,13 +60,19 @@ const BASE_URL = "http://157.245.253.201:1337";
 export function MyTickets() {
   const [title, setTitle] = useState('');
   const [message, setMessage] = useState('');
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const { data: ticketData, refetch } = useQuery({
+    queryKey: ['tickets'],
+    queryFn: () => axios.get(`${BASE_URL}/tickets`).then((response) => response.data)
+  });
 
   const mutation = useMutation({
     mutationFn: () => {
       return axios.post(`${BASE_URL}/tickets`, {
         title: title,
         statusId: "3ffed123-f9e4-4e6a-8668-d1540fa0b33c",
-        priorityId: "9cfbc00b-33c6-432d-949d-87ab58207677",
+        priorityId: "2077ce0a-9581-4724-ab9d-8978284f8a7b",
         tags: [],
         userId: "7d8fa820-5c8b-4794-bc15-80b4c6632d39",
         complexityId: "182cdd6f-d520-4b0c-b77a-6ff86363b6d9",
@@ -76,15 +83,13 @@ export function MyTickets() {
         }
       }).then((response) => response.data);
     },
-    onSuccess: (data) => {
-      console.log(data);
+    onSuccess: () => {
+      refetch()
+      setIsModalOpen(false)
     }
   })
 
-  const { data: ticketData } = useQuery({
-    queryKey: ['tickets'],
-    queryFn: () => axios.get(`${BASE_URL}/tickets`).then((response) => response.data)
-  });
+  console.log(mutation.isLoading, mutation.isFetching, mutation)
 
   return (
     <>
@@ -103,11 +108,11 @@ export function MyTickets() {
                     Veja abaixo os tickets criados para você.
                   </CardDescription>
                 </div>
-                <Dialog>
+                <Dialog open={isModalOpen}>
                   <DialogTrigger asChild>
-                    <Button variant="secondary">
+                    <Button variant="secondary" onClick={() => setIsModalOpen(true)}>
                       <CirclePlus className="stroke-1 mr-1" />
-                      <p>Criar Ticket</p>
+                      <p>Criar ticket</p>
                     </Button>
                   </DialogTrigger>
                   <DialogContent className="sm:max-w-[90vw] md:max-w-[60vw]">
@@ -118,12 +123,17 @@ export function MyTickets() {
                       resolver o problema mais rapidamente.
                     </DialogDescription>
                     <div className="mt-2">
-                      <Label>Assunto</Label>
+                      <Label>Título</Label>
                       <Input value={title} onChange={(e) => setTitle(e.target.value)} />
                     </div>
-                    <Textarea cvalue={message} onChange={(e) => setMessage(e.target.value)} />
+                    <Label>Descrição</Label>
+                    <Textarea cvalue={message} onChange={(e) => setMessage(e.target.value)} className="min-h-40" />
                     <Files />
-                    <Button className="h-10" onClick={() => mutation.mutate()}>Enviar Ticket</Button>
+                    <Button className="h-10" onClick={() => mutation.mutate()}>
+                      {mutation.isLoading ? (
+                        <Loader className="w-4 h-4" />
+                      ) : 'Criar ticket'}
+                    </Button>
                   </DialogContent>
                 </Dialog>
               </CardHeader>
@@ -140,9 +150,6 @@ export function MyTickets() {
                         Prioridade
                       </TableHead>
                       <TableHead className="hidden md:table-cell">
-                        Notificações
-                      </TableHead>
-                      <TableHead className="hidden md:table-cell">
                         Última atualização
                       </TableHead>
                       <TableHead>
@@ -151,70 +158,39 @@ export function MyTickets() {
                     </TableRow>
                   </TableHeader>
                   <TableBody>
-                    {mock.map((item, i) => (
+                    {ticketData?.map((item, i) => (
                       <TableRow key={i}>
                         <TableCell className="hidden sm:table-cell text-xs">
-                          {item.numero}
+                          {item.id}
                         </TableCell>
                         <TableCell className="font-medium">
-                          {item.titulo}
+                          {item.title}
                         </TableCell>
                         <TableCell>
                           <Badge variant="secondary" className="flex gap-1 w-fit items-center">
                             {/* <StarIcon className="h-4 w-4" /> */}
-                            {item.status === "Em andamento" && (<Clock10 className="text-orange-300 h-4 w-4" />)}
-                            {item.status === "Pendente" && (<Clock10 className="text-orange-300 h-4 w-4" />)}
-                            {item.status === "Aberto" && (<Star className="text-blue-300 h-4 w-4" />)}
-                            {item.status === "Concluído" && (<CheckCheck className="text-green-300 h-4 w-4" />)}
-                            {item.status}
+                            {item.status.title === "Em andamento" && (<Clock10 className="text-orange-300 h-4 w-4" />)}
+                            {item.status.title === "Pendente" && (<Clock10 className="text-orange-300 h-4 w-4" />)}
+                            {item.status.title === "Aberto" && (<Star className="text-blue-300 h-4 w-4" />)}
+                            {item.status.title === "Concluído" && (<CheckCheck className="text-green-300 h-4 w-4" />)}
+                            {item.status.title}
                           </Badge>
                         </TableCell>
                         <TableCell className="hidden md:table-cell">
                           <Badge className={cn({
-                            'bg-red-700': item.prioridade === 'Crítica',
-                            'bg-red-400': item.prioridade === 'Alta',
-                            'bg-yellow-400': item.prioridade === 'Média',
-                            'bg-green-400': item.prioridade === 'Baixa',
-                            'text-white': item.prioridade === 'Crítica'
-                          })}>{item.prioridade}</Badge>
+                            'bg-gray-400': item.priority.title === 'Aguardando',
+                            'bg-red-700': item.priority.title === 'Crítica',
+                            'bg-red-400': item.priority.title === 'Alta',
+                            'bg-yellow-400': item.priority.title === 'Média',
+                            'bg-green-400': item.priority.title === 'Baixa',
+                            'text-white': item.priority.title === 'Crítica'
+                          })}>{item.priority.title}</Badge>
                         </TableCell>
-                        <TableCell className="hidden md:table-cell">
-                          <div className="flex gap-1">
-                            <Tooltip>
-                              <TooltipTrigger>
-                                <Badge variant="secondary" className="flex items-center gap-1">
-                                  <BotIcon className="h-4 w-4" /> {item.notificacoes.agentes}
-                                </Badge>
-                              </TooltipTrigger>
-                              <TooltipContent>
-                                {item.notificacoes.agentes > 0 ? (
-                                  <p>Você tem {item.notificacoes.agentes} {item.notificacoes.agentes > 1 ? 'mensagens' : 'mensagem'} de assistentes </p>
-                                ) : (
-                                  <p>Você não tem novas mensagens de assistentes</p>
-                                )}
-                              </TooltipContent>
-                            </Tooltip>
-
-                            <Tooltip>
-                              <TooltipTrigger>
-                                <Badge variant="secondary" className="flex items-center gap-1">
-                                  <MessageCircle className="h-4 w-4" /> {item.notificacoes.mensagens}
-                                </Badge>
-                              </TooltipTrigger>
-                              <TooltipContent>
-                                {item.notificacoes.mensagens > 0 ? (
-                                  <p>Você tem {item.notificacoes.mensagens} {item.notificacoes.mensagens > 1 ? 'mensagens' : 'mensagem'} do cliente</p>
-                                ) : (
-                                  <p>Você não tem novas mensagens do cliente</p>
-                                )}
-                              </TooltipContent>
-                            </Tooltip>
-                          </div>
-                        </TableCell>
+                        
                         <TableCell className="hidden md:table-cell space-x-2">
-                          {format(new Date(item.data_edicao), 'dd-MM-yyyy')}
+                          {format(new Date(item.createdAt), 'dd-MM-yyyy')}
                           <p className="text-xs text-muted-foreground">{formatDistance(
-                            new Date(item.data_edicao),
+                            new Date(item.createdAt),
                             new Date(),
                             { addSuffix: true, locale: ptBR }
                           )}</p>
@@ -234,10 +210,10 @@ export function MyTickets() {
                             <DropdownMenuContent align="end">
                               <DropdownMenuLabel>Ações</DropdownMenuLabel>
                               <DropdownMenuItem>
-                                <Link to={`/chamado/${item.numero}/consultor`}>Ver como consultor</Link>
+                                <Link to={`/chamado/${item.id}/consultor`}>Ver como consultor</Link>
                               </DropdownMenuItem>
                               <DropdownMenuItem>
-                                <Link to={`/chamado/${item.numero}/cliente`}>Ver como cliente</Link>
+                                <Link to={`/chamado/${item.id}/cliente`}>Ver como cliente</Link>
                               </DropdownMenuItem>
                             </DropdownMenuContent>
                           </DropdownMenu>
@@ -249,7 +225,7 @@ export function MyTickets() {
               </CardContent>
               <CardFooter>
                 <div className="text-xs text-muted-foreground">
-                  Exibindo <strong>1-{mock.length}</strong> de <strong>{mock.length}</strong>{" "}
+                  Exibindo <strong>1-{ticketData?.length}</strong> de <strong>{ticketData?.length}</strong>{" "}
                   tickets
                 </div>
               </CardFooter>
