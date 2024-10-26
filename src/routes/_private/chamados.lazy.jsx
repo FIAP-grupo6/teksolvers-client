@@ -84,8 +84,10 @@ export function MyTickets() {
       }).then((response) => response.data);
     },
     onSuccess: () => {
-      refetch()
       setIsModalOpen(false)
+      setTitle('')
+      setMessage('')
+      refetch()
     }
   })
 
@@ -125,11 +127,11 @@ export function MyTickets() {
                       <Input value={title} onChange={(e) => setTitle(e.target.value)} />
                     </div>
                     <Label>Descrição</Label>
-                    <Textarea cvalue={message} onChange={(e) => setMessage(e.target.value)} className="min-h-40" />
+                    <Textarea value={message} onChange={(e) => setMessage(e.target.value)} className="min-h-40" />
                     <Files />
-                    <Button className="h-10" onClick={() => mutation.mutate()}>
+                    <Button className="h-10" onClick={() => mutation.mutate()} disabled={mutation.isPending}>
                       {mutation.isPending ? (
-                        <Loader className="w-4 h-4" />
+                        <Loader className="w-4 h-4 text-white" />
                       ) : 'Criar ticket'}
                     </Button>
                   </DialogContent>
@@ -159,7 +161,7 @@ export function MyTickets() {
                     {ticketData?.map((item, i) => (
                       <TableRow key={i}>
                         <TableCell className="hidden sm:table-cell text-xs">
-                          {item.id}
+                          {item.id.substring(0, 6)}
                         </TableCell>
                         <TableCell className="font-medium">
                           {item.title}
