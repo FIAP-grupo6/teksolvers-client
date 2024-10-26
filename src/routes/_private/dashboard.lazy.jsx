@@ -37,6 +37,7 @@ import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, D
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea"
 import Files from "@/components/files/index";
+import { cn } from "@/lib/utils";
 
 export const Route = createLazyFileRoute("/_private/dashboard")({
   component: Dashboard,
@@ -492,7 +493,7 @@ function Dashboard() {
                           <TooltipProvider>
                             <Tooltip>
                               <TooltipTrigger asChild>
-                                <DialogTrigger asChild>
+                                <DialogTrigger asChild className={cn({'pointer-events-none opacity-10': !agent.ativo})}>
                                   <Settings className="h-5 w-5 hover:cursor-pointer" />
                                 </DialogTrigger>
                               </TooltipTrigger>
@@ -511,7 +512,7 @@ function Dashboard() {
                             <div className="gap-4 flex flex-col">
                               <div>
                                 <Label>Instruções de comando</Label>
-                                <Textarea className="h-24" placeholder="Digite os comandos do Agente"/>
+                                <Textarea className="h-24" placeholder="Digite os comandos do Agente" value={agent?.prompt} readOnly/>
                               </div>
                               <div>
                                 <Label>Modelo do Agente</Label>

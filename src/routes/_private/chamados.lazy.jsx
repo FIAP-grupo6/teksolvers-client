@@ -108,7 +108,7 @@ export function MyTickets() {
                     Veja abaixo os tickets criados para você.
                   </CardDescription>
                 </div>
-                <Dialog open={isModalOpen}>
+                <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
                   <DialogTrigger asChild>
                     <Button variant="secondary" onClick={() => setIsModalOpen(true)}>
                       <CirclePlus className="stroke-1 mr-1" />
