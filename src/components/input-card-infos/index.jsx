@@ -24,15 +24,17 @@ import { useQuery } from "@tanstack/react-query";
 export default function InputCardInfos({ className, item }) {
   const BASE_URL = "http://157.245.253.201:1337";
   
-  const { data: priorityData } = useQuery({
+  const { data: priorityData, isLoading: loadingPriority } = useQuery({
     queryKey: ['priority'],
     queryFn: () => axios.get(`${BASE_URL}/priority`).then((response) => response.data)
   });
 
-  const { data: complexityData } = useQuery({
+  const { data: complexityData, isLoading: loadingComplexity } = useQuery({
     queryKey: ['complexity'],
     queryFn: () => axios.get(`${BASE_URL}/complexity`).then((response) => response.data)
   });
+
+  if(loadingComplexity || loadingPriority) return null
 
   return (
     <Card className={cn('w-[450px]', className)}>
@@ -42,11 +44,11 @@ export default function InputCardInfos({ className, item }) {
       </CardHeader>
       <div className="p-5">
         <Label htmlFor="nivel">Complexidade</Label>
-        <Tabs defaultValue={complexityData?.title || 'Nível 1'}>
+        <Tabs defaultValue={item?.complexityId || 'Nível 1'}>
           <TabsList className="grid w-full grid-cols-3">
-            <TabsTrigger value="Nível 1">Nível 1</TabsTrigger>
-            <TabsTrigger value="Nível 2">Nível 2</TabsTrigger>
-            <TabsTrigger value="Nível 3">Nível 3</TabsTrigger>
+            {complexityData.map(item => (
+              <TabsTrigger value={item.id} key={`complexity_item_${item.id}`}>{item.title}</TabsTrigger>
+            ))}
           </TabsList>
         </Tabs>
       </div>
@@ -73,15 +75,14 @@ export default function InputCardInfos({ className, item }) {
             </div>
             <div className="flex flex-col space-y-1.5">
               <Label htmlFor="prioridade">Prioridade</Label>
-              <Select defaultValue={priorityData?.title || ''}>
+              <Select defaultValue={item?.priorityId || ''}>
                 <SelectTrigger id="prioridade">
                   <SelectValue placeholder="Selecionar" />
                 </SelectTrigger>
                 <SelectContent position="popper">
-                  <SelectItem value="Baixa">Baixa</SelectItem>
-                  <SelectItem value="Média">Média</SelectItem>
-                  <SelectItem value="Alta">Alta</SelectItem>
-                  <SelectItem value="Crítica">Crítica</SelectItem>
+                  {priorityData?.map(item => (
+                    <SelectItem value={item.id} key={`priority_item_${item.id}`}>{item.title}</SelectItem>
+                  ))}
                 </SelectContent>
               </Select>
             </div>

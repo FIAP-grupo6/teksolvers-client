@@ -15,7 +15,7 @@ export default function Tags({tags = []}) {
   }
 
   const handleRemoveTag = (tag) => {
-    setTags(tags => tags.filter(t => t !== tag))
+    setTags(tags => tags.filter(t => t.id !== tag.id))
   }
 
   return (
@@ -26,9 +26,9 @@ export default function Tags({tags = []}) {
         <Button onClick={handleAddTag}>Adicionar</Button>
       </div>
       <div className="flex flex-wrap gap-2">
-        {allTags.map((tag, index) => (
-          <Badge key={`tag_${index}`} variant="secondary" className="px-3 py-1.5 rounded-2xl">
-            <p>{tag}</p>
+        {allTags.map((tag) => (
+          <Badge key={`tag_${tag.id}`} variant="secondary" className="px-3 py-1.5 rounded-2xl">
+            <p>{tag.title}</p>
             <Cross2Icon className="w-3 ml-2 cursor-pointer" onClick={() => handleRemoveTag(tag)} />
           </Badge>
         ))}

@@ -89,8 +89,6 @@ export function MyTickets() {
     }
   })
 
-  console.log(mutation.isLoading, mutation.isFetching, mutation)
-
   return (
     <>
       <Helmet>
@@ -130,7 +128,7 @@ export function MyTickets() {
                     <Textarea cvalue={message} onChange={(e) => setMessage(e.target.value)} className="min-h-40" />
                     <Files />
                     <Button className="h-10" onClick={() => mutation.mutate()}>
-                      {mutation.isLoading ? (
+                      {mutation.isPending ? (
                         <Loader className="w-4 h-4" />
                       ) : 'Criar ticket'}
                     </Button>

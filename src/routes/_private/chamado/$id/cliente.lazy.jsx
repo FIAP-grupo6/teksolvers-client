@@ -22,16 +22,16 @@ import {
   TabsList,
   TabsTrigger
 } from "@/components/ui/tabs";
-import items from '@/mock/tickets.json';
 import { SendIcon, Settings } from 'lucide-react';
-import { useMemo } from 'react';
 
 import { format, formatDistance } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
 
 import { CommentRatings } from '@/components/ratings/index';
+import ReactMarkdown from 'react-markdown';
 import { Badge } from '@/components/ui/badge';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import Loader from '@/components/spinner/index';
 
 export const Route = createLazyFileRoute('/_private/chamado/$id/cliente')({
   component: TicketCliente
@@ -41,7 +41,7 @@ function TicketCliente() {
   const BASE_URL = "http://157.245.253.201:1337";
   const { id } = Route.useParams();
 
-  const { data: ticketsDetailData } = useQuery({
+  const { data: ticketsDetailData, isFetching, isLoading } = useQuery({
     queryKey: ['ticketsDetail'],
     queryFn: () => axios.get(`${BASE_URL}/tickets/${id}`).then((response) => response.data)
   });
@@ -51,17 +51,19 @@ function TicketCliente() {
     console.log('submit', e.target.description.value);
   }
 
-  const mock = useMemo(() => {
-    return items.find(item => item.numero === id);
-  }, [id])
+  if(isFetching || isLoading) return (
+    <div className="w-full min-h-screen h-full grid place-items-center">
+      <Loader />
+    </div>
+  )
 
   return (
     <>
       <Helmet>
-        <title>DeskBots - #{mock.numero}</title>
+        <title>DeskBots - #{ticketsDetailData.id}</title>
       </Helmet>
 
-      <main className="grid flex-1 max-w-7xl m-auto items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8">
+      <main className="grid flex-1 w-full max-w-[1024px] m-auto items-start gap-4 p-4 sm:px-3 sm:py-0 md:gap-8">
         <Tabs defaultValue="main">
           <div className="flex items-center">
             <TabsList>
@@ -77,7 +79,7 @@ function TicketCliente() {
               </SheetTrigger>
 
               <SheetContent side="right" className="w-[95%] sm:max-w-2xl">
-                <InputCardInfosCliente className="mt-6 w-full" item={mock} />
+                <InputCardInfosCliente className="mt-6 w-full" item={ticketsDetailData} />
               </SheetContent>
             </Sheet>
           </div>
@@ -87,29 +89,29 @@ function TicketCliente() {
               <CardHeader className="flex flex-row justify-between">
                 <div>
                   <CardTitle className="text-lg">
-                    {mock.titulo}
+                    {ticketsDetailData.title}
                   </CardTitle>
                   <div className="flex gap-2 mt-0">
-                    <p className="text-xs text-muted-foreground">{mock.numero} - <span className="text-xs text-muted-foreground">{format(new Date(mock.data_criacao), 'dd-MM-yyyy')}</span></p>
+                    <p className="text-xs text-muted-foreground">{ticketsDetailData.id} - <span className="text-xs text-muted-foreground">{format(new Date(ticketsDetailData.createdAt), 'dd-MM-yyyy')}</span></p>
                   </div>
                 </div>
-                <Badge variant="secondary">{mock.status}</Badge>
+                <Badge variant="secondary">{ticketsDetailData.status.title}</Badge>
               </CardHeader>
               <CardContent className="p-4 space-y-4 overflow-y-auto h-[calc(100vh-19rem)] md:h-[calc(100vh-18rem)] pt-0 pr-0">
                 <ScrollArea className="h-full flex flex-col pr-4">
-                  {mock.mensagens.map((item, i) => (
+                  {ticketsDetailData?.messages?.map((item, i) => (
                     <Card x-chunk="dashboard-01-chunk-0" key={`card_${i}`} className="mb-4 bg-muted">
                       <CardHeader className="flex flex-row gap-2">
                         <Avatar>
-                          <AvatarImage src={item.usuario.imagem} alt="@person" className="bg-slate-50" />
+                          <AvatarImage src="https://api.dicebear.com/9.x/avataaars/svg?seed=Marcio&randomizeIds=true&accessories=prescription01&clothingGraphic=bear&eyes=default&mouth=smile" alt="@person" className="bg-slate-50" />
                         </Avatar>
 
                         <div className="flex items-center justify-between w-full">
                           <div>
-                            <CardTitle className="font-medium text-sm">{item.usuario.nome}</CardTitle>
+                            <CardTitle className="font-medium text-sm">{item.user.name}</CardTitle>
                             <CardDescription className="text-xs text-muted-foreground">
                               {formatDistance(
-                                new Date(item.data),
+                                new Date(item.createdAt),
                                 new Date(),
                                 { addSuffix: true, locale: ptBR }
                               )}
@@ -119,9 +121,9 @@ function TicketCliente() {
                         </div>
                       </CardHeader>
                       <CardContent>
-                        <p className="text-sm">{item.mensagem}</p>
+                        <ReactMarkdown className="text-sm">{item.content}</ReactMarkdown>
 
-                        {item.usuario.nome === "Jarvis" && (
+                        {item?.usuario?.nome === "Jarvis" && (
                           <div className="mt-6">
                             <CommentRatings rating={2.5} totalStars={5} />
                           </div>
